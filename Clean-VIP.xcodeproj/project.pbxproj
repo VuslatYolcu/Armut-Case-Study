@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
+		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
+		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
+		11EF60012A42206500A7F66F /* ServicesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60002A42206500A7F66F /* ServicesInteractor.swift */; };
+		11EF60032A42206C00A7F66F /* ServicesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60022A42206C00A7F66F /* ServicesPresenter.swift */; };
+		11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60042A42207500A7F66F /* ServicesRouter.swift */; };
+		11EF60082A42217400A7F66F /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60072A42217400A7F66F /* JobsView.swift */; };
+		11EF600A2A42217E00A7F66F /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60092A42217E00A7F66F /* JobsViewController.swift */; };
+		11EF600C2A42218600A7F66F /* JobsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF600B2A42218600A7F66F /* JobsInteractor.swift */; };
+		11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF600D2A42218D00A7F66F /* JobsPresenter.swift */; };
+		11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF600F2A42219500A7F66F /* JobsRouter.swift */; };
+		11EF60132A4222DE00A7F66F /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60122A4222DE00A7F66F /* NotificationsView.swift */; };
+		11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60142A4222E500A7F66F /* NotificationsViewController.swift */; };
+		11EF60172A4222EF00A7F66F /* NotificationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60162A4222EF00A7F66F /* NotificationsInteractor.swift */; };
+		11EF60192A4222F900A7F66F /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60182A4222F900A7F66F /* NotificationsPresenter.swift */; };
+		11EF601B2A4222FF00A7F66F /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF601A2A4222FF00A7F66F /* NotificationsRouter.swift */; };
+		11EF601E2A42255600A7F66F /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF601D2A42255600A7F66F /* ProfilesView.swift */; };
+		11EF60202A42255D00A7F66F /* ProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF601F2A42255D00A7F66F /* ProfilesViewController.swift */; };
+		11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60212A42256600A7F66F /* ProfilesInteractor.swift */; };
+		11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */; };
+		11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60252A42257500A7F66F /* ProfilesRouter.swift */; };
 		1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818BD247CDF03001B0324 /* AppDelegate.swift */; };
 		1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818C1247CDF03001B0324 /* TitlesViewController.swift */; };
 		1C4818C7247CDF06001B0324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4818C6247CDF06001B0324 /* Assets.xcassets */; };
@@ -29,6 +50,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		11EF60002A42206500A7F66F /* ServicesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesInteractor.swift; sourceTree = "<group>"; };
+		11EF60022A42206C00A7F66F /* ServicesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPresenter.swift; sourceTree = "<group>"; };
+		11EF60042A42207500A7F66F /* ServicesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesRouter.swift; sourceTree = "<group>"; };
+		11EF60072A42217400A7F66F /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
+		11EF60092A42217E00A7F66F /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		11EF600B2A42218600A7F66F /* JobsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsInteractor.swift; sourceTree = "<group>"; };
+		11EF600D2A42218D00A7F66F /* JobsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsPresenter.swift; sourceTree = "<group>"; };
+		11EF600F2A42219500A7F66F /* JobsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsRouter.swift; sourceTree = "<group>"; };
+		11EF60122A4222DE00A7F66F /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		11EF60142A4222E500A7F66F /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		11EF60162A4222EF00A7F66F /* NotificationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsInteractor.swift; sourceTree = "<group>"; };
+		11EF60182A4222F900A7F66F /* NotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPresenter.swift; sourceTree = "<group>"; };
+		11EF601A2A4222FF00A7F66F /* NotificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRouter.swift; sourceTree = "<group>"; };
+		11EF601D2A42255600A7F66F /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		11EF601F2A42255D00A7F66F /* ProfilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesViewController.swift; sourceTree = "<group>"; };
+		11EF60212A42256600A7F66F /* ProfilesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesInteractor.swift; sourceTree = "<group>"; };
+		11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesPresenter.swift; sourceTree = "<group>"; };
+		11EF60252A42257500A7F66F /* ProfilesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesRouter.swift; sourceTree = "<group>"; };
 		1C4818BA247CDF03001B0324 /* Clean-VIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean-VIP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4818BD247CDF03001B0324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C4818C1247CDF03001B0324 /* TitlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +105,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11EF5FF82A421E6000A7F66F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		11EF5FFB2A42202B00A7F66F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11EF5FFC2A42205200A7F66F /* ServicesView.swift */,
+				11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */,
+				11EF60002A42206500A7F66F /* ServicesInteractor.swift */,
+				11EF60022A42206C00A7F66F /* ServicesPresenter.swift */,
+				11EF60042A42207500A7F66F /* ServicesRouter.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		11EF60062A42216900A7F66F /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				11EF60072A42217400A7F66F /* JobsView.swift */,
+				11EF60092A42217E00A7F66F /* JobsViewController.swift */,
+				11EF600B2A42218600A7F66F /* JobsInteractor.swift */,
+				11EF600D2A42218D00A7F66F /* JobsPresenter.swift */,
+				11EF600F2A42219500A7F66F /* JobsRouter.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		11EF60112A4222C900A7F66F /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				11EF60122A4222DE00A7F66F /* NotificationsView.swift */,
+				11EF60142A4222E500A7F66F /* NotificationsViewController.swift */,
+				11EF60162A4222EF00A7F66F /* NotificationsInteractor.swift */,
+				11EF60182A4222F900A7F66F /* NotificationsPresenter.swift */,
+				11EF601A2A4222FF00A7F66F /* NotificationsRouter.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		11EF601C2A42254900A7F66F /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				11EF601D2A42255600A7F66F /* ProfilesView.swift */,
+				11EF601F2A42255D00A7F66F /* ProfilesViewController.swift */,
+				11EF60212A42256600A7F66F /* ProfilesInteractor.swift */,
+				11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */,
+				11EF60252A42257500A7F66F /* ProfilesRouter.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
 		1C390276247CDFC900797273 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +236,11 @@
 		1CCAC465247D6A36009AC08C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				11EF601C2A42254900A7F66F /* Profiles */,
+				11EF60112A4222C900A7F66F /* Notifications */,
+				11EF60062A42216900A7F66F /* Jobs */,
+				11EF5FFB2A42202B00A7F66F /* Services */,
+				11EF5FF82A421E6000A7F66F /* Dashboard */,
 				1CCAC466247D6A3D009AC08C /* Titles */,
 				1CCAC467247D6A4A009AC08C /* Title Detail */,
 			);
@@ -265,14 +368,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CEF92BD2481764000643631 /* TitleDetailConfigurator.swift in Sources */,
+				11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */,
+				11EF60172A4222EF00A7F66F /* NotificationsInteractor.swift in Sources */,
+				11EF60082A42217400A7F66F /* JobsView.swift in Sources */,
+				11EF60012A42206500A7F66F /* ServicesInteractor.swift in Sources */,
 				1CEF92AE2480EF4200643631 /* Model.xcdatamodeld in Sources */,
+				11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */,
+				11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */,
+				11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */,
 				1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */,
+				11EF60192A4222F900A7F66F /* NotificationsPresenter.swift in Sources */,
+				11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */,
 				1CEF92B52481761100643631 /* TitleDetailViewController.swift in Sources */,
 				1CCAC463247CF7F5009AC08C /* TitlesView.swift in Sources */,
+				11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */,
 				1CCAC45F247CE372009AC08C /* TitlesPresenter.swift in Sources */,
 				1CEF92B02480FC5400643631 /* PersistentContainerProvider.swift in Sources */,
 				1CEF92B92481763000643631 /* TitleDetailPresenter.swift in Sources */,
+				11EF600C2A42218600A7F66F /* JobsInteractor.swift in Sources */,
 				1CCAC45D247CE36B009AC08C /* TitlesInteractor.swift in Sources */,
+				11EF60202A42255D00A7F66F /* ProfilesViewController.swift in Sources */,
+				11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */,
+				11EF601E2A42255600A7F66F /* ProfilesView.swift in Sources */,
+				11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */,
+				11EF60032A42206C00A7F66F /* ServicesPresenter.swift in Sources */,
+				11EF60132A4222DE00A7F66F /* NotificationsView.swift in Sources */,
+				11EF601B2A4222FF00A7F66F /* NotificationsRouter.swift in Sources */,
 				1CEF92B72481762800643631 /* TitleDetailInteractor.swift in Sources */,
 				1CCAC461247CE383009AC08C /* TitlesConfigurator.swift in Sources */,
 				1CEF92B32481760700643631 /* TitleDetailView.swift in Sources */,
@@ -280,6 +401,9 @@
 				1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */,
 				1CEF92BF2482B6F300643631 /* Extensions.swift in Sources */,
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
+				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
+				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,
+				11EF600A2A42217E00A7F66F /* JobsViewController.swift in Sources */,
 				1CCAC45B247CE363009AC08C /* TitlesRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -402,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +544,7 @@
 				DEVELOPMENT_TEAM = MJWVGRX9VD;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = "Clean-VIP/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,7 +564,7 @@
 				DEVELOPMENT_TEAM = MJWVGRX9VD;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = "Clean-VIP/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
