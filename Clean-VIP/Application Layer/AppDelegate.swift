@@ -15,9 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let titlesViewController = TitlesViewController()
-        let navigationController = UINavigationController(rootViewController: titlesViewController)
-        TitlesConfigurator.configureModule(viewController: titlesViewController)
+        let tabBarViewController = TabBarViewController()
+        let navigationController = UINavigationController(rootViewController: tabBarViewController)
         
         window = UIWindow()
         window?.rootViewController = navigationController
@@ -25,6 +24,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
 }
 
