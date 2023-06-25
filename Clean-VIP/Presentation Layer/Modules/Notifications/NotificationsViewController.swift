@@ -13,16 +13,12 @@ protocol NotificationsPresenterOutput: AnyObject {
     func presenter(didFailRetrieveItem message: String)
 }
 
-class NotificationsViewController: UIViewController {
+final class NotificationsViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
-    override func loadView() {
-        super.loadView()
-        self.view = titleDetailView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = titleDetailView
         self.interactor?.viewDidLoad()
     }
     

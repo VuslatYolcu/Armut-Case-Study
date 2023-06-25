@@ -13,7 +13,7 @@ protocol ServicesPresenterOutput: AnyObject {
     func presenter(didFailRetrieveItem message: String)
 }
 
-class ServicesViewController: UIViewController {
+final class ServicesViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
     override func loadView() {

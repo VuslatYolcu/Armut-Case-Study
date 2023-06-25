@@ -13,16 +13,12 @@ protocol ProfilesPresenterOutput: AnyObject {
     func presenter(didFailRetrieveItem message: String)
 }
 
-class ProfilesViewController: UIViewController {
+final class ProfilesViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
-    override func loadView() {
-        super.loadView()
-        self.view = titleDetailView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = titleDetailView
         self.interactor?.viewDidLoad()
     }
     
