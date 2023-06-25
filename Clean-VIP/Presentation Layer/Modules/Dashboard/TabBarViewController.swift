@@ -33,10 +33,15 @@ final class TabBarViewController: UITabBarController {
         let nav3 = UINavigationController(rootViewController: notificationsVC)
         let nav4 = UINavigationController(rootViewController: profilesVC)
         
-        nav1.tabBarItem = UITabBarItem(title: "Character", image: UIImage(systemName: "person"), tag: 1)
-        nav2.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(systemName: "globe"), tag: 2)
-        nav3.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "tv"), tag: 3)
-        nav4.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4)
+        let servicesIcon = UIImage(systemName: "magnifyingglass")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let jobsIcon = UIImage(systemName: "bag")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let notifacationsIcon = UIImage(systemName: "bell")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let profileIcon = UIImage(systemName: "person")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        
+        nav1.tabBarItem = UITabBarItem(title: "Services", image: servicesIcon, tag: 1)
+        nav2.tabBarItem = UITabBarItem(title: "Jobs", image: jobsIcon, tag: 2)
+        nav3.tabBarItem = UITabBarItem(title: "Notifications", image: notifacationsIcon, tag: 3)
+        nav4.tabBarItem = UITabBarItem(title: "Profile", image: profileIcon, tag: 4)
         
         for nav in [nav1, nav2, nav3, nav4] {
             nav.navigationBar.prefersLargeTitles = true

@@ -16,13 +16,9 @@ protocol ServicesPresenterOutput: AnyObject {
 final class ServicesViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
-    override func loadView() {
-        super.loadView()
-        self.view = titleDetailView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = titleDetailView
         self.interactor?.viewDidLoad()
     }
     
