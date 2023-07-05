@@ -11,15 +11,24 @@ import UIKit
 /// Controller to house tabs and root view controllers
 final class TabBarViewController: UITabBarController {
 
+    // MARK: - Properties
+    var router: TabBarRouter?
+    
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupTabs()
     }
+}
 
+// MARK: - Set up Tabs
+extension TabBarViewController {
+    
     private func setupTabs() {
+       
         let servicesVC = ServicesViewController()
-        let jobsVC = JobsViewController()
+        let jobsVC = TitleDetailViewController()
         let notificationsVC = NotificationsViewController()
         let profilesVC = ProfilesViewController()
         
@@ -33,10 +42,10 @@ final class TabBarViewController: UITabBarController {
         let nav3 = UINavigationController(rootViewController: notificationsVC)
         let nav4 = UINavigationController(rootViewController: profilesVC)
         
-        let servicesIcon = UIImage(systemName: "magnifyingglass")?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        let jobsIcon = UIImage(systemName: "bag")?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        let notifacationsIcon = UIImage(systemName: "bell")?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        let profileIcon = UIImage(systemName: "person")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let servicesIcon = UIImage(systemName: "magnifyingglass")?.withTintColor(.systemGray6, renderingMode: .alwaysOriginal)
+        let jobsIcon = UIImage(systemName: "bag")?.withTintColor(.systemGray6, renderingMode: .alwaysOriginal)
+        let notifacationsIcon = UIImage(systemName: "bell")?.withTintColor(.systemGray6, renderingMode: .alwaysOriginal)
+        let profileIcon = UIImage(systemName: "person")?.withTintColor(.systemGray6, renderingMode: .alwaysOriginal)
         
         nav1.tabBarItem = UITabBarItem(title: "Services", image: servicesIcon, tag: 1)
         nav2.tabBarItem = UITabBarItem(title: "Jobs", image: jobsIcon, tag: 2)
@@ -48,6 +57,8 @@ final class TabBarViewController: UITabBarController {
         }
         setViewControllers([nav1, nav2, nav3, nav4],
                            animated: true)
+        
+      
     }
 }
 

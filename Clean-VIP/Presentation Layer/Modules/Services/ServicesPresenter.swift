@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol ServicesPresenter: AnyObject {
+    
+}
+
+final class ServicesPresenterImplementation: ServicesPresenter {
+    
+    var viewController: ServicesPresenterOutput?
+    
+}

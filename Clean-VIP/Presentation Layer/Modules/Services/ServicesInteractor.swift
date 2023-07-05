@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol ServicesInteractor: AnyObject {
+    
+    func viewDidLoad()
+}
+
+final class ServicesInteractorImplementation: ServicesInteractor {
+    
+    var presenter: ServicesPresenter?
+    
+    //private let titlesService = TitlesServiceImplementation()
+    
+    func viewDidLoad() {
+        
+    }
+}
