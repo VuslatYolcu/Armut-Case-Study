@@ -11,6 +11,13 @@ import UIKit
 final class ServicesView: UIView {
     
     // MARK: - Properties
+    let headerView: ServicesHeaderView = {
+        let headerView = ServicesHeaderView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.configure(imageName: "header", backgroundColor: .systemBackground)
+        return headerView
+    }()
+
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Hizmet piş \nağzıma düş"
@@ -23,37 +30,13 @@ final class ServicesView: UIView {
         return label
     }()
     
-//    private let titleLabel: UILabel = {
-//        let label = UILabel()
-//        //label.font = UIFont(name: "Avenir", size: 25)
-//        label.textColor = .black
-//        label.numberOfLines = 0
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Hizmet piş \nağzıma düş"
-//        label.backgroundColor = .red
-//        label.adjustsFontSizeToFitWidth = true
-//
-//        label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.5
-//        return label
-//    }()
-//
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 8
-        stackView.backgroundColor = .systemBlue
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .equalSpacing
         return stackView
-    }()
-    
-    private let headerView: ServicesImageView = {
-        let headerView = ServicesImageView()
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        //headerView.configure(with: "header", with: .systemGray5)
-        headerView.configure(with: "header", with: .systemBackground)
-        return headerView
     }()
     
     // MARK: - Initialization
@@ -78,20 +61,11 @@ extension ServicesView {
         self.backgroundColor = .systemBackground
         self.addSubview(stackView)
         
-        headerView.addSubview(titleLabel)
-
-        //stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(headerView)
         setupConstraints()
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
-            titleLabel.heightAnchor.constraint(equalToConstant: 100)
-        ])
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1),
