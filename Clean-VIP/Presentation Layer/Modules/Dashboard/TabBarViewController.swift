@@ -54,6 +54,7 @@ extension TabBarViewController {
         
         for nav in [nav1, nav2, nav3, nav4] {
             nav.navigationBar.prefersLargeTitles = true
+            nav.isNavigationBarHidden = true
         }
         setViewControllers([nav1, nav2, nav3, nav4],
                            animated: true)

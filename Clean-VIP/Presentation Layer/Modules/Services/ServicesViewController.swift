@@ -19,8 +19,8 @@ final class ServicesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = servicesView
-        title = "Hizmet piş ağzıma düş"
-       
+        //title = "Hizmet piş ağzıma düş"
+        
         
         
         
@@ -34,11 +34,6 @@ final class ServicesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupNavigationMultilineTitle()
     }
     
     // MARK: - Properties

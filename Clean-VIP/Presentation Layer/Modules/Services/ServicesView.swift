@@ -60,19 +60,19 @@ extension ServicesView {
     private func setupUI() {
         self.backgroundColor = .systemBackground
         self.addSubview(stackView)
-        stackView.addArrangedSubview(titleLabel)
+        //stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(headerView)
         setupConstraints()
     }
     
     private func setupConstraints() {
-        
+        /*
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 100)
+            headerView.heightAnchor.constraint(equalToConstant: 100)
         ])
+         */
         
         NSLayoutConstraint.activate([
-            
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 1),
             safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
