@@ -19,13 +19,26 @@ final class ServicesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = servicesView
+        title = "Hizmet piş ağzıma düş"
+       
+        
+        
+        
+        
         self.interactor?.viewDidLoad()
         /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
         ServicesConfigurator.configureModule(viewController: self)
+        self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
+        self.tabBarController?.navigationItem.title?.removeAll()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupNavigationMultilineTitle()
     }
     
     // MARK: - Properties

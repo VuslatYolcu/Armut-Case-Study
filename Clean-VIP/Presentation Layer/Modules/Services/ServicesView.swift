@@ -10,6 +10,35 @@ import UIKit
 
 final class ServicesView: UIView {
     
+    // MARK: - Properties
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir", size: 25)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Hello"
+        label.backgroundColor = .red
+        return label
+    }()
+    
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.backgroundColor = .systemBlue
+        stackView.distribution = .fillProportionally
+        return stackView
+    }()
+    
+    private let headerView: ServicesHeaderView = {
+        let headerView = ServicesHeaderView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.configure(with: "header", with: .systemGray5)
+        return headerView
+    }()
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,55 +53,31 @@ final class ServicesView: UIView {
     public func updateLabel(with text: String) {
         titleLabel.text = text
     }
-    
-    // MARK: - Properties
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Avenir", size: 25)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
 }
 
 // MARK: - UI Setup
 extension ServicesView {
     private func setupUI() {
-        self.backgroundColor = .systemGray
-        
-        self.addSubview(titleLabel)
+        self.backgroundColor = .systemBackground
+        self.addSubview(stackView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(headerView)
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            titleLabel.heightAnchor.constraint(equalToConstant: 100)
         ])
+        
+        NSLayoutConstraint.activate([
+            
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 1),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
+            safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
+        ])
+
     }
 }
-
-//private let imageView: UIImageView = {
-//    let imageView = UIImageView()
-//    imageView.contentMode = .scaleAspectFill
-//    imageView.clipsToBounds = true
-//    imageView.translatesAutoresizingMaskIntoConstraints = false
-//    return imageView
-//}()
-//
-//override init(frame: CGRect) {
-//    super.init(frame: frame)
-//    contentView.addSubview(imageView)
-//    setUpConstraints()
-//}
-//
-//required init?(coder: NSCoder) {
-//    fatalError()
-//}
-//
-//private func setUpConstraints() {
-//    NSLayoutConstraint.activate([
-//        imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//        imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-//        imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//        imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-//    ])
-//}
