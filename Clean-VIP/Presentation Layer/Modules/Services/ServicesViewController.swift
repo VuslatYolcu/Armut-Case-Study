@@ -19,12 +19,6 @@ final class ServicesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = servicesView
-        //title = "Hizmet piş ağzıma düş"
-        
-        
-        
-        
-        
         self.interactor?.viewDidLoad()
         /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
         ServicesConfigurator.configureModule(viewController: self)

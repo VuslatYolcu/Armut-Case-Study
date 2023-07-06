@@ -14,7 +14,7 @@ final class ServicesView: UIView {
     let headerView: ServicesHeaderView = {
         let headerView = ServicesHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.configure(imageName: "header", backgroundColor: .systemBackground)
+        headerView.configure(imageName: "header", backgroundColor: .systemGray6)
         return headerView
     }()
 
@@ -22,7 +22,6 @@ final class ServicesView: UIView {
         let label = UILabel()
         label.text = "Hizmet piş \nağzıma düş"
         label.font = .boldSystemFont(ofSize: 50)
-        //label.font = .systemFont(ofSize: 40, weight: UIFont.Weight(rawValue: 1))
         label.textColor = .black
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -60,7 +59,6 @@ extension ServicesView {
     private func setupUI() {
         self.backgroundColor = .systemBackground
         self.addSubview(stackView)
-        
         stackView.addArrangedSubview(headerView)
         setupConstraints()
     }
@@ -68,11 +66,11 @@ extension ServicesView {
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1),
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 1),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
-            safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 400)
         ])
-
     }
+    
 }

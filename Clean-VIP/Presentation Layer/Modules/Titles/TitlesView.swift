@@ -87,7 +87,6 @@ extension TitlesView {
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
-        self.backgroundColor = .purple
         
         self.addSubview(tableView)
         self.addSubview(placeholderLabel)

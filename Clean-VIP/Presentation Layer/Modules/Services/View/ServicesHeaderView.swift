@@ -33,13 +33,7 @@ final class ServicesHeaderView: UIView {
         stackView.spacing = 8
         return stackView
     }()
-    
-    private let label: UILabel = {
-        let label = UILabel()
-        label.text = "Hello"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Hizmet piş \nağzıma düş"
@@ -51,7 +45,6 @@ final class ServicesHeaderView: UIView {
         return label
     }()
 
-    
     // MARK: - Lifecycle
     
     override init(frame: CGRect) {
@@ -59,7 +52,6 @@ final class ServicesHeaderView: UIView {
         
         self.addSubview(stackView)
         stackView.addArrangedSubview(headerImageView)
-        
         headerImageView.addSubview(imageStackView)
         imageStackView.addArrangedSubview(titleLabel)
         setUpConstraints()
@@ -74,15 +66,23 @@ final class ServicesHeaderView: UIView {
         
         // MARK: - Stack View
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1),
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 2),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
-            safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 0),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 0),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 0),
+            safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 0)
+        ])
+        
+        // MARK: - Stack View
+        NSLayoutConstraint.activate([
+            imageStackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 3),
+
+            imageStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 3),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: imageStackView.trailingAnchor, multiplier: 2),
         ])
 
         // MARK: - Title
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 100)
+            titleLabel.heightAnchor.constraint(equalToConstant: 100),
         ])
         
        
