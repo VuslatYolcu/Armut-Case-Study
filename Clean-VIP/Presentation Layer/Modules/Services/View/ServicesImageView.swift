@@ -1,14 +1,14 @@
 //
-//  ServicesHeaderView.swift
+//  ServicesImageView.swift
 //  Clean-VIP
 //
-//  Created by Vuslat Yolcu on 5.07.2023.
+//  Created by Vuslat Yolcu on 6.07.2023.
 //  Copyright © 2023 Zafar. All rights reserved.
 //
 
 import UIKit
 
-final class ServicesHeaderView: UIView {
+final class ServicesImageView: UIView {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */; };
 		11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E892A48C1D70014AC86 /* TabBarRouter.swift */; };
 		11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderView.swift; sourceTree = "<group>"; };
 		11D53E892A48C1D70014AC86 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesConfigurator.swift; sourceTree = "<group>"; };
@@ -111,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116A0BAA2A574AFB00BA9CF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */,
+				116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		11EF5FF82A421E6000A7F66F /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +134,13 @@
 		11EF5FFB2A42202B00A7F66F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				116A0BAA2A574AFB00BA9CF3 /* View */,
 				11EF5FFC2A42205200A7F66F /* ServicesView.swift */,
 				11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */,
 				11EF60002A42206500A7F66F /* ServicesInteractor.swift */,
 				11EF60022A42206C00A7F66F /* ServicesPresenter.swift */,
 				11EF60042A42207500A7F66F /* ServicesRouter.swift */,
 				11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */,
-				116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -398,6 +409,7 @@
 				116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */,
 				11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */,
 				11EF600C2A42218600A7F66F /* JobsInteractor.swift in Sources */,
+				116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */,
 				1CCAC45D247CE36B009AC08C /* TitlesInteractor.swift in Sources */,
 				11EF60202A42255D00A7F66F /* ProfilesViewController.swift in Sources */,
 				11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */,
