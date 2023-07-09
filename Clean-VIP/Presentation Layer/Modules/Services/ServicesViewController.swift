@@ -13,17 +13,17 @@ protocol ServicesPresenterOutput: AnyObject {
     func presenter(didFailRetrieveItem message: String)
 }
 
-class ServicesViewController: UIViewController {
+final class ServicesViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
-    override func loadView() {
-        super.loadView()
-        self.view = titleDetailView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = servicesView
         self.interactor?.viewDidLoad()
+        /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
+        ServicesConfigurator.configureModule(viewController: self)
+        self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
+        self.tabBarController?.navigationItem.title?.removeAll()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,20 +31,20 @@ class ServicesViewController: UIViewController {
     }
     
     // MARK: - Properties
-    var titleDetailView: TitleDetailView?
-    var interactor: TitleDetailInteractor?
-    weak var presenter: TitleDetailPresenter?
-    var router: TitleDetailRouter?
+    var servicesView: ServicesView?
+    var interactor: ServicesInteractor?
+    weak var presenter: ServicesPresenter?
+    var router: ServicesRouter?
     
 }
-//
-//// MARK: - Presenter Output
-//extension TitleDetailViewController: TitleDetailPresenterOutput {
-//    func presenter(didRetrieveItem item: String) {
-//        titleDetailView?.updateLabel(with: item)
-//    }
-//
-//    func presenter(didFailRetrieveItem message: String) {
-//        showError(with: message)
-//    }
-//}
+
+// MARK: - Presenter Output
+extension ServicesViewController: ServicesPresenterOutput {
+    func presenter(didRetrieveItem item: String) {
+        //titleDetailView?.updateLabel(with: item)
+    }
+
+    func presenter(didFailRetrieveItem message: String) {
+        //showError(with: message)
+    }
+}

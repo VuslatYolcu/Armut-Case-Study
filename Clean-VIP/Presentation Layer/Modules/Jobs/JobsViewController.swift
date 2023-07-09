@@ -13,16 +13,12 @@ protocol JobsPresenterOutput: AnyObject {
     func presenter(didFailRetrieveItem message: String)
 }
 
-class JobsViewController: UIViewController {
+final class JobsViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
-    override func loadView() {
-        super.loadView()
-        self.view = titleDetailView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = titleDetailView
         self.interactor?.viewDidLoad()
     }
     

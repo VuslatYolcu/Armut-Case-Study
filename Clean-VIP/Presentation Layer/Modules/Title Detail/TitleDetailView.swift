@@ -39,11 +39,6 @@ class TitleDetailView: UIView {
 // MARK: - UI Setup
 extension TitleDetailView {
     private func setupUI() {
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        self.backgroundColor = .white
-        
         self.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([

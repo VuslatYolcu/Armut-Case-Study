@@ -13,6 +13,7 @@ class TitlesView: UIView {
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupUI()
     }
     
@@ -86,7 +87,6 @@ extension TitlesView {
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
-        self.backgroundColor = .white
         
         self.addSubview(tableView)
         self.addSubview(placeholderLabel)

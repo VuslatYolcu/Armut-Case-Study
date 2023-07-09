@@ -18,11 +18,14 @@ class TitleDetailViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func loadView() {
         super.loadView()
+        TitleDetailConfigurator.configureModule(titleId: "Dummy", viewController: self)
         self.view = titleDetailView
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TitleDetailConfigurator.configureModule(titleId: "Dummy", viewController: self)
         self.interactor?.viewDidLoad()
     }
     
