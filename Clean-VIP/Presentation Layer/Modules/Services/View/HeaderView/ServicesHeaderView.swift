@@ -36,7 +36,6 @@ final class ServicesHeaderView: UIView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hizmet piş \nağzıma düş"
         label.font = .boldSystemFont(ofSize: 50)
         label.textColor = .black
         label.numberOfLines = 0
@@ -48,7 +47,6 @@ final class ServicesHeaderView: UIView {
     private let searchBar: ServicesSearchBarView = {
         let searchBar = ServicesSearchBarView()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.configure(text: "Which service do you need?", color: .systemGreen)
         searchBar.layer.shadowColor = UIColor.black.cgColor
         searchBar.layer.shadowOffset = CGSize(width: 3, height: 3)
         searchBar.layer.shadowOpacity = 0.3
@@ -56,12 +54,10 @@ final class ServicesHeaderView: UIView {
         searchBar.layer.shouldRasterize = true // Cache the shadow
         return searchBar
     }()
-
-    // MARK: - Lifecycle
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.addSubview(stackView)
         stackView.addArrangedSubview(headerImageView)
         headerImageView.addSubview(imageStackView)
@@ -76,7 +72,6 @@ final class ServicesHeaderView: UIView {
     
     // MARK: - Constraints
     private func setUpConstraints() {
-        
         // MARK: - Stack View
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 0),
@@ -102,8 +97,10 @@ final class ServicesHeaderView: UIView {
     }
     
     // MARK: - Configurations
-    public func configure(imageName: String, backgroundColor: UIColor) {
-        headerImageView.configure(with: imageName, with: backgroundColor)
+    public func configure(with headerViewModel: ServicesHeaderViewModel) {
+        titleLabel.text = headerViewModel.titleLabel
+        searchBar.configure(text: headerViewModel.searchBarPlaceholder, color: headerViewModel.searchBarIconColor)
+        headerImageView.configure(with: headerViewModel.imageName, with: headerViewModel.headerBackgroundColor)
     }
 
 }
