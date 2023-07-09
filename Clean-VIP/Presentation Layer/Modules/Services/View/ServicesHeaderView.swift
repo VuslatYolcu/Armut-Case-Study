@@ -45,27 +45,17 @@ final class ServicesHeaderView: UIView {
         return label
     }()
     
-    private let searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.frame = searchBar.bounds
+    private let searchBar: ServicesSearchBarView = {
+        let searchBar = ServicesSearchBarView()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.searchTextField.backgroundColor = .white
-        searchBar.barTintColor = .white
-        searchBar.backgroundImage = UIImage()
-        
-        // MARK: - Rounded Corner
-        searchBar.searchTextField.layer.shadowColor = UIColor.black.cgColor
-        searchBar.searchTextField.layer.shadowOffset = CGSize(width: 0, height: 2)
-        searchBar.searchTextField.layer.shadowOpacity = 0.3
-        searchBar.searchTextField.layer.shadowRadius = 3
-        searchBar.searchTextField.layer.masksToBounds = false
-
-        // MARK: - Corner
-        searchBar.layer.cornerRadius = 15
-        searchBar.clipsToBounds = true
+        searchBar.configure(text: "Which service do you need?")
+        searchBar.layer.shadowColor = UIColor.black.cgColor
+        searchBar.layer.shadowOffset = CGSize(width: 3, height: 3)
+        searchBar.layer.shadowOpacity = 0.3
+        searchBar.layer.shadowRadius = 5
+        searchBar.layer.shouldRasterize = true // Cache the shadow
         return searchBar
     }()
-
 
     // MARK: - Lifecycle
     
