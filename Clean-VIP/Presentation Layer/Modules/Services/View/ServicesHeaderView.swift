@@ -11,12 +11,6 @@ import UIKit
 final class ServicesHeaderView: UIView {
     
     // MARK: - Properties
-    private let headerImageView: ServicesImageView = {
-        let imageView = ServicesImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +18,12 @@ final class ServicesHeaderView: UIView {
         stackView.distribution = .equalSpacing
         stackView.spacing = 16
         return stackView
+    }()
+    
+    private let headerImageView: ServicesImageView = {
+        let imageView = ServicesImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private let imageStackView: UIStackView = {
@@ -44,6 +44,40 @@ final class ServicesHeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let searchBarContainerView: UIView = {
+        let containerView = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 50))
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Add shadow to the container view
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        containerView.layer.shadowOpacity = 0.3
+        containerView.layer.shadowRadius = 4
+        containerView.layer.masksToBounds = false
+        
+        return containerView
+    }()
+    
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.frame = searchBar.bounds
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.searchTextField.backgroundColor = .white
+        searchBar.barTintColor = .white
+
+//        // MARK: - Shadow
+//        searchBar.layer.shadowColor = UIColor.black.cgColor
+//        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        searchBar.layer.shadowOpacity = 0.8
+//        searchBar.layer.shadowRadius = 10
+//        searchBar.layer.masksToBounds = false
+//
+        searchBar.layer.cornerRadius = 15
+        searchBar.clipsToBounds = true
+        return searchBar
+    }()
+
 
     // MARK: - Lifecycle
     
@@ -54,6 +88,7 @@ final class ServicesHeaderView: UIView {
         stackView.addArrangedSubview(headerImageView)
         headerImageView.addSubview(imageStackView)
         imageStackView.addArrangedSubview(titleLabel)
+        imageStackView.addArrangedSubview(searchBar)
         setUpConstraints()
     }
     
