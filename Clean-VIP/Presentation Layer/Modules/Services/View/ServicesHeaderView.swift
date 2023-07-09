@@ -30,7 +30,7 @@ final class ServicesHeaderView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.spacing = 20
         return stackView
     }()
 
@@ -48,7 +48,7 @@ final class ServicesHeaderView: UIView {
     private let searchBar: ServicesSearchBarView = {
         let searchBar = ServicesSearchBarView()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.configure(text: "Which service do you need?")
+        searchBar.configure(text: "Which service do you need?", color: .systemGreen)
         searchBar.layer.shadowColor = UIColor.black.cgColor
         searchBar.layer.shadowOffset = CGSize(width: 3, height: 3)
         searchBar.layer.shadowOpacity = 0.3
@@ -90,7 +90,7 @@ final class ServicesHeaderView: UIView {
             imageStackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 3),
 
             imageStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 3),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: imageStackView.trailingAnchor, multiplier: 2),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: imageStackView.trailingAnchor, multiplier: 3),
         ])
 
         // MARK: - Title

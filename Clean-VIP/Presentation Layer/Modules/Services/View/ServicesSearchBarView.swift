@@ -17,7 +17,7 @@ final class ServicesSearchBarView: UIView {
         searchBar.searchTextField.backgroundColor = .white
         searchBar.barTintColor = .white
         // MARK: - Rounded corners
-        searchBar.layer.cornerRadius = 15
+        searchBar.layer.cornerRadius = 10
         searchBar.clipsToBounds = true
         return searchBar
     }()
@@ -37,11 +37,14 @@ final class ServicesSearchBarView: UIView {
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor),
             searchBar.topAnchor.constraint(equalTo: topAnchor),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor),
-            searchBar.bottomAnchor.constraint(equalTo: bottomAnchor)
+            searchBar.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            searchBar.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
-    public func configure(text placeHolder: String) {
+    public func configure(text placeHolder: String, color searchIcon: UIColor) {
         searchBar.placeholder = placeHolder
+        searchBar.searchTextField.leftView?.tintColor = searchIcon
     }
 }
