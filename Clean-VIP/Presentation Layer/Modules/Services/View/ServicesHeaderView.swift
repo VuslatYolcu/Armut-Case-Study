@@ -30,7 +30,7 @@ final class ServicesHeaderView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 16
         return stackView
     }()
 
@@ -45,34 +45,22 @@ final class ServicesHeaderView: UIView {
         return label
     }()
     
-    private let searchBarContainerView: UIView = {
-        let containerView = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 50))
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Add shadow to the container view
-        containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        containerView.layer.shadowOpacity = 0.3
-        containerView.layer.shadowRadius = 4
-        containerView.layer.masksToBounds = false
-        
-        return containerView
-    }()
-    
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.frame = searchBar.bounds
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.searchTextField.backgroundColor = .white
         searchBar.barTintColor = .white
+        searchBar.backgroundImage = UIImage()
+        
+        // MARK: - Rounded Corner
+        searchBar.searchTextField.layer.shadowColor = UIColor.black.cgColor
+        searchBar.searchTextField.layer.shadowOffset = CGSize(width: 0, height: 2)
+        searchBar.searchTextField.layer.shadowOpacity = 0.3
+        searchBar.searchTextField.layer.shadowRadius = 3
+        searchBar.searchTextField.layer.masksToBounds = false
 
-//        // MARK: - Shadow
-//        searchBar.layer.shadowColor = UIColor.black.cgColor
-//        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2)
-//        searchBar.layer.shadowOpacity = 0.8
-//        searchBar.layer.shadowRadius = 10
-//        searchBar.layer.masksToBounds = false
-//
+        // MARK: - Corner
         searchBar.layer.cornerRadius = 15
         searchBar.clipsToBounds = true
         return searchBar
