@@ -21,10 +21,11 @@ final class ServicesView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
         stackView.spacing = 40
         return stackView
     }()
-    
+
     private let headerView: ServicesHeaderView = {
         let headerView = ServicesHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +38,7 @@ final class ServicesView: UIView {
         campaignView.configure(with: "wedding")
         return campaignView
     }()
-    
+
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,10 +65,16 @@ extension ServicesView {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            headerView.heightAnchor.constraint(equalToConstant: 400),
+            campaignView.heightAnchor.constraint(equalToConstant: 210),
+        ])
+        
+        NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 1000),
+            safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: scrollViewContainer.frame.size.height + 100),
         ])
         
         NSLayoutConstraint.activate([
@@ -79,11 +86,7 @@ extension ServicesView {
             scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         
-        NSLayoutConstraint.activate([
-            headerView.heightAnchor.constraint(equalToConstant: 400),
-            campaignView.heightAnchor.constraint(equalToConstant: 210),
-            scrollViewContainer.heightAnchor.constraint(equalToConstant: 600)
-        ])
+      
     }
     
     private func configureHeaderView() {
