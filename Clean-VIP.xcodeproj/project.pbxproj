@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
+		116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */; };
 		116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */; };
 		11A3CFA02A5AF80A001EA591 /* ServicesSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */; };
 		11A3CFA52A5B11B5001EA591 /* ServicesHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3CFA42A5B11B5001EA591 /* ServicesHeaderViewModel.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
+		116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBottomView.swift; sourceTree = "<group>"; };
 		116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderView.swift; sourceTree = "<group>"; };
 		11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesSearchBarView.swift; sourceTree = "<group>"; };
 		11A3CFA42A5B11B5001EA591 /* ServicesHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */,
+				116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */,
 			);
 			path = CampaignView;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */,
 				1CCAC45F247CE372009AC08C /* TitlesPresenter.swift in Sources */,
 				1CEF92B02480FC5400643631 /* PersistentContainerProvider.swift in Sources */,
+				116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */,
 				11A3CFA02A5AF80A001EA591 /* ServicesSearchBarView.swift in Sources */,
 				1CEF92B92481763000643631 /* TitleDetailPresenter.swift in Sources */,
 				116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */,

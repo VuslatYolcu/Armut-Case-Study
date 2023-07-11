@@ -21,16 +21,13 @@ final class ServicesView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 8
-        stackView.distribution = .equalSpacing
-        stackView.backgroundColor = .yellow
+        stackView.spacing = 50
         return stackView
     }()
     
     private let headerView: ServicesHeaderView = {
         let headerView = ServicesHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.backgroundColor = .systemPink
         return headerView
     }()
     
@@ -38,7 +35,6 @@ final class ServicesView: UIView {
        let campaignView = CampaignView()
         campaignView.translatesAutoresizingMaskIntoConstraints = false
         campaignView.configure(with: "wedding")
-        campaignView.backgroundColor = .blue
         return campaignView
     }()
     
@@ -58,39 +54,36 @@ final class ServicesView: UIView {
 extension ServicesView {
     private func setupUI() {
         self.backgroundColor = .systemBackground
-        self.addSubview(scrollViewContainer)
+        self.addSubview(scrollView)
+        scrollView.addSubview(scrollViewContainer)
+        
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(campaignView)
         setupConstraints()
         configureHeaderView()
     }
-//    
-//    private func initScrollView() {
-//        view.addSubview(scrollView)
-//        scrollView.addSubview(scrollViewContainer)
-//        scrollViewContainer.addArrangedSubview(redView)
-//        scrollViewContainer.addArrangedSubview(blueView)
-//        scrollViewContainer.addArrangedSubview(greenView)
-//        
-//        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        
-//        scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-//        scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-//        scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-//        scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-//        // this is important for scrolling
-//        scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-//    }
-//    
+
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            scrollViewContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            scrollViewContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 400)
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: 1000),
+        ])
+        
+        NSLayoutConstraint.activate([
+            scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            // this is important for scrolling
+            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            headerView.heightAnchor.constraint(equalToConstant: 400),
+            campaignView.heightAnchor.constraint(equalToConstant: 200),
+            scrollViewContainer.heightAnchor.constraint(equalToConstant: 600)
         ])
     }
     
