@@ -17,6 +17,8 @@ final class CampaignView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.backgroundColor = .systemGreen
+        stackView.clipsToBounds = true
+        stackView.layer.cornerRadius = 10
         return stackView
     }()
     
@@ -31,17 +33,25 @@ final class CampaignView: UIView {
     
     private let campaignBottomView: CampaignBottomView = {
         let view = CampaignBottomView()
+        view.backgroundColor = .systemGreen
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
    
+    private let discountView: CampaignDiscountView = {
+        let discountView = CampaignDiscountView()
+        discountView.translatesAutoresizingMaskIntoConstraints = false
+        discountView.clipsToBounds = true
+        discountView.layer.cornerRadius = 10
+        return discountView
+    }()
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(stackView)
         stackView.addArrangedSubview(imageView)
-        //stackView.addArrangedSubview(campaignBottomView)
-
+        imageView.addSubview(campaignBottomView)
+        imageView.addSubview(discountView)
         setUpConstraints()
     }
     
@@ -52,16 +62,24 @@ final class CampaignView: UIView {
     // MARK: - Constraints
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 5),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 5),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 4),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 4),
             stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-           
+            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         ])
         
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 200)
+            campaignBottomView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
+            campaignBottomView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            campaignBottomView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
+            campaignBottomView.heightAnchor.constraint(equalToConstant: 75)
         ])
+        
+        NSLayoutConstraint.activate([
+            discountView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -8),
+            discountView.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 25)
+        ])
+    
     }
     
     // MARK: - Configuration

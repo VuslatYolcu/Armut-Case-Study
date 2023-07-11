@@ -15,8 +15,7 @@ final class CampaignBottomView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 8
-        stackView.backgroundColor = .systemGreen
+        stackView.spacing = 0
         return stackView
     }()
 
@@ -34,8 +33,9 @@ final class CampaignBottomView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "WEDDING PHOTOGRAPHERS \nFROM 540TL"
         label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 16)
         return label
     }()
     
@@ -58,7 +58,9 @@ final class CampaignBottomView: UIView {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeAreaLayoutGuide.leadingAnchor, multiplier: 2),
             safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
-            stackView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 2)
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
+            safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 8)
+
         ])
     }
 }

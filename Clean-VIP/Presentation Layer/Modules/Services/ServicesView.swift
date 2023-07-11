@@ -21,7 +21,7 @@ final class ServicesView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 50
+        stackView.spacing = 40
         return stackView
     }()
     
@@ -47,7 +47,6 @@ final class ServicesView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 // MARK: - UI Setup
@@ -82,7 +81,7 @@ extension ServicesView {
         
         NSLayoutConstraint.activate([
             headerView.heightAnchor.constraint(equalToConstant: 400),
-            campaignView.heightAnchor.constraint(equalToConstant: 200),
+            campaignView.heightAnchor.constraint(equalToConstant: 210),
             scrollViewContainer.heightAnchor.constraint(equalToConstant: 600)
         ])
     }
