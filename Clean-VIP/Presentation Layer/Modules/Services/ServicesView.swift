@@ -11,33 +11,34 @@ import UIKit
 final class ServicesView: UIView {
     
     // MARK: - Properties
-    let headerView: ServicesHeaderView = {
-        let headerView = ServicesHeaderView()
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.configure(imageName: "header", backgroundColor: .systemGray6)
-        return headerView
-    }()
-
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Hizmet piş \nağzıma düş"
-        label.font = .boldSystemFont(ofSize: 50)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
     }()
     
-    private let stackView: UIStackView = {
+    private let scrollViewContainer: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 8
         stackView.distribution = .equalSpacing
+        stackView.spacing = 40
         return stackView
     }()
+
+    private let headerView: ServicesHeaderView = {
+        let headerView = ServicesHeaderView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        return headerView
+    }()
     
+    private let campaignView: CampaignView = {
+       let campaignView = CampaignView()
+        campaignView.translatesAutoresizingMaskIntoConstraints = false
+        campaignView.configure(with: "wedding")
+        return campaignView
+    }()
+
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,30 +48,56 @@ final class ServicesView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Actions
-    public func updateLabel(with text: String) {
-        titleLabel.text = text
-    }
 }
 
 // MARK: - UI Setup
 extension ServicesView {
     private func setupUI() {
         self.backgroundColor = .systemBackground
-        self.addSubview(stackView)
-        stackView.addArrangedSubview(headerView)
+        self.addSubview(scrollView)
+        scrollView.addSubview(scrollViewContainer)
+        
+        scrollViewContainer.addArrangedSubview(headerView)
+        scrollViewContainer.addArrangedSubview(campaignView)
         setupConstraints()
+        configureHeaderView()
     }
-    
+
     private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            headerView.heightAnchor.constraint(equalToConstant: 400),
+            campaignView.heightAnchor.constraint(equalToConstant: 210),
+        ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 400)
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: scrollViewContainer.frame.size.height + 100),
         ])
+        
+        NSLayoutConstraint.activate([
+            scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            // this is important for scrolling
+            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+        
+      
+    }
+    
+    private func configureHeaderView() {
+        let headerViewModel = ServicesHeaderViewModel(
+            titleLabel: "Hizmet piş \nağzıma düş",
+            imageName: "header",
+            headerBackgroundColor: .systemGray6,
+            searchBarPlaceholder: "Which service do you need?",
+            searchBarIconColor: .systemGreen
+        )
+        headerView.configure(with: headerViewModel)
     }
     
 }
