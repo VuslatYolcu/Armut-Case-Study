@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
+		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
 		116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */; };
 		11A3CFA02A5AF80A001EA591 /* ServicesSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */; };
 		11A3CFA52A5B11B5001EA591 /* ServicesHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3CFA42A5B11B5001EA591 /* ServicesHeaderViewModel.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
+		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderView.swift; sourceTree = "<group>"; };
 		11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesSearchBarView.swift; sourceTree = "<group>"; };
 		11A3CFA42A5B11B5001EA591 /* ServicesHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -120,9 +122,18 @@
 		116A0BAA2A574AFB00BA9CF3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				116C8EAC2A5DC63400FE8173 /* CampaignView */,
 				11A3CFA32A5B11A6001EA591 /* HeaderView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		116C8EAC2A5DC63400FE8173 /* CampaignView */ = {
+			isa = PBXGroup;
+			children = (
+				116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */,
+			);
+			path = CampaignView;
 			sourceTree = "<group>";
 		};
 		11A3CFA32A5B11A6001EA591 /* HeaderView */ = {
@@ -440,6 +451,7 @@
 				1CEF92BB2481763700643631 /* TitleDetailRouter.swift in Sources */,
 				1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */,
 				1CEF92BF2482B6F300643631 /* Extensions.swift in Sources */,
+				116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */,
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
 				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,

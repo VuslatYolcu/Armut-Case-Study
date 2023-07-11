@@ -11,19 +11,35 @@ import UIKit
 final class ServicesView: UIView {
     
     // MARK: - Properties
-    private let stackView: UIStackView = {
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    private let scrollViewContainer: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 8
         stackView.distribution = .equalSpacing
+        stackView.backgroundColor = .yellow
         return stackView
     }()
     
-    let headerView: ServicesHeaderView = {
+    private let headerView: ServicesHeaderView = {
         let headerView = ServicesHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = .systemPink
         return headerView
+    }()
+    
+    private let campaignView: CampaignView = {
+       let campaignView = CampaignView()
+        campaignView.translatesAutoresizingMaskIntoConstraints = false
+        campaignView.configure(with: "wedding")
+        campaignView.backgroundColor = .blue
+        return campaignView
     }()
     
     // MARK: - Initialization
@@ -42,17 +58,38 @@ final class ServicesView: UIView {
 extension ServicesView {
     private func setupUI() {
         self.backgroundColor = .systemBackground
-        self.addSubview(stackView)
-        stackView.addArrangedSubview(headerView)
+        self.addSubview(scrollViewContainer)
+        scrollViewContainer.addArrangedSubview(headerView)
+        scrollViewContainer.addArrangedSubview(campaignView)
         setupConstraints()
         configureHeaderView()
     }
-    
+//    
+//    private func initScrollView() {
+//        view.addSubview(scrollView)
+//        scrollView.addSubview(scrollViewContainer)
+//        scrollViewContainer.addArrangedSubview(redView)
+//        scrollViewContainer.addArrangedSubview(blueView)
+//        scrollViewContainer.addArrangedSubview(greenView)
+//        
+//        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        
+//        scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+//        scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+//        scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+//        scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+//        // this is important for scrolling
+//        scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+//    }
+//    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            scrollViewContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollViewContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
