@@ -23,7 +23,6 @@ final class CampaignDiscountView: UIView {
     
     private let discountAmountLabel: UILabel = {
         let label = UILabel()
-        label.text = "-15%"
         label.font = .boldSystemFont(ofSize: 35)
         label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -68,8 +67,7 @@ final class CampaignDiscountView: UIView {
         ])
     }
     
-    public func configure(text placeHolder: String, color searchIcon: UIColor) {
-        //searchBar.placeholder = placeHolder
-        //searchBar.searchTextField.leftView?.tintColor = searchIcon
+    public func configure(text discountRatio: String) {
+        discountAmountLabel.text = discountRatio
     }
 }

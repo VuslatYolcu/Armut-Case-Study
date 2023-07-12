@@ -35,7 +35,6 @@ final class ServicesView: UIView {
     private let campaignView: CampaignView = {
        let campaignView = CampaignView()
         campaignView.translatesAutoresizingMaskIntoConstraints = false
-        campaignView.configure(with: "wedding")
         return campaignView
     }()
 
@@ -60,7 +59,8 @@ extension ServicesView {
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(campaignView)
         setupConstraints()
-        configureHeaderView()
+        configureHeaderViewModel()
+        configureCampaignViewModel()
     }
 
     private func setupConstraints() {
@@ -89,7 +89,7 @@ extension ServicesView {
       
     }
     
-    private func configureHeaderView() {
+    private func configureHeaderViewModel() {
         let headerViewModel = ServicesHeaderViewModel(
             titleLabel: "Hizmet piş \nağzıma düş",
             imageName: "header",
@@ -98,6 +98,16 @@ extension ServicesView {
             searchBarIconColor: .systemGreen
         )
         headerView.configure(with: headerViewModel)
+    }
+    
+    private func configureCampaignViewModel() {
+        let campaignViewModel = CampaignViewModel(
+            imageName: "wedding",
+            discountRatio: "-15%",
+            bottomViewTitle: "FIRST TIME NEWLY WEDS",
+            bottomViewLabel: "WEDDING PHOTOGRAPHERS \nFROM 540TL"
+        )
+        campaignView.configure(with: campaignViewModel)
     }
     
 }
