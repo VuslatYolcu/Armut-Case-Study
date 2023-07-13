@@ -33,11 +33,17 @@ final class ServicesView: UIView {
     }()
     
     private let campaignView: CampaignView = {
-       let campaignView = CampaignView()
+        let campaignView = CampaignView()
         campaignView.translatesAutoresizingMaskIntoConstraints = false
         return campaignView
     }()
 
+    private let allServicesView: AllServicesView = {
+        let collectionView = AllServicesView()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,15 +64,18 @@ extension ServicesView {
         
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(campaignView)
+        scrollViewContainer.addArrangedSubview(allServicesView)
         setupConstraints()
         configureHeaderViewModel()
         configureCampaignViewModel()
+        configureAllServicesModel()
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             headerView.heightAnchor.constraint(equalToConstant: 400),
             campaignView.heightAnchor.constraint(equalToConstant: 210),
+            allServicesView.heightAnchor.constraint(equalToConstant: 230)
         ])
         
         NSLayoutConstraint.activate([
@@ -110,4 +119,20 @@ extension ServicesView {
         campaignView.configure(with: campaignViewModel)
     }
     
+    private func configureAllServicesModel() {
+        var allServicesList = [AllServicesCollectionViewCellModel]()
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tadilat", imageName: "tadilat"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Temizlik", imageName: "temizlik"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Nakliyat", imageName: "nakliyat"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tamir", imageName: "tamir"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Özel ders", imageName: "ozel_ders"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Saglik", imageName: "saglik"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Dugun", imageName: "dugun"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "Diger", imageName: "diger"))
+        
+        let allServicesViewModel = AllServicesViewModel(titleLabel: "All Services", serviceList: allServicesList)
+        allServicesView.configure(with: allServicesViewModel)
+    }
+    
+  
 }

@@ -10,12 +10,14 @@
 		11181B832A5DEFCA00C70CE4 /* CampaignDiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11181B822A5DEFCA00C70CE4 /* CampaignDiscountView.swift */; };
 		111A3AE82A5F212D000CAE8A /* AllServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A3AE72A5F212D000CAE8A /* AllServicesView.swift */; };
 		111A3AEA2A5F2499000CAE8A /* CampaignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A3AE92A5F2499000CAE8A /* CampaignViewModel.swift */; };
+		111A3AEC2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A3AEB2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift */; };
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
 		116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */; };
 		116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */; };
 		11A3CFA02A5AF80A001EA591 /* ServicesSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */; };
 		11A3CFA52A5B11B5001EA591 /* ServicesHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3CFA42A5B11B5001EA591 /* ServicesHeaderViewModel.swift */; };
+		11CAFC582A608644007C1847 /* AllServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CAFC572A608644007C1847 /* AllServicesViewModel.swift */; };
 		11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E892A48C1D70014AC86 /* TabBarRouter.swift */; };
 		11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
@@ -64,12 +66,14 @@
 		11181B822A5DEFCA00C70CE4 /* CampaignDiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDiscountView.swift; sourceTree = "<group>"; };
 		111A3AE72A5F212D000CAE8A /* AllServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesView.swift; sourceTree = "<group>"; };
 		111A3AE92A5F2499000CAE8A /* CampaignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignViewModel.swift; sourceTree = "<group>"; };
+		111A3AEB2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBottomView.swift; sourceTree = "<group>"; };
 		116E82F82A55F33800BBDEC4 /* ServicesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderView.swift; sourceTree = "<group>"; };
 		11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesSearchBarView.swift; sourceTree = "<group>"; };
 		11A3CFA42A5B11B5001EA591 /* ServicesHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeaderViewModel.swift; sourceTree = "<group>"; };
+		11CAFC572A608644007C1847 /* AllServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesViewModel.swift; sourceTree = "<group>"; };
 		11D53E892A48C1D70014AC86 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesConfigurator.swift; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				111A3AE72A5F212D000CAE8A /* AllServicesView.swift */,
+				111A3AEB2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift */,
+				11CAFC572A608644007C1847 /* AllServicesViewModel.swift */,
 			);
 			path = AllServicesView;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */,
 				11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */,
 				1CEF92B52481761100643631 /* TitleDetailViewController.swift in Sources */,
+				11CAFC582A608644007C1847 /* AllServicesViewModel.swift in Sources */,
 				1CCAC463247CF7F5009AC08C /* TitlesView.swift in Sources */,
 				11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */,
 				1CCAC45F247CE372009AC08C /* TitlesPresenter.swift in Sources */,
@@ -468,6 +475,7 @@
 				11EF60132A4222DE00A7F66F /* NotificationsView.swift in Sources */,
 				11EF601B2A4222FF00A7F66F /* NotificationsRouter.swift in Sources */,
 				1CEF92B72481762800643631 /* TitleDetailInteractor.swift in Sources */,
+				111A3AEC2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift in Sources */,
 				1CCAC461247CE383009AC08C /* TitlesConfigurator.swift in Sources */,
 				1CEF92B32481760700643631 /* TitleDetailView.swift in Sources */,
 				1CEF92BB2481763700643631 /* TitleDetailRouter.swift in Sources */,
