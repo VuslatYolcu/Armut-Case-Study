@@ -14,4 +14,5 @@ import Foundation
     case character // "character
     case location
     case episode
+    case home
 }

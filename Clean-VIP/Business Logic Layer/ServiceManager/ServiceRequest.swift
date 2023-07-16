@@ -13,8 +13,9 @@ final class ServiceRequest {
     /// API constants
     private struct Constants {
         static let baseUrl = "https://rickandmortyapi.com/api"
+        static let baseUrl2 = "https://my-json-server.typicode.com/engincancan/case"
     }
-    
+
     /// Desired endpoint
     let endpoint: ServiceEndpoint
     
@@ -125,5 +126,6 @@ extension ServiceRequest {
     static let listCharactersRequest = ServiceRequest(endpoint: .character)
     static let listEpisodesRequest = ServiceRequest(endpoint: .episode)
     static let listLocationRequest = ServiceRequest(endpoint: .location)
+    static let listHomeRequest = ServiceRequest(endpoint: .home)
 }
 

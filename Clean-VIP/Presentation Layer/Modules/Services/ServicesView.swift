@@ -69,6 +69,7 @@ extension ServicesView {
         configureHeaderViewModel()
         configureCampaignViewModel()
         configureAllServicesModel()
+        fetchPopularPosts()
     }
 
     private func setupConstraints() {
@@ -134,5 +135,18 @@ extension ServicesView {
         allServicesView.configure(with: allServicesViewModel)
     }
     
-  
+    
+    private func fetchPopularPosts() {
+        ServiceManager.shared.execute(.listEpisodesRequest, expecting: AllServicesViewModel) { [weak self] result in
+            switch result {
+            case .success(let model):
+                // TODO: Handle success case
+                break
+            case .failure(let error):
+                // TODO: Handle error
+                break
+            }
+        }
+    }
+    
 }
