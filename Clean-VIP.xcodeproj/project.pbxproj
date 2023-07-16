@@ -17,6 +17,10 @@
 		111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B224D2A64067A001E88D5 /* CacheManager.swift */; };
 		111B22532A6412E4001E88D5 /* ServicesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22522A6412E4001E88D5 /* ServicesResponseModel.swift */; };
 		111B22552A6424BD001E88D5 /* ServiceRequest+Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22542A6424BD001E88D5 /* ServiceRequest+Urls.swift */; };
+		111B22582A643970001E88D5 /* PopularServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22572A643970001E88D5 /* PopularServicesView.swift */; };
+		111B225A2A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */; };
+		111B225E2A64469F001E88D5 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */; };
+		111B22602A6447CB001E88D5 /* PopularServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */; };
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
 		116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */; };
@@ -65,7 +69,7 @@
 		1CEF92B92481763000643631 /* TitleDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF92B82481763000643631 /* TitleDetailPresenter.swift */; };
 		1CEF92BB2481763700643631 /* TitleDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF92BA2481763700643631 /* TitleDetailRouter.swift */; };
 		1CEF92BD2481764000643631 /* TitleDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF92BC2481764000643631 /* TitleDetailConfigurator.swift */; };
-		1CEF92BF2482B6F300643631 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF92BE2482B6F300643631 /* Extensions.swift */; };
+		1CEF92BF2482B6F300643631 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF92BE2482B6F300643631 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		111B224D2A64067A001E88D5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		111B22522A6412E4001E88D5 /* ServicesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesResponseModel.swift; sourceTree = "<group>"; };
 		111B22542A6424BD001E88D5 /* ServiceRequest+Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceRequest+Urls.swift"; sourceTree = "<group>"; };
+		111B22572A643970001E88D5 /* PopularServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesView.swift; sourceTree = "<group>"; };
+		111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extentions.swift"; sourceTree = "<group>"; };
+		111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesViewModel.swift; sourceTree = "<group>"; };
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBottomView.swift; sourceTree = "<group>"; };
@@ -129,7 +137,7 @@
 		1CEF92B82481763000643631 /* TitleDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDetailPresenter.swift; sourceTree = "<group>"; };
 		1CEF92BA2481763700643631 /* TitleDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDetailRouter.swift; sourceTree = "<group>"; };
 		1CEF92BC2481764000643631 /* TitleDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDetailConfigurator.swift; sourceTree = "<group>"; };
-		1CEF92BE2482B6F300643631 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1CEF92BE2482B6F300643631 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,17 +188,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		111B22562A6438D0001E88D5 /* PopulerServicesView */ = {
+		111B22562A6438D0001E88D5 /* PopularServicesView */ = {
 			isa = PBXGroup;
 			children = (
+				111B22572A643970001E88D5 /* PopularServicesView.swift */,
+				111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */,
+				111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */,
 			);
-			path = PopulerServicesView;
+			path = PopularServicesView;
+			sourceTree = "<group>";
+		};
+		111B225C2A644663001E88D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF92BE2482B6F300643631 /* UIViewController+Extensions.swift */,
+				111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		116A0BAA2A574AFB00BA9CF3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				111B22562A6438D0001E88D5 /* PopulerServicesView */,
+				111B22562A6438D0001E88D5 /* PopularServicesView */,
 				111A3AE62A5F2111000CAE8A /* AllServicesView */,
 				116C8EAC2A5DC63400FE8173 /* CampaignView */,
 				11A3CFA32A5B11A6001EA591 /* HeaderView */,
@@ -346,7 +366,7 @@
 		1C4818D1247CDF2F001B0324 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1CEF92BE2482B6F300643631 /* Extensions.swift */,
+				111B225C2A644663001E88D5 /* Extensions */,
 				1C4818C6247CDF06001B0324 /* Assets.xcassets */,
 				1C4818C8247CDF06001B0324 /* LaunchScreen.storyboard */,
 				1C4818CB247CDF06001B0324 /* Info.plist */,
@@ -490,6 +510,7 @@
 			files = (
 				1CEF92BD2481764000643631 /* TitleDetailConfigurator.swift in Sources */,
 				11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */,
+				111B22582A643970001E88D5 /* PopularServicesView.swift in Sources */,
 				11EF60172A4222EF00A7F66F /* NotificationsInteractor.swift in Sources */,
 				11EF60082A42217400A7F66F /* JobsView.swift in Sources */,
 				11EF60012A42206500A7F66F /* ServicesInteractor.swift in Sources */,
@@ -511,6 +532,7 @@
 				1CCAC45F247CE372009AC08C /* TitlesPresenter.swift in Sources */,
 				1CEF92B02480FC5400643631 /* PersistentContainerProvider.swift in Sources */,
 				116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */,
+				111B225A2A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift in Sources */,
 				11A3CFA02A5AF80A001EA591 /* ServicesSearchBarView.swift in Sources */,
 				1CEF92B92481763000643631 /* TitleDetailPresenter.swift in Sources */,
 				116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */,
@@ -525,6 +547,8 @@
 				11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */,
 				11EF601E2A42255600A7F66F /* ProfilesView.swift in Sources */,
 				11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */,
+				111B225E2A64469F001E88D5 /* UIImageView+Extentions.swift in Sources */,
+				111B22602A6447CB001E88D5 /* PopularServicesViewModel.swift in Sources */,
 				11EF60032A42206C00A7F66F /* ServicesPresenter.swift in Sources */,
 				11EF60132A4222DE00A7F66F /* NotificationsView.swift in Sources */,
 				11EF601B2A4222FF00A7F66F /* NotificationsRouter.swift in Sources */,
@@ -534,7 +558,7 @@
 				1CEF92B32481760700643631 /* TitleDetailView.swift in Sources */,
 				1CEF92BB2481763700643631 /* TitleDetailRouter.swift in Sources */,
 				1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */,
-				1CEF92BF2482B6F300643631 /* Extensions.swift in Sources */,
+				1CEF92BF2482B6F300643631 /* UIViewController+Extensions.swift in Sources */,
 				111B22472A63FF74001E88D5 /* ServiceManager.swift in Sources */,
 				111A3AE82A5F212D000CAE8A /* AllServicesView.swift in Sources */,
 				111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */,
