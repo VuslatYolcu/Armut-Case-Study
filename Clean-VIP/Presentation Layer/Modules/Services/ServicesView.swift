@@ -77,7 +77,6 @@ extension ServicesView {
         configureHeaderViewModel()
         configureCampaignViewModel()
         configureAllServicesModel()
-        configurePopularServicesModel()
         fetchServicesPageData()
     }
 
@@ -86,7 +85,7 @@ extension ServicesView {
             headerView.heightAnchor.constraint(equalToConstant: 400),
             campaignView.heightAnchor.constraint(equalToConstant: 210),
             allServicesView.heightAnchor.constraint(equalToConstant: 230),
-            popularServicesView.heightAnchor.constraint(equalToConstant: 180)
+            popularServicesView.heightAnchor.constraint(equalToConstant: 160)
         ])
         
         NSLayoutConstraint.activate([
@@ -145,27 +144,13 @@ extension ServicesView {
         allServicesView.configure(with: allServicesViewModel)
     }
     
-    private func configurePopularServicesModel() {
-        var allServicesList = [AllServicesCollectionViewCellModel]()
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tadilat", imageName: "tadilat"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Temizlik", imageName: "temizlik"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Nakliyat", imageName: "nakliyat"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tamir", imageName: "tamir"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Özel ders", imageName: "ozel_ders"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Saglik", imageName: "saglik"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Dugun", imageName: "dugun"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Diger", imageName: "diger"))
-        
-        let allServicesViewModel = AllServicesViewModel(titleLabel: "All Services", serviceList: allServicesList)
-        popularServicesView.configure(with: allServicesViewModel)
-    }
-    
     private func fetchServicesPageData() {
         ServiceManager.shared.execute(.Home.homeRequest, expecting: ServicesResponseModel.self) { [weak self] result in
             switch result {
             case .success(let model):
-            
-                // TODO: Handle success case
+                DispatchQueue.main.async {
+                    self?.configurePopularServicesModel(popularServices: model.popularServices)
+                }
                 break
             case .failure(let error):
                 // TODO: Handle error
@@ -173,6 +158,12 @@ extension ServicesView {
                 break
             }
         }
+    }
+    
+    private func configurePopularServicesModel(popularServices: [ServiceModel]) {
+        
+        let popularServicesViewModel = PopularServicesViewModel(titleLabel: "Popular these days", serviceList: popularServices)
+        popularServicesView.configure(with: popularServicesViewModel)
     }
     
 }

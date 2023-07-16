@@ -8,11 +8,5 @@
 
 struct PopularServicesViewModel {
     let titleLabel: String
-    let serviceList: [PopularServicesCollectionViewCellModel]
+    let serviceList: [ServiceModel]
 }
-
-struct PopularServicesCollectionViewCellModel {
-    let label: String
-    let imageUrl: String
-}
-

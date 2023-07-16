@@ -21,16 +21,17 @@ final class PopularServicesView: UIView {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(PopularServicesCollectionViewCell.self, forCellWithReuseIdentifier: PopularServicesCollectionViewCell.cellIdentifier)
+        collectionView.backgroundColor = .orange
         return collectionView
     }()
     
-    private let itemsPerRow: Int = 4
-    private var sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
-    private var allServicesList = [AllServicesCollectionViewCellModel]()
+    private let itemsPerRow: Double = 2.3
+    private var sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+    private var popularServicesList = [ServiceModel]()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -68,9 +69,10 @@ final class PopularServicesView: UIView {
     }
     
     // MARK: - Configurations
-    public func configure(with allServicesList: AllServicesViewModel) {
-        label.text = allServicesList.titleLabel
-        self.allServicesList = allServicesList.serviceList
+    public func configure(with popularServicesList: PopularServicesViewModel) {
+        label.text = popularServicesList.titleLabel
+        self.popularServicesList = popularServicesList.serviceList
+        collectionView.reloadData()
     }
 }
 
@@ -79,14 +81,14 @@ final class PopularServicesView: UIView {
 extension PopularServicesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allServicesList.count
+        return popularServicesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularServicesCollectionViewCell.cellIdentifier, for: indexPath) as? PopularServicesCollectionViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(serviceViewModel: allServicesList[indexPath.row])
+        cell.configure(serviceViewModel: popularServicesList[indexPath.row])
         return cell
     }
    
@@ -104,11 +106,12 @@ extension PopularServicesView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let paddingSpace = Int(sectionInsets.left) * (itemsPerRow + 1)
-        let availableWidth = Int(collectionView.frame.width) - paddingSpace
+        let paddingSpace = Double(sectionInsets.left) * (itemsPerRow + 1)
+        let availableWidth = Double(collectionView.frame.width) - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        //return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: 130, height: 80)
     }
 }
+ 
 

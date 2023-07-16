@@ -10,19 +10,19 @@ import Foundation
 
 // MARK: - ServicesResponseModel
 struct ServicesResponseModel: Codable {
-    let allServices: [AllService]
-    let popular: [AllService]
-    let posts: [Post]
+    let allServices: [ServiceModel]
+    let popularServices: [ServiceModel]
+    let posts: [PostModel]
 
     enum CodingKeys: String, CodingKey {
         case allServices = "all_services"
-        case popular
+        case popularServices = "popular"
         case posts
     }
 }
 
-// MARK: - AllService
-struct AllService: Codable {
+// MARK: - Service Model
+struct ServiceModel: Codable {
     let id: Int?
     let serviceId: Int?
     let name: String
@@ -41,7 +41,7 @@ struct AllService: Codable {
 }
 
 // MARK: - Post
-struct Post: Codable {
+struct PostModel: Codable {
     let title: String
     let category: String
     let imageURL: String

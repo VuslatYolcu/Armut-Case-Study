@@ -18,15 +18,16 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .red
         return imageView
     }()
     
     private let serviceNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.font = .systemFont(ofSize: 12, weight: .medium)
         label.textColor = .label
-        label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
@@ -36,8 +37,9 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubview(imageView)
         contentView.addSubview(serviceNameLabel)
+        contentView.backgroundColor = .yellow
         addConstraints()
-        setupLayer()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -46,23 +48,23 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: contentView.frame.size.height),
             
-            serviceNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            serviceNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            serviceNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            serviceNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            serviceNameLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            //serviceNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
 
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        setupLayer()
     }
-    
-    private func setupLayer() {
-        contentView.layer.cornerRadius = 10
-    }
+  
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -70,9 +72,10 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
         serviceNameLabel.text = nil
     }
     
-    public func configure(serviceViewModel: AllServicesCollectionViewCellModel) {
-        imageView.image = UIImage(named: serviceViewModel.imageName)
-        serviceNameLabel.text = serviceViewModel.label
+    public func configure(serviceViewModel: ServiceModel) {
+        guard let serviceImageUrl = serviceViewModel.imageURL, let imageUrl = URL(string: serviceImageUrl) else { return }
+        imageView.load(url: imageUrl)
+        serviceNameLabel.text = serviceViewModel.longName
     }
 }
 
