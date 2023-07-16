@@ -66,10 +66,11 @@ extension ServicesView {
         scrollViewContainer.addArrangedSubview(campaignView)
         scrollViewContainer.addArrangedSubview(allServicesView)
         setupConstraints()
+        
         configureHeaderViewModel()
         configureCampaignViewModel()
         configureAllServicesModel()
-        fetchPopularPosts()
+        fetchServicesPageData()
     }
 
     private func setupConstraints() {
@@ -136,8 +137,8 @@ extension ServicesView {
     }
     
     
-    private func fetchPopularPosts() {
-        ServiceManager.shared.execute(.Home.homeRequest, expecting: HomeResponseModel.self) { [weak self] result in
+    private func fetchServicesPageData() {
+        ServiceManager.shared.execute(.Home.homeRequest, expecting: ServicesResponseModel.self) { [weak self] result in
             switch result {
             case .success(let model):
                 print(model)

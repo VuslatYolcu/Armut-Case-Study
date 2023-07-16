@@ -1,5 +1,5 @@
 //
-//  HomeResponseModel.swift
+//  ServicesResponseModel.swift
 //  Clean-VIP
 //
 //  Created by Vuslat Yolcu on 16.07.2023.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct HomeResponseModel: Codable {
+// MARK: - ServicesResponseModel
+struct ServicesResponseModel: Codable {
     let allServices: [AllService]
     let popular: [AllService]
     let posts: [Post]
