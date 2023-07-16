@@ -85,7 +85,7 @@ extension ServicesView {
             headerView.heightAnchor.constraint(equalToConstant: 400),
             campaignView.heightAnchor.constraint(equalToConstant: 210),
             allServicesView.heightAnchor.constraint(equalToConstant: 210),
-            popularServicesView.heightAnchor.constraint(equalToConstant: 160)
+            popularServicesView.heightAnchor.constraint(equalToConstant: 170)
         ])
         
         NSLayoutConstraint.activate([

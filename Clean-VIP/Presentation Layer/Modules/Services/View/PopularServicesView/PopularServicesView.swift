@@ -68,7 +68,15 @@ final class PopularServicesView: UIView {
     // MARK: - Configurations
     public func configure(with popularServicesList: PopularServicesViewModel) {
         label.text = popularServicesList.titleLabel
+        
         self.popularServicesList = popularServicesList.serviceList
+        self.popularServicesList.insert(popularServicesList.serviceList[0], at: 2)
+        self.popularServicesList.insert(popularServicesList.serviceList[1], at: 3)
+        self.popularServicesList.insert(popularServicesList.serviceList[0], at: 4)
+        self.popularServicesList.insert(popularServicesList.serviceList[1], at: 5)
+        self.popularServicesList.insert(popularServicesList.serviceList[0], at: 6)
+        self.popularServicesList.insert(popularServicesList.serviceList[1], at: 7)
+        self.popularServicesList.insert(popularServicesList.serviceList[0], at: 8)
         collectionView.reloadData()
     }
 }
@@ -103,7 +111,7 @@ extension PopularServicesView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 160, height: 130)
+        return CGSize(width: 160, height: 140)
     }
 }
 
