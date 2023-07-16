@@ -15,17 +15,16 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
         return imageView
     }()
     
     private let serviceNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.font = .systemFont(ofSize: 12, weight: .bold)
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -34,10 +33,8 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubview(imageView)
         contentView.addSubview(serviceNameLabel)
-        contentView.backgroundColor = .yellow
         addConstraints()
         
     }
@@ -51,12 +48,12 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: contentView.frame.size.height),
+            imageView.heightAnchor.constraint(equalToConstant: 100),
             
             serviceNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             serviceNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            serviceNameLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
-            //serviceNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            serviceNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor)
+            
         ])
 
     }
