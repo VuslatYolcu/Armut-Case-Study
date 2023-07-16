@@ -11,8 +11,5 @@ import Foundation
 /// Represents unique API call
 @frozen enum ServiceEndpoint: String, CaseIterable, Hashable {
     
-    case character // "character
-    case location
-    case episode
     case home
 }

@@ -137,13 +137,15 @@ extension ServicesView {
     
     
     private func fetchPopularPosts() {
-        ServiceManager.shared.execute(.listEpisodesRequest, expecting: AllServicesViewModel) { [weak self] result in
+        ServiceManager.shared.execute(.Home.homeRequest, expecting: HomeResponseModel.self) { [weak self] result in
             switch result {
             case .success(let model):
+                print(model)
                 // TODO: Handle success case
                 break
             case .failure(let error):
                 // TODO: Handle error
+                print(error)
                 break
             }
         }

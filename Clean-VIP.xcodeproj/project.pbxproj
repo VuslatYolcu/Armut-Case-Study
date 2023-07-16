@@ -15,6 +15,8 @@
 		111B22492A640318001E88D5 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22482A640318001E88D5 /* ServiceRequest.swift */; };
 		111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B224A2A64052D001E88D5 /* ServiceEndpoint.swift */; };
 		111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B224D2A64067A001E88D5 /* CacheManager.swift */; };
+		111B22532A6412E4001E88D5 /* HomeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22522A6412E4001E88D5 /* HomeResponseModel.swift */; };
+		111B22552A6424BD001E88D5 /* ServiceRequest+Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22542A6424BD001E88D5 /* ServiceRequest+Urls.swift */; };
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
 		116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */; };
@@ -75,6 +77,8 @@
 		111B22482A640318001E88D5 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		111B224A2A64052D001E88D5 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
 		111B224D2A64067A001E88D5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		111B22522A6412E4001E88D5 /* HomeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponseModel.swift; sourceTree = "<group>"; };
+		111B22542A6424BD001E88D5 /* ServiceRequest+Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceRequest+Urls.swift"; sourceTree = "<group>"; };
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBottomView.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				111B22462A63FF74001E88D5 /* ServiceManager.swift */,
 				111B22482A640318001E88D5 /* ServiceRequest.swift */,
 				111B224A2A64052D001E88D5 /* ServiceEndpoint.swift */,
+				111B22542A6424BD001E88D5 /* ServiceRequest+Urls.swift */,
 			);
 			path = ServiceManager;
 			sourceTree = "<group>";
@@ -165,6 +170,14 @@
 				111B224D2A64067A001E88D5 /* CacheManager.swift */,
 			);
 			path = CacheManager;
+			sourceTree = "<group>";
+		};
+		111B22512A6412D0001E88D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				111B22522A6412E4001E88D5 /* HomeResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		116A0BAA2A574AFB00BA9CF3 /* View */ = {
@@ -211,6 +224,7 @@
 		11EF5FFB2A42202B00A7F66F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				111B22512A6412D0001E88D5 /* Models */,
 				116A0BAA2A574AFB00BA9CF3 /* View */,
 				11EF5FFC2A42205200A7F66F /* ServicesView.swift */,
 				11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */,
@@ -475,6 +489,7 @@
 				111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */,
 				11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */,
 				11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */,
+				111B22552A6424BD001E88D5 /* ServiceRequest+Urls.swift in Sources */,
 				11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */,
 				11A3CFA52A5B11B5001EA591 /* ServicesHeaderViewModel.swift in Sources */,
 				1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */,
@@ -493,6 +508,7 @@
 				116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */,
 				11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */,
 				11EF600C2A42218600A7F66F /* JobsInteractor.swift in Sources */,
+				111B22532A6412E4001E88D5 /* HomeResponseModel.swift in Sources */,
 				116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */,
 				1CCAC45D247CE36B009AC08C /* TitlesInteractor.swift in Sources */,
 				111B22492A640318001E88D5 /* ServiceRequest.swift in Sources */,
