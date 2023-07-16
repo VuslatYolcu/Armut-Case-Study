@@ -11,6 +11,10 @@
 		111A3AE82A5F212D000CAE8A /* AllServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A3AE72A5F212D000CAE8A /* AllServicesView.swift */; };
 		111A3AEA2A5F2499000CAE8A /* CampaignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A3AE92A5F2499000CAE8A /* CampaignViewModel.swift */; };
 		111A3AEC2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A3AEB2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift */; };
+		111B22472A63FF74001E88D5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22462A63FF74001E88D5 /* ServiceManager.swift */; };
+		111B22492A640318001E88D5 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22482A640318001E88D5 /* ServiceRequest.swift */; };
+		111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B224A2A64052D001E88D5 /* ServiceEndpoint.swift */; };
+		111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B224D2A64067A001E88D5 /* CacheManager.swift */; };
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
 		116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */; };
@@ -67,6 +71,10 @@
 		111A3AE72A5F212D000CAE8A /* AllServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesView.swift; sourceTree = "<group>"; };
 		111A3AE92A5F2499000CAE8A /* CampaignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignViewModel.swift; sourceTree = "<group>"; };
 		111A3AEB2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		111B22462A63FF74001E88D5 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		111B22482A640318001E88D5 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		111B224A2A64052D001E88D5 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
+		111B224D2A64067A001E88D5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBottomView.swift; sourceTree = "<group>"; };
@@ -139,6 +147,24 @@
 				11CAFC572A608644007C1847 /* AllServicesViewModel.swift */,
 			);
 			path = AllServicesView;
+			sourceTree = "<group>";
+		};
+		111B22452A63FF63001E88D5 /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				111B22462A63FF74001E88D5 /* ServiceManager.swift */,
+				111B22482A640318001E88D5 /* ServiceRequest.swift */,
+				111B224A2A64052D001E88D5 /* ServiceEndpoint.swift */,
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		111B224C2A64066F001E88D5 /* CacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				111B224D2A64067A001E88D5 /* CacheManager.swift */,
+			);
+			path = CacheManager;
 			sourceTree = "<group>";
 		};
 		116A0BAA2A574AFB00BA9CF3 /* View */ = {
@@ -251,6 +277,8 @@
 		1C390278247CDFDA00797273 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				111B224C2A64066F001E88D5 /* CacheManager */,
+				111B22452A63FF63001E88D5 /* ServiceManager */,
 				1CEF92B12481758200643631 /* Entities */,
 				1CE9D67D247D6D4700C8AAF6 /* Services */,
 			);
@@ -444,6 +472,7 @@
 				11EF60082A42217400A7F66F /* JobsView.swift in Sources */,
 				11EF60012A42206500A7F66F /* ServicesInteractor.swift in Sources */,
 				1CEF92AE2480EF4200643631 /* Model.xcdatamodeld in Sources */,
+				111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */,
 				11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */,
 				11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */,
 				11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */,
@@ -466,6 +495,7 @@
 				11EF600C2A42218600A7F66F /* JobsInteractor.swift in Sources */,
 				116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */,
 				1CCAC45D247CE36B009AC08C /* TitlesInteractor.swift in Sources */,
+				111B22492A640318001E88D5 /* ServiceRequest.swift in Sources */,
 				11EF60202A42255D00A7F66F /* ProfilesViewController.swift in Sources */,
 				111A3AEA2A5F2499000CAE8A /* CampaignViewModel.swift in Sources */,
 				11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */,
@@ -481,7 +511,9 @@
 				1CEF92BB2481763700643631 /* TitleDetailRouter.swift in Sources */,
 				1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */,
 				1CEF92BF2482B6F300643631 /* Extensions.swift in Sources */,
+				111B22472A63FF74001E88D5 /* ServiceManager.swift in Sources */,
 				111A3AE82A5F212D000CAE8A /* AllServicesView.swift in Sources */,
+				111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */,
 				116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */,
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
