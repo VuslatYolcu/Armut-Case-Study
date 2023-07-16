@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  UIViewController+Extensions.swift
 //  Clean-VIP
 //
 //  Created by Zafar on 5/30/20.

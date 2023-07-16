@@ -83,7 +83,9 @@ final class CampaignView: UIView {
     }
     
     // MARK: - Configuration
-    public func configure(with imageName: String) {
-        imageView.image = UIImage(named: imageName)
+    public func configure(with campaignViewModel: CampaignViewModel) {
+        imageView.image = UIImage(named: campaignViewModel.imageName)
+        discountView.configure(text: campaignViewModel.discountRatio)
+        campaignBottomView.configure(titleLabelText: campaignViewModel.bottomViewTitle, labelText: campaignViewModel.bottomViewLabel)
     }
 }

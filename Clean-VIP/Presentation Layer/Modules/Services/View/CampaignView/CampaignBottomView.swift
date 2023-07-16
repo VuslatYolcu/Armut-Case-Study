@@ -22,7 +22,6 @@ final class CampaignBottomView: UIView {
     private let bottomViewTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "FIRST TIME NEWLY WEDS"
         label.textColor = .white
         label.font = .systemFont(ofSize: 12)
         return label
@@ -31,7 +30,6 @@ final class CampaignBottomView: UIView {
     private let bottomViewLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "WEDDING PHOTOGRAPHERS \nFROM 540TL"
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .white
@@ -62,6 +60,11 @@ final class CampaignBottomView: UIView {
             safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 8)
 
         ])
+    }
+    
+    public func configure(titleLabelText: String, labelText: String) {
+        bottomViewTitleLabel.text = titleLabelText
+        bottomViewLabel.text = labelText
     }
 }
 
