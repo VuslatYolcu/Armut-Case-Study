@@ -1,5 +1,5 @@
 //
-//  ImageLoader.swift
+//  CachedImageLoader.swift
 //  Clean-VIP
 //
 //  Created by Vuslat Yolcu on 18.07.2023.
@@ -9,9 +9,9 @@
 import Foundation
 
 /// Manage for image loading
-final class ImageLoader {
+final class CachedImageLoader {
     /// Shared instance
-    static let shared = ImageLoader()
+    static let shared = CachedImageLoader()
 
     /// In memory data cache
     private var imageDataCache = NSCache<NSString, NSData>()
@@ -42,5 +42,14 @@ final class ImageLoader {
         }
         task.resume()
     }
+    
+    public func fetchImage(imageUrl: URL?, completion: @escaping (Result<Data, Error>) -> Void) {
+        guard let imageUrl = imageUrl else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+        downloadImage(imageUrl, completion: completion)
+    }
+    
 }
 

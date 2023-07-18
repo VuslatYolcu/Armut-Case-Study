@@ -73,11 +73,11 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
         guard let serviceImageUrl = serviceViewModel.imageURL, let imageUrl = URL(string: serviceImageUrl) else { return }
         
         serviceNameLabel.text = serviceViewModel.longName
-        configureImageView(with: imageUrl)
+        configureCachedImageView(with: imageUrl)
     }
     
-    private func configureImageView(with imageUrl: URL) {
-        fetchImage(imageUrl: imageUrl) { [weak self] result in
+    private func configureCachedImageView(with imageUrl: URL) {
+        CachedImageLoader.shared.fetchImage(imageUrl: imageUrl) { [weak self] result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -88,14 +88,5 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
-    private func fetchImage(imageUrl: URL?, completion: @escaping (Result<Data, Error>) -> Void) {
-        guard let imageUrl = imageUrl else {
-            completion(.failure(URLError(.badURL)))
-            return
-        }
-        ImageLoader.shared.downloadImage(imageUrl, completion: completion)
-    }
-
 }
 
