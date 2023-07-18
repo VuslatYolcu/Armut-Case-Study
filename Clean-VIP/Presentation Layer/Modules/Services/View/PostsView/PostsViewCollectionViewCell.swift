@@ -13,21 +13,13 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
 
     static let cellIdentifier = "PostsViewCollectionViewCell"
     
-    /*
+    
     private let imageView: PostsImageView = {
         let imageView = PostsImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-     */
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
     
     private let categoryLabel: UILabel = {
         let label = UILabel()
@@ -43,7 +35,6 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .white
-        label.backgroundColor = .orange
         label.numberOfLines = 0
         return label
     }()
@@ -55,6 +46,7 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         imageView.addSubview(categoryLabel)
         imageView.addSubview(titleLabel)
         addConstraints()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -90,30 +82,19 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
+        imageView.resetImage()
         categoryLabel.text = nil
         titleLabel.text = nil
     }
     
+    
     public func configure(postModel: BlogPostModel) {
         guard let postImageUrl = postModel.imageURL, let imageUrl = URL(string: postImageUrl) else { return }
         
+        imageView.configure(with: imageUrl)
         categoryLabel.text = postModel.category
         titleLabel.text = postModel.title
-        configureCachedImageView(with: imageUrl)
-    }
-    
-    private func configureCachedImageView(with imageUrl: URL) {
-        CachedImageLoader.shared.fetchImage(imageUrl: imageUrl) { [weak self] result in
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    self?.imageView.image = UIImage(data: data)
-                }
-            case .failure:
-                break
-            }
-        }
+        imageView.addFadingEffect(width: contentView.frame.size.width, height: contentView.frame.size.height)
     }
     
 }

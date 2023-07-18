@@ -15,7 +15,6 @@ final class PostsImageView: UIView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.addFadingEffect()
         return imageView
     }()
     
@@ -38,11 +37,6 @@ final class PostsImageView: UIView {
         ])
     }
     
-    public func configure(with imageURL: String) {
-        guard let imageUrl = URL(string: imageURL) else { return }
-        configureCachedImageView(with: imageUrl)
-    }
-    
     private func configureCachedImageView(with imageUrl: URL) {
         CachedImageLoader.shared.fetchImage(imageUrl: imageUrl) { [weak self] result in
             switch result {
@@ -54,6 +48,19 @@ final class PostsImageView: UIView {
                 break
             }
         }
+    }
+    
+}
+
+// MARK: - Public
+
+extension PostsImageView {
+    public func configure(with imageURL: URL) {
+        configureCachedImageView(with: imageURL)
+    }
+    
+    public func resetImage() {
+        imageView.image = nil
     }
 }
 

@@ -35,6 +35,7 @@
 		11D8A9382A6708E000DFB117 /* PostsViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9372A6708E000DFB117 /* PostsViewCollectionViewCell.swift */; };
 		11D8A93A2A6709D300DFB117 /* PostsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9392A6709D300DFB117 /* PostsImageView.swift */; };
 		11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A93B2A67136400DFB117 /* PostsViewModel.swift */; };
+		11D8A93E2A67399A00DFB117 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
 		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
 		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
@@ -106,6 +107,7 @@
 		11D8A9372A6708E000DFB117 /* PostsViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		11D8A9392A6709D300DFB117 /* PostsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsImageView.swift; sourceTree = "<group>"; };
 		11D8A93B2A67136400DFB117 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				1CEF92BE2482B6F300643631 /* UIViewController+Extensions.swift */,
 				111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */,
+				11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
 				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,
+				11D8A93E2A67399A00DFB117 /* UIView+Extensions.swift in Sources */,
 				11D8A9332A66EFB900DFB117 /* CachedImageLoader.swift in Sources */,
 				11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */,
 				11181B832A5DEFCA00C70CE4 /* CampaignDiscountView.swift in Sources */,
