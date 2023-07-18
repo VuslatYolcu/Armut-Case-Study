@@ -71,8 +71,22 @@ final class PopularServicesCollectionViewCell: UICollectionViewCell {
     
     public func configure(serviceViewModel: ServiceModel) {
         guard let serviceImageUrl = serviceViewModel.imageURL, let imageUrl = URL(string: serviceImageUrl) else { return }
-        imageView.load(url: imageUrl)
+        
         serviceNameLabel.text = serviceViewModel.longName
+        configureCachedImageView(with: imageUrl)
+    }
+    
+    private func configureCachedImageView(with imageUrl: URL) {
+        CachedImageLoader.shared.fetchImage(imageUrl: imageUrl) { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self?.imageView.image = UIImage(data: data)
+                }
+            case .failure:
+                break
+            }
+        }
     }
 }
 
