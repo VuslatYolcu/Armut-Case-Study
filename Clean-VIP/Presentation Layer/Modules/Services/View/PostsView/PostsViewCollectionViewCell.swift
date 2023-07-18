@@ -26,13 +26,6 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        let gradient = CAGradientLayer()
-        gradient.frame = imageView.bounds
-        gradient.contents = imageView.image?.cgImage
-        gradient.colors = [UIColor.green.cgColor, UIColor.blue.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        imageView.layer.addSublayer(gradient)
         return imageView
     }()
     
@@ -48,8 +41,9 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .white
+        label.backgroundColor = .orange
         label.numberOfLines = 0
         return label
     }()
@@ -61,7 +55,6 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         imageView.addSubview(categoryLabel)
         imageView.addSubview(titleLabel)
         addConstraints()
-        
     }
 
     required init?(coder: NSCoder) {
@@ -83,9 +76,9 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.centerYAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 15),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
-            titleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10)
+            imageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10)
         ])
 
     }
