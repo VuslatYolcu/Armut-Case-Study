@@ -50,6 +50,12 @@ final class ServicesView: UIView {
         return collectionView
     }()
     
+    private let postsView: PostsView = {
+        let collectionView = PostsView()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,6 +78,7 @@ extension ServicesView {
         scrollViewContainer.addArrangedSubview(campaignView)
         scrollViewContainer.addArrangedSubview(allServicesView)
         scrollViewContainer.addArrangedSubview(popularServicesView)
+        scrollViewContainer.addArrangedSubview(postsView)
         setupConstraints()
         
         configureHeaderViewModel()
@@ -85,7 +92,8 @@ extension ServicesView {
             headerView.heightAnchor.constraint(equalToConstant: 400),
             campaignView.heightAnchor.constraint(equalToConstant: 210),
             allServicesView.heightAnchor.constraint(equalToConstant: 210),
-            popularServicesView.heightAnchor.constraint(equalToConstant: 170)
+            popularServicesView.heightAnchor.constraint(equalToConstant: 170),
+            postsView.heightAnchor.constraint(equalToConstant: 300)
         ])
         
         NSLayoutConstraint.activate([
@@ -150,6 +158,7 @@ extension ServicesView {
             case .success(let model):
                 DispatchQueue.main.async {
                     self?.configurePopularServicesModel(popularServices: model.popularServices)
+                    self?.configurePostsModel(blogPostList: model.posts)
                 }
                 break
             case .failure(let error):
@@ -161,9 +170,12 @@ extension ServicesView {
     }
     
     private func configurePopularServicesModel(popularServices: [ServiceModel]) {
-        
         let popularServicesViewModel = PopularServicesViewModel(titleLabel: "Popular these days", serviceList: popularServices)
         popularServicesView.configure(with: popularServicesViewModel)
     }
     
+    private func configurePostsModel(blogPostList: [BlogPostModel]) {
+        let postViewModel = PostsViewModel(titleLabel: "Latests from the blog", blogPostsList: blogPostList)
+        postsView.configure(with: postViewModel)
+    }
 }

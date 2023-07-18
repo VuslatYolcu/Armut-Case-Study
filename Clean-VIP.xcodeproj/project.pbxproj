@@ -31,6 +31,10 @@
 		11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E892A48C1D70014AC86 /* TabBarRouter.swift */; };
 		11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */; };
 		11D8A9332A66EFB900DFB117 /* CachedImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9322A66EFB900DFB117 /* CachedImageLoader.swift */; };
+		11D8A9362A66FC3900DFB117 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9352A66FC3900DFB117 /* PostsView.swift */; };
+		11D8A9382A6708E000DFB117 /* PostsViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9372A6708E000DFB117 /* PostsViewCollectionViewCell.swift */; };
+		11D8A93A2A6709D300DFB117 /* PostsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9392A6709D300DFB117 /* PostsImageView.swift */; };
+		11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A93B2A67136400DFB117 /* PostsViewModel.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
 		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
 		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
@@ -98,6 +102,10 @@
 		11D53E892A48C1D70014AC86 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesConfigurator.swift; sourceTree = "<group>"; };
 		11D8A9322A66EFB900DFB117 /* CachedImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageLoader.swift; sourceTree = "<group>"; };
+		11D8A9352A66FC3900DFB117 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		11D8A9372A6708E000DFB117 /* PostsViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		11D8A9392A6709D300DFB117 /* PostsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsImageView.swift; sourceTree = "<group>"; };
+		11D8A93B2A67136400DFB117 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +220,7 @@
 		116A0BAA2A574AFB00BA9CF3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11D8A9342A66FBE600DFB117 /* PostsView */,
 				111B22562A6438D0001E88D5 /* PopularServicesView */,
 				111A3AE62A5F2111000CAE8A /* AllServicesView */,
 				116C8EAC2A5DC63400FE8173 /* CampaignView */,
@@ -240,6 +249,17 @@
 				11A3CF9F2A5AF80A001EA591 /* ServicesSearchBarView.swift */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		11D8A9342A66FBE600DFB117 /* PostsView */ = {
+			isa = PBXGroup;
+			children = (
+				11D8A9352A66FC3900DFB117 /* PostsView.swift */,
+				11D8A9372A6708E000DFB117 /* PostsViewCollectionViewCell.swift */,
+				11D8A9392A6709D300DFB117 /* PostsImageView.swift */,
+				11D8A93B2A67136400DFB117 /* PostsViewModel.swift */,
+			);
+			path = PostsView;
 			sourceTree = "<group>";
 		};
 		11EF5FF82A421E6000A7F66F /* Dashboard */ = {
@@ -516,6 +536,7 @@
 				111B22582A643970001E88D5 /* PopularServicesView.swift in Sources */,
 				11EF60172A4222EF00A7F66F /* NotificationsInteractor.swift in Sources */,
 				11EF60082A42217400A7F66F /* JobsView.swift in Sources */,
+				11D8A9382A6708E000DFB117 /* PostsViewCollectionViewCell.swift in Sources */,
 				11EF60012A42206500A7F66F /* ServicesInteractor.swift in Sources */,
 				1CEF92AE2480EF4200643631 /* Model.xcdatamodeld in Sources */,
 				111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */,
@@ -546,6 +567,7 @@
 				1CCAC45D247CE36B009AC08C /* TitlesInteractor.swift in Sources */,
 				111B22492A640318001E88D5 /* ServiceRequest.swift in Sources */,
 				11EF60202A42255D00A7F66F /* ProfilesViewController.swift in Sources */,
+				11D8A9362A66FC3900DFB117 /* PostsView.swift in Sources */,
 				111A3AEA2A5F2499000CAE8A /* CampaignViewModel.swift in Sources */,
 				11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */,
 				11EF601E2A42255600A7F66F /* ProfilesView.swift in Sources */,
@@ -564,12 +586,14 @@
 				1CEF92BF2482B6F300643631 /* UIViewController+Extensions.swift in Sources */,
 				111B22472A63FF74001E88D5 /* ServiceManager.swift in Sources */,
 				111A3AE82A5F212D000CAE8A /* AllServicesView.swift in Sources */,
+				11D8A93A2A6709D300DFB117 /* PostsImageView.swift in Sources */,
 				111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */,
 				116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */,
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
 				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,
 				11D8A9332A66EFB900DFB117 /* CachedImageLoader.swift in Sources */,
+				11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */,
 				11181B832A5DEFCA00C70CE4 /* CampaignDiscountView.swift in Sources */,
 				11EF600A2A42217E00A7F66F /* JobsViewController.swift in Sources */,
 				1CCAC45B247CE363009AC08C /* TitlesRouter.swift in Sources */,

@@ -12,7 +12,7 @@ import Foundation
 struct ServicesResponseModel: Codable {
     let allServices: [ServiceModel]
     let popularServices: [ServiceModel]
-    let posts: [PostModel]
+    let posts: [BlogPostModel]
 
     enum CodingKeys: String, CodingKey {
         case allServices = "all_services"
@@ -41,10 +41,10 @@ struct ServiceModel: Codable {
 }
 
 // MARK: - Post
-struct PostModel: Codable {
+struct BlogPostModel: Codable {
     let title: String
     let category: String
-    let imageURL: String
+    let imageURL: String?
     let link: String
     
     enum CodingKeys: String, CodingKey {

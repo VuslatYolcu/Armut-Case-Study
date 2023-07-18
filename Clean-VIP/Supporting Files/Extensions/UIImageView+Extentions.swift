@@ -20,4 +20,22 @@ extension UIImageView {
             }
         }
     }
+    
+    func addFadingEffect() {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.frame
+        gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradient.locations = [0.0, 1.0]
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+    
+    func makeGradient() {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.contents = self.image?.cgImage
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        self.layer.addSublayer(gradient)
+    }
 }
