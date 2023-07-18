@@ -30,6 +30,7 @@
 		11CAFC582A608644007C1847 /* AllServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CAFC572A608644007C1847 /* AllServicesViewModel.swift */; };
 		11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E892A48C1D70014AC86 /* TabBarRouter.swift */; };
 		11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */; };
+		11D8A9332A66EFB900DFB117 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9322A66EFB900DFB117 /* ImageLoader.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
 		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
 		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
@@ -96,6 +97,7 @@
 		11CAFC572A608644007C1847 /* AllServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesViewModel.swift; sourceTree = "<group>"; };
 		11D53E892A48C1D70014AC86 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		11D53E8B2A48C2FF0014AC86 /* ServicesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesConfigurator.swift; sourceTree = "<group>"; };
+		11D8A9322A66EFB900DFB117 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				1C4818C6247CDF06001B0324 /* Assets.xcassets */,
 				1C4818C8247CDF06001B0324 /* LaunchScreen.storyboard */,
 				1C4818CB247CDF06001B0324 /* Info.plist */,
+				11D8A9322A66EFB900DFB117 /* ImageLoader.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
 				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,
+				11D8A9332A66EFB900DFB117 /* ImageLoader.swift in Sources */,
 				11181B832A5DEFCA00C70CE4 /* CampaignDiscountView.swift in Sources */,
 				11EF600A2A42217E00A7F66F /* JobsViewController.swift in Sources */,
 				1CCAC45B247CE363009AC08C /* TitlesRouter.swift in Sources */,
