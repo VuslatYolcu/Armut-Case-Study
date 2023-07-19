@@ -14,6 +14,8 @@ final class ServicesView: UIView {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
         return scrollView
     }()
     
