@@ -110,7 +110,7 @@ extension ServicesView {
             scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
             scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             // this is important for scrolling
-            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
         
       
