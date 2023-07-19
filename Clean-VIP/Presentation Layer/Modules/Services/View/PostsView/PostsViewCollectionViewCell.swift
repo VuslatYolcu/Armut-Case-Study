@@ -13,7 +13,6 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
 
     static let cellIdentifier = "PostsViewCollectionViewCell"
     
-    
     private let imageView: PostsImageView = {
         let imageView = PostsImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +35,7 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .white
         label.numberOfLines = 0
+        
         return label
     }()
     
@@ -68,7 +68,7 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 15),
+            titleLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
             imageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10)
         ])
@@ -95,6 +95,12 @@ final class PostsViewCollectionViewCell: UICollectionViewCell {
         categoryLabel.text = postModel.category
         titleLabel.text = postModel.title
         imageView.addFadingEffect(width: contentView.frame.size.width, height: contentView.frame.size.height)
+        addSpaceForLabel(title: postModel.title)
+    }
+    
+    private func addSpaceForLabel(title: String) {
+        let spacedTitle = NSAttributedString(string: title).withLineSpacing(4)
+        titleLabel.attributedText = spacedTitle
     }
     
 }

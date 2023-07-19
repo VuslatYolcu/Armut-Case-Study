@@ -93,7 +93,7 @@ extension ServicesView {
             campaignView.heightAnchor.constraint(equalToConstant: 210),
             allServicesView.heightAnchor.constraint(equalToConstant: 210),
             popularServicesView.heightAnchor.constraint(equalToConstant: 170),
-            postsView.heightAnchor.constraint(equalToConstant: 300)
+            postsView.heightAnchor.constraint(equalToConstant: 250)
         ])
         
         NSLayoutConstraint.activate([

@@ -57,6 +57,7 @@
 		11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60212A42256600A7F66F /* ProfilesInteractor.swift */; };
 		11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */; };
 		11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60252A42257500A7F66F /* ProfilesRouter.swift */; };
+		11F9200B2A680206005B8918 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */; };
 		1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818BD247CDF03001B0324 /* AppDelegate.swift */; };
 		1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818C1247CDF03001B0324 /* TitlesViewController.swift */; };
 		1C4818C7247CDF06001B0324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4818C6247CDF06001B0324 /* Assets.xcassets */; };
@@ -129,6 +130,7 @@
 		11EF60212A42256600A7F66F /* ProfilesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesInteractor.swift; sourceTree = "<group>"; };
 		11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesPresenter.swift; sourceTree = "<group>"; };
 		11EF60252A42257500A7F66F /* ProfilesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesRouter.swift; sourceTree = "<group>"; };
+		11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		1C4818BA247CDF03001B0324 /* Clean-VIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean-VIP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4818BD247CDF03001B0324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C4818C1247CDF03001B0324 /* TitlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				1CEF92BE2482B6F300643631 /* UIViewController+Extensions.swift */,
 				111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */,
 				11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */,
+				11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				11D8A9362A66FC3900DFB117 /* PostsView.swift in Sources */,
 				111A3AEA2A5F2499000CAE8A /* CampaignViewModel.swift in Sources */,
 				11EF60152A4222E500A7F66F /* NotificationsViewController.swift in Sources */,
+				11F9200B2A680206005B8918 /* NSAttributedString+Extensions.swift in Sources */,
 				11EF601E2A42255600A7F66F /* ProfilesView.swift in Sources */,
 				11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */,
 				111B225E2A64469F001E88D5 /* UIImageView+Extentions.swift in Sources */,
