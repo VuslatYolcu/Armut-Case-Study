@@ -20,6 +20,7 @@ final class TabBarViewController: UITabBarController {
         view.backgroundColor = .systemBackground
         setupTabs()
     }
+
 }
 
 // MARK: - Set up Tabs
@@ -52,19 +53,14 @@ extension TabBarViewController {
         nav3.tabBarItem = UITabBarItem(title: "Notifications", image: notifacationsIcon, tag: 3)
         nav4.tabBarItem = UITabBarItem(title: "Profile", image: profileIcon, tag: 4)
         
+       
         for nav in [nav1, nav2, nav3, nav4] {
             nav.navigationBar.prefersLargeTitles = true
             nav.isNavigationBarHidden = true
-            
         }
-        
         
         setViewControllers([nav1, nav2, nav3, nav4],
                            animated: true)
-        
       
     }
 }
-
-
-

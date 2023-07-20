@@ -103,7 +103,6 @@ extension ServicesView {
             scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: scrollViewContainer.frame.size.height + 100),
         ])
         
         NSLayoutConstraint.activate([
