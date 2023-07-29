@@ -71,6 +71,7 @@ final class AllServicesView: UIView {
     public func configure(with allServicesList: AllServicesViewModel) {
         label.text = allServicesList.titleLabel
         self.allServicesList = allServicesList.serviceList
+        
     }
 }
 

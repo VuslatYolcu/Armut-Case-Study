@@ -21,6 +21,7 @@
 		111B225A2A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */; };
 		111B225E2A64469F001E88D5 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */; };
 		111B22602A6447CB001E88D5 /* PopularServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */; };
+		115AEDB82A75842B00B66099 /* NotificationsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115AEDB72A75842B00B66099 /* NotificationsConfigurator.swift */; };
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
 		116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */; };
 		116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */; };
@@ -94,6 +95,7 @@
 		111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extentions.swift"; sourceTree = "<group>"; };
 		111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesViewModel.swift; sourceTree = "<group>"; };
+		115AEDB72A75842B00B66099 /* NotificationsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsConfigurator.swift; sourceTree = "<group>"; };
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
 		116C8EAD2A5DC64E00FE8173 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		116C8EAF2A5DDCDC00FE8173 /* CampaignBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBottomView.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				11EF60162A4222EF00A7F66F /* NotificationsInteractor.swift */,
 				11EF60182A4222F900A7F66F /* NotificationsPresenter.swift */,
 				11EF601A2A4222FF00A7F66F /* NotificationsRouter.swift */,
+				115AEDB72A75842B00B66099 /* NotificationsConfigurator.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				1CEF92AE2480EF4200643631 /* Model.xcdatamodeld in Sources */,
 				111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */,
 				11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */,
+				115AEDB82A75842B00B66099 /* NotificationsConfigurator.swift in Sources */,
 				11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */,
 				111B22552A6424BD001E88D5 /* ServiceRequest+Urls.swift in Sources */,
 				11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */,
