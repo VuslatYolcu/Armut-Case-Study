@@ -9,8 +9,9 @@
 import UIKit
 
 protocol ServicesPresenterOutput: AnyObject {
-    func presenter(didRetrieveItem item: String)
-    func presenter(didFailRetrieveItem message: String)
+    func presentAllServices(viewModel: AllServicesViewModel)
+    //func presenter(didRetrieveItem item: String)
+    //func presenter(didFailRetrieveItem message: String)
 }
 
 final class ServicesViewController: UIViewController {
@@ -32,14 +33,17 @@ final class ServicesViewController: UIViewController {
     
     // MARK: - Properties
     var servicesView: ServicesView?
-    var interactor: ServicesInteractor?
+    var interactor: ServicesBusinessLogic?
     weak var presenter: ServicesPresenter?
     var router: ServicesRouter?
-    
 }
 
 // MARK: - Presenter Output
 extension ServicesViewController: ServicesPresenterOutput {
+    func presentAllServices(viewModel: AllServicesViewModel) {
+        servicesView?.displayFetchedAllServices(viewModel: viewModel)
+    }
+    /*
     func presenter(didRetrieveItem item: String) {
         //titleDetailView?.updateLabel(with: item)
     }
@@ -47,4 +51,5 @@ extension ServicesViewController: ServicesPresenterOutput {
     func presenter(didFailRetrieveItem message: String) {
         //showError(with: message)
     }
+     */
 }

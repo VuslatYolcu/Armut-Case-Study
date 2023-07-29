@@ -1,36 +1,34 @@
 //
-//  AllServicesView.swift
+//  PostsView.swift
 //  Clean-VIP
 //
-//  Created by Vuslat Yolcu on 12.07.2023.
+//  Created by Vuslat Yolcu on 18.07.2023.
 //  Copyright © 2023 Zafar. All rights reserved.
 //
 
 import UIKit
 
-final class AllServicesView: UIView {
+final class PostsView: UIView {
     
     // MARK: - Properties
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
     }()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(AllServicesCollectionViewCell.self, forCellWithReuseIdentifier: AllServicesCollectionViewCell.cellIdentifier)
+        collectionView.register(PostsViewCollectionViewCell.self, forCellWithReuseIdentifier: PostsViewCollectionViewCell.cellIdentifier)
         return collectionView
     }()
     
-    private let itemsPerRow: Int = 4
-    private var sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
-    private var allServicesList = [AllServicesCollectionViewCellModel]()
+    private var blogPostsList = [BlogPostModel]()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -63,51 +61,48 @@ final class AllServicesView: UIView {
             collectionView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: collectionView.trailingAnchor, multiplier: 2),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
+            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 15),
         ])
     }
     
     // MARK: - Configurations
-    public func configure(with allServicesList: AllServicesViewModel) {
-        label.text = allServicesList.titleLabel
-        self.allServicesList = allServicesList.serviceList
-        
+    public func configure(with postsViewModel: PostsViewModel) {
+        label.text = postsViewModel.titleLabel
+        self.blogPostsList = postsViewModel.blogPostsList
+        collectionView.reloadData()
     }
 }
 
 
 // MARK: - CollectionView
-extension AllServicesView: UICollectionViewDataSource {
+extension PostsView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allServicesList.count
+        return blogPostsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllServicesCollectionViewCell.cellIdentifier, for: indexPath) as? AllServicesCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostsViewCollectionViewCell.cellIdentifier, for: indexPath) as? PostsViewCollectionViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(serviceViewModel: allServicesList[indexPath.row])
+        cell.configure(postModel: blogPostsList[indexPath.row])
         return cell
     }
    
 }
 
-extension AllServicesView: UICollectionViewDelegate {
+extension PostsView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         // Handle cell tap
     }
 }
 
-extension AllServicesView: UICollectionViewDelegateFlowLayout {
+
+extension PostsView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let paddingSpace = Int(sectionInsets.left) * (itemsPerRow + 1)
-        let availableWidth = Int(collectionView.frame.width) - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: 150, height: 200)
     }
 }

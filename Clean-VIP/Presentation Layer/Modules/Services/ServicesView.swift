@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol ServicesDisplayLogic: AnyObject {
+    func displayFetchedAllServices(viewModel: AllServicesViewModel)
+}
+
 final class ServicesView: UIView {
     
     // MARK: - Properties
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
         return scrollView
     }()
     
@@ -50,6 +56,14 @@ final class ServicesView: UIView {
         return collectionView
     }()
     
+    private let postsView: PostsView = {
+        let collectionView = PostsView()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
+    var interactor: ServicesBusinessLogic?
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,11 +86,11 @@ extension ServicesView {
         scrollViewContainer.addArrangedSubview(campaignView)
         scrollViewContainer.addArrangedSubview(allServicesView)
         scrollViewContainer.addArrangedSubview(popularServicesView)
+        scrollViewContainer.addArrangedSubview(postsView)
         setupConstraints()
         
         configureHeaderViewModel()
         configureCampaignViewModel()
-        configureAllServicesModel()
         fetchServicesPageData()
     }
 
@@ -85,7 +99,8 @@ extension ServicesView {
             headerView.heightAnchor.constraint(equalToConstant: 400),
             campaignView.heightAnchor.constraint(equalToConstant: 210),
             allServicesView.heightAnchor.constraint(equalToConstant: 210),
-            popularServicesView.heightAnchor.constraint(equalToConstant: 170)
+            popularServicesView.heightAnchor.constraint(equalToConstant: 170),
+            postsView.heightAnchor.constraint(equalToConstant: 250)
         ])
         
         NSLayoutConstraint.activate([
@@ -93,7 +108,6 @@ extension ServicesView {
             scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: scrollViewContainer.frame.size.height + 100),
         ])
         
         NSLayoutConstraint.activate([
@@ -102,7 +116,7 @@ extension ServicesView {
             scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
             scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             // this is important for scrolling
-            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
         
       
@@ -129,27 +143,17 @@ extension ServicesView {
         campaignView.configure(with: campaignViewModel)
     }
     
-    private func configureAllServicesModel() {
-        var allServicesList = [AllServicesCollectionViewCellModel]()
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tadilat", imageName: "tadilat"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Temizlik", imageName: "temizlik"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Nakliyat", imageName: "nakliyat"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tamir", imageName: "tamir"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Özel ders", imageName: "ozel_ders"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Saglik", imageName: "saglik"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Dugun", imageName: "dugun"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Diger", imageName: "diger"))
-        
-        let allServicesViewModel = AllServicesViewModel(titleLabel: "All Services", serviceList: allServicesList)
-        allServicesView.configure(with: allServicesViewModel)
+    public func configureAllServices(viewModel: AllServicesViewModel) {
+        allServicesView.configure(with: viewModel)
     }
-    
+
     private func fetchServicesPageData() {
         ServiceManager.shared.execute(.Home.homeRequest, expecting: ServicesResponseModel.self) { [weak self] result in
             switch result {
             case .success(let model):
                 DispatchQueue.main.async {
                     self?.configurePopularServicesModel(popularServices: model.popularServices)
+                    self?.configurePostsModel(blogPostList: model.posts)
                 }
                 break
             case .failure(let error):
@@ -161,9 +165,19 @@ extension ServicesView {
     }
     
     private func configurePopularServicesModel(popularServices: [ServiceModel]) {
-        
         let popularServicesViewModel = PopularServicesViewModel(titleLabel: "Popular these days", serviceList: popularServices)
         popularServicesView.configure(with: popularServicesViewModel)
+    }
+    
+    private func configurePostsModel(blogPostList: [BlogPostModel]) {
+        let postViewModel = PostsViewModel(titleLabel: "Latests from the blog", blogPostsList: blogPostList)
+        postsView.configure(with: postViewModel)
+    }
+}
+
+extension ServicesView: ServicesDisplayLogic {
+    func displayFetchedAllServices(viewModel: AllServicesViewModel) {
+        allServicesView.configure(with: viewModel)
     }
     
 }
