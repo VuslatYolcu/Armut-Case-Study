@@ -9,10 +9,7 @@
 import UIKit
 
 protocol ServicesDisplayLogic: AnyObject {
-    //func displayFetchedRockets(viewModel: Rockets.FetchRockets.ViewModel)
-    //func displayRocketDetail()
     func displayFetchedAllServices(viewModel: AllServicesViewModel)
-    
 }
 
 final class ServicesView: UIView {
@@ -70,7 +67,6 @@ final class ServicesView: UIView {
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //interactor = ServicesInteractorImplementation()
         setupUI()
     }
     
@@ -95,8 +91,6 @@ extension ServicesView {
         
         configureHeaderViewModel()
         configureCampaignViewModel()
-        //fetchAllServices()
-        //configureAllServicesModel()
         fetchServicesPageData()
     }
 
@@ -152,26 +146,7 @@ extension ServicesView {
     public func configureAllServices(viewModel: AllServicesViewModel) {
         allServicesView.configure(with: viewModel)
     }
-    
-//    func fetchAllServices() {
-//        interactor?.fetchAllServices()
-//    }
-//
-//    private func configureAllServicesModel() {
-//        var allServicesList = [AllServicesCollectionViewCellModel]()
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tadilat", imageName: "tadilat"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Temizlik", imageName: "temizlik"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Nakliyat", imageName: "nakliyat"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tamir", imageName: "tamir"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Özel ders", imageName: "ozel_ders"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Saglik", imageName: "saglik"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Dugun", imageName: "dugun"))
-//        allServicesList.append(AllServicesCollectionViewCellModel(label: "Diger", imageName: "diger"))
-//
-//        let allServicesViewModel = AllServicesViewModel(titleLabel: "All Services", serviceList: allServicesList)
-//        allServicesView.configure(with: allServicesViewModel)
-//    }
-//
+
     private func fetchServicesPageData() {
         ServiceManager.shared.execute(.Home.homeRequest, expecting: ServicesResponseModel.self) { [weak self] result in
             switch result {
