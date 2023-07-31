@@ -10,9 +10,12 @@ import UIKit
 
 protocol ServicesPresenterOutput: AnyObject {
     func presentAllServices(viewModel: AllServicesViewModel)
-    //func presenter(didRetrieveItem item: String)
-    //func presenter(didFailRetrieveItem message: String)
+    func presentHeaderView(viewModel: ServicesHeaderViewModel)
+    func presentCampaignView(viewModel: CampaignViewModel)
+    func presentPopularServicesView(viewModel: PopularServicesViewModel)
+    func presentPostView(viewModel: PostsViewModel)
 }
+
 
 final class ServicesViewController: UIViewController {
     
@@ -33,23 +36,31 @@ final class ServicesViewController: UIViewController {
     
     // MARK: - Properties
     var servicesView: ServicesView?
-    var interactor: ServicesBusinessLogic?
-    weak var presenter: ServicesPresenter?
-    var router: ServicesRouter?
+    var interactor: ServicesInteractorProtocol?
+    weak var presenter: ServicesPresenterProtocol?
+    var router: ServicesRouterProtocol?
 }
 
 // MARK: - Presenter Output
 extension ServicesViewController: ServicesPresenterOutput {
+ 
     func presentAllServices(viewModel: AllServicesViewModel) {
         servicesView?.displayFetchedAllServices(viewModel: viewModel)
     }
-    /*
-    func presenter(didRetrieveItem item: String) {
-        //titleDetailView?.updateLabel(with: item)
+    
+    func presentHeaderView(viewModel: ServicesHeaderViewModel) {
+        servicesView?.displayHeaderView(viewModel: viewModel)
+    }
+    
+    func presentCampaignView(viewModel: CampaignViewModel) {
+        servicesView?.displayCampaingView(viewModel: viewModel)
     }
 
-    func presenter(didFailRetrieveItem message: String) {
-        //showError(with: message)
+    func presentPopularServicesView(viewModel: PopularServicesViewModel) {
+        servicesView?.displayPopularServicesView(viewModel: viewModel)
     }
-     */
+    
+    func presentPostView(viewModel: PostsViewModel) {
+        servicesView?.displayPostView(viewModel: viewModel)
+    }
 }

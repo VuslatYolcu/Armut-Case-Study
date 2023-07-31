@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol ServicesRouter {
+protocol ServicesRouterProtocol {
     
 }
 
-final class ServicesRouterImplementation: ServicesRouter {
+final class ServicesRouter: ServicesRouterProtocol {
     
 }

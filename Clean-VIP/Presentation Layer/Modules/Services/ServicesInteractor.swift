@@ -8,16 +8,20 @@
 
 import Foundation
 
-protocol ServicesBusinessLogic: AnyObject {
+protocol ServicesInteractorProtocol: AnyObject {
     func viewDidLoad()
 }
 
-final class ServicesInteractorImplementation: ServicesBusinessLogic {
+final class ServicesInteractor: ServicesInteractorProtocol {
     
-    var presenter: ServicesPresenter?
+    var presenter: ServicesPresenterProtocol?
     
     func viewDidLoad() {
         fetchAllServices()
+        setHeaderView()
+        setHeaderView()
+        setCampaignView()
+        fetchServicesPageData()
     }
 
     private func fetchAllServices() {
@@ -32,5 +36,53 @@ final class ServicesInteractorImplementation: ServicesBusinessLogic {
         allServicesList.append(AllServicesCollectionViewCellModel(label: "Diger", imageName: "diger"))
         
         presenter?.presentAllServices(allServicesTitle: "All Services", allServicesList: allServicesList)
+    }
+    
+    private func setHeaderView() {
+        presenter?.presentHeaderView(
+            titleLabel: "Hizmet piş \nağzıma düş",
+            imageName: "header",
+            searchBarPlaceHolder: "Which service do you need?"
+        )
+    }
+    
+    private func setCampaignView() {
+        presenter?.presentCampaignView(
+            imageName: "wedding",
+            discountRatio: "-15%",
+            bottomViewTitle: "FIRST TIME NEWLY WEDS",
+            bottomViewLabel: "WEDDING PHOTOGRAPHERS \nFROM 540TL"
+        )
+    }
+    
+    private func fetchServicesPageData() {
+        ServiceManager.shared.execute(.Home.homeRequest, expecting: ServicesResponseModel.self) { [weak self] result in
+            switch result {
+            case .success(let model):
+                DispatchQueue.main.async {
+                    self?.configurePopularServicesModel(popularServices: model.popularServices)
+                    self?.configurePostsModel(blogPostList: model.posts)
+                }
+                break
+            case .failure(let error):
+                // TODO: Handle error
+                print(error)
+                break
+            }
+        }
+    }
+    
+    private func configurePopularServicesModel(popularServices: [ServiceModel]) {
+        presenter?.presentPopularServicesView(
+            titleLabel: "Popular these days",
+            serviceList: popularServices
+        )
+    }
+    
+    private func configurePostsModel(blogPostList: [BlogPostModel]) {
+        presenter?.presentPostView(
+            titleLabel: "Latests from the blog",
+            blogPostsList: blogPostList
+        )
     }
 }

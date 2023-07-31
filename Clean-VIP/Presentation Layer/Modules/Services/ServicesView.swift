@@ -8,8 +8,12 @@
 
 import UIKit
 
-protocol ServicesDisplayLogic: AnyObject {
+protocol ServicesDisplayProtocol: AnyObject {
     func displayFetchedAllServices(viewModel: AllServicesViewModel)
+    func displayHeaderView(viewModel: ServicesHeaderViewModel)
+    func displayCampaingView(viewModel: CampaignViewModel)
+    func displayPopularServicesView(viewModel: PopularServicesViewModel)
+    func displayPostView(viewModel: PostsViewModel)
 }
 
 final class ServicesView: UIView {
@@ -62,8 +66,6 @@ final class ServicesView: UIView {
         return collectionView
     }()
     
-    var interactor: ServicesBusinessLogic?
-    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -89,8 +91,6 @@ extension ServicesView {
         scrollViewContainer.addArrangedSubview(postsView)
         setupConstraints()
         
-        configureHeaderViewModel()
-        configureCampaignViewModel()
         fetchServicesPageData()
     }
 
@@ -118,33 +118,6 @@ extension ServicesView {
             // this is important for scrolling
             scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
-        
-      
-    }
-    
-    private func configureHeaderViewModel() {
-        let headerViewModel = ServicesHeaderViewModel(
-            titleLabel: "Hizmet piş \nağzıma düş",
-            imageName: "header",
-            headerBackgroundColor: .systemGray6,
-            searchBarPlaceholder: "Which service do you need?",
-            searchBarIconColor: .systemGreen
-        )
-        headerView.configure(with: headerViewModel)
-    }
-    
-    private func configureCampaignViewModel() {
-        let campaignViewModel = CampaignViewModel(
-            imageName: "wedding",
-            discountRatio: "-15%",
-            bottomViewTitle: "FIRST TIME NEWLY WEDS",
-            bottomViewLabel: "WEDDING PHOTOGRAPHERS \nFROM 540TL"
-        )
-        campaignView.configure(with: campaignViewModel)
-    }
-    
-    public func configureAllServices(viewModel: AllServicesViewModel) {
-        allServicesView.configure(with: viewModel)
     }
 
     private func fetchServicesPageData() {
@@ -175,9 +148,24 @@ extension ServicesView {
     }
 }
 
-extension ServicesView: ServicesDisplayLogic {
+extension ServicesView: ServicesDisplayProtocol {
     func displayFetchedAllServices(viewModel: AllServicesViewModel) {
         allServicesView.configure(with: viewModel)
     }
     
+    func displayHeaderView(viewModel: ServicesHeaderViewModel) {
+        headerView.configure(with: viewModel)
+    }
+    
+    func displayCampaingView(viewModel: CampaignViewModel) {
+        campaignView.configure(with: viewModel)
+    }
+    
+    func displayPopularServicesView(viewModel: PopularServicesViewModel) {
+        popularServicesView.configure(with: viewModel)
+    }
+    
+    func displayPostView(viewModel: PostsViewModel) {
+        postsView.configure(with: viewModel)
+    }
 }
