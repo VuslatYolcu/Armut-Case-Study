@@ -75,6 +75,10 @@ final class ServicesView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    deinit {
+        print("Service is deinit")
+    }
 }
 
 // MARK: - UI Setup
@@ -90,8 +94,6 @@ extension ServicesView {
         scrollViewContainer.addArrangedSubview(popularServicesView)
         scrollViewContainer.addArrangedSubview(postsView)
         setupConstraints()
-        
-        fetchServicesPageData()
     }
 
     private func setupConstraints() {
@@ -120,32 +122,6 @@ extension ServicesView {
         ])
     }
 
-    private func fetchServicesPageData() {
-        ServiceManager.shared.execute(.Home.homeRequest, expecting: ServicesResponseModel.self) { [weak self] result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self?.configurePopularServicesModel(popularServices: model.popularServices)
-                    self?.configurePostsModel(blogPostList: model.posts)
-                }
-                break
-            case .failure(let error):
-                // TODO: Handle error
-                print(error)
-                break
-            }
-        }
-    }
-    
-    private func configurePopularServicesModel(popularServices: [ServiceModel]) {
-        let popularServicesViewModel = PopularServicesViewModel(titleLabel: "Popular these days", serviceList: popularServices)
-        popularServicesView.configure(with: popularServicesViewModel)
-    }
-    
-    private func configurePostsModel(blogPostList: [BlogPostModel]) {
-        let postViewModel = PostsViewModel(titleLabel: "Latests from the blog", blogPostsList: blogPostList)
-        postsView.configure(with: postViewModel)
-    }
 }
 
 extension ServicesView: ServicesDisplayProtocol {

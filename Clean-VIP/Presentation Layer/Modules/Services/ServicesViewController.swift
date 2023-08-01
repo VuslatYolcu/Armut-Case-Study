@@ -19,13 +19,19 @@ protocol ServicesPresenterOutput: AnyObject {
 
 final class ServicesViewController: UIViewController {
     
+    // MARK: - Properties
+    var servicesView: ServicesView?
+    var interactor: ServicesInteractorProtocol?
+    weak var presenter: ServicesPresenterProtocol?
+    var router: ServicesRouterProtocol?
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        ServicesConfigurator.configureModule(viewController: self)
         self.view = servicesView
         self.interactor?.viewDidLoad()
         /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
-        ServicesConfigurator.configureModule(viewController: self)
         self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
         self.tabBarController?.navigationItem.title?.removeAll()
     }
@@ -33,12 +39,7 @@ final class ServicesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    // MARK: - Properties
-    var servicesView: ServicesView?
-    var interactor: ServicesInteractorProtocol?
-    weak var presenter: ServicesPresenterProtocol?
-    var router: ServicesRouterProtocol?
+
 }
 
 // MARK: - Presenter Output

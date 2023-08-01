@@ -60,4 +60,8 @@ final class ServicesPresenter: ServicesPresenterProtocol {
         )
         viewController?.presentPostView(viewModel: postViewModel)
     }
+    
+    deinit {
+        print("ServicesPresenter is deinit")
+    }
 }
