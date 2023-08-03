@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ServicesViewDelegate: AnyObject {
+    func didSelectService(index at: Int)
+}
+
 protocol ServicesDisplayProtocol: AnyObject {
     func displayFetchedAllServices(viewModel: AllServicesViewModel)
     func displayHeaderView(viewModel: ServicesHeaderViewModel)
@@ -66,10 +70,13 @@ final class ServicesView: UIView {
         return collectionView
     }()
     
+    weak var delegate: ServicesViewDelegate?
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        allServicesView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -143,5 +150,11 @@ extension ServicesView: ServicesDisplayProtocol {
     
     func displayPostView(viewModel: PostsViewModel) {
         postsView.configure(with: viewModel)
+    }
+}
+
+extension ServicesView: AllServicesViewDelegate {
+    func didSelectService(at index: Int) {
+        delegate?.didSelectService(index: index)
     }
 }

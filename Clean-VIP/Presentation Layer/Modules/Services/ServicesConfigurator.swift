@@ -10,17 +10,21 @@ import Foundation
 
 final class ServicesConfigurator {
     static func configureModule(viewController: ServicesViewController) {
-        let view = ServicesView()
+        let servicesView = ServicesView()
         let router = ServicesRouter()
         let interactor = ServicesInteractor()
         let presenter = ServicesPresenter()
         
-        viewController.servicesView = view
+        viewController.servicesView = servicesView
         viewController.router = router
         viewController.interactor = interactor
+        viewController.view = servicesView
         
         interactor.presenter = presenter
         
         presenter.viewController = viewController
+        servicesView.delegate = viewController
+        
+        router.navigationController = viewController.navigationController
     }
 }

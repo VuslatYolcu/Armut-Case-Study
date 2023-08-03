@@ -14,6 +14,7 @@ protocol ServicesPresenterProtocol: AnyObject {
     func presentCampaignView(imageName: String, discountRatio: String, bottomViewTitle: String, bottomViewLabel: String)
     func presentPopularServicesView(titleLabel: String, serviceList: [ServiceModel])
     func presentPostView(titleLabel: String, blogPostsList: [BlogPostModel])
+    func presentServiceDetails()
 }
 
 final class ServicesPresenter: ServicesPresenterProtocol {
@@ -59,6 +60,10 @@ final class ServicesPresenter: ServicesPresenterProtocol {
             blogPostsList: blogPostsList
         )
         viewController?.presentPostView(viewModel: postViewModel)
+    }
+    
+    func presentServiceDetails() {
+        viewController?.displayServiceDetails()
     }
     
     deinit {

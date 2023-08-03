@@ -248,6 +248,13 @@
 			path = CampaignView;
 			sourceTree = "<group>";
 		};
+		119106752A79941A00296BD8 /* ServiceDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceDetails;
+			sourceTree = "<group>";
+		};
 		11A3CFA32A5B11A6001EA591 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +416,7 @@
 		1CCAC465247D6A36009AC08C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				119106752A79941A00296BD8 /* ServiceDetails */,
 				11EF601C2A42254900A7F66F /* Profiles */,
 				11EF60112A4222C900A7F66F /* Notifications */,
 				11EF60062A42216900A7F66F /* Jobs */,

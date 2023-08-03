@@ -14,8 +14,8 @@ protocol ServicesPresenterOutput: AnyObject {
     func presentCampaignView(viewModel: CampaignViewModel)
     func presentPopularServicesView(viewModel: PopularServicesViewModel)
     func presentPostView(viewModel: PostsViewModel)
+    func displayServiceDetails()
 }
-
 
 final class ServicesViewController: UIViewController {
     
@@ -29,7 +29,6 @@ final class ServicesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ServicesConfigurator.configureModule(viewController: self)
-        self.view = servicesView
         self.interactor?.viewDidLoad()
         /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
         self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
@@ -38,6 +37,10 @@ final class ServicesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    deinit {
+        print("deinit is called")
     }
 
 }
@@ -63,5 +66,15 @@ extension ServicesViewController: ServicesPresenterOutput {
     
     func presentPostView(viewModel: PostsViewModel) {
         servicesView?.displayPostView(viewModel: viewModel)
+    }
+    
+    func displayServiceDetails() {
+        self.router?.routeToServiceDetail(with: "2")
+    }
+}
+
+extension ServicesViewController: ServicesViewDelegate {
+    func didSelectService(index at: Int) {
+        self.interactor?.fetchServiceDetails()
     }
 }
