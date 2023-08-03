@@ -8,18 +8,75 @@
 
 import Foundation
 
-protocol ServicesPresenter: AnyObject {
+protocol ServicesPresenterProtocol: AnyObject {
     func presentAllServices(allServicesTitle: String, allServicesList: [AllServicesCollectionViewCellModel])
+    func presentHeaderView(titleLabel: String, imageName: String, searchBarPlaceHolder: String)
+    func presentCampaignView(imageName: String, discountRatio: String, bottomViewTitle: String, bottomViewLabel: String)
+    func presentPopularServicesView(titleLabel: String, serviceList: [ServiceModel])
+    func presentPostView(titleLabel: String, blogPostsList: [BlogPostModel])
+    func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel)
 }
 
-final class ServicesPresenterImplementation: ServicesPresenter {
+final class ServicesPresenter: ServicesPresenterProtocol {
     var viewController: ServicesPresenterOutput?
     
-    // MARK: - Present All Services
     func presentAllServices(allServicesTitle: String, allServicesList: [AllServicesCollectionViewCellModel]) {
-        
         let viewModel = AllServicesViewModel(titleLabel: allServicesTitle, serviceList: allServicesList)
         viewController?.presentAllServices(viewModel: viewModel)
-        //viewController?.displayFetchedAllServices(viewModel: viewModel)
+    }
+    
+    func presentHeaderView(titleLabel: String, imageName: String, searchBarPlaceHolder: String) {
+        let headerViewModel = ServicesHeaderViewModel(
+            titleLabel: titleLabel,
+            imageName: imageName,
+            headerBackgroundColor: .systemGray6,
+            searchBarPlaceholder: searchBarPlaceHolder,
+            searchBarIconColor: .systemGreen
+        )
+        viewController?.presentHeaderView(viewModel: headerViewModel)
+    }
+    
+    func presentCampaignView(imageName: String, discountRatio: String, bottomViewTitle: String, bottomViewLabel: String) {
+        let campaignViewModel = CampaignViewModel(
+            imageName: imageName,
+            discountRatio: discountRatio,
+            bottomViewTitle: bottomViewTitle,
+            bottomViewLabel: bottomViewLabel
+        )
+        viewController?.presentCampaignView(viewModel: campaignViewModel)
+    }
+    
+    func presentPopularServicesView(titleLabel: String, serviceList: [ServiceModel]) {
+        let popularServicesViewModel = PopularServicesViewModel(
+            titleLabel: "Popular these days",
+            serviceList: serviceList
+        )
+        viewController?.presentPopularServicesView(viewModel: popularServicesViewModel)
+    }
+    
+    func presentPostView(titleLabel: String, blogPostsList: [BlogPostModel]) {
+        let postViewModel = PostsViewModel(
+            titleLabel: titleLabel,
+            blogPostsList: blogPostsList
+        )
+        viewController?.presentPostView(viewModel: postViewModel)
+    }
+    
+    func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel) {
+        let serviceDetailsViewModel = ServiceDetailsViewModel(
+            id: serviceDetail.id,
+            serviceID: serviceDetail.serviceID,
+            name: serviceDetail.name,
+            longName: serviceDetail.longName,
+            imageURL: serviceDetail.imageURL,
+            proCount: serviceDetail.proCount,
+            averageRating: serviceDetail.averageRating,
+            completedJobsOnLastMonth: serviceDetail.completedJobsOnLastMonth
+        )
+        viewController?.displayServiceDetails(viewModel: serviceDetailsViewModel)
+    }
+    
+    deinit {
+        print("ServicesPresenter - deinit")
     }
 }

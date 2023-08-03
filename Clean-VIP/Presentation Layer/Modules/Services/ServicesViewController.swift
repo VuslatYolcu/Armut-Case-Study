@@ -10,19 +10,27 @@ import UIKit
 
 protocol ServicesPresenterOutput: AnyObject {
     func presentAllServices(viewModel: AllServicesViewModel)
-    //func presenter(didRetrieveItem item: String)
-    //func presenter(didFailRetrieveItem message: String)
+    func presentHeaderView(viewModel: ServicesHeaderViewModel)
+    func presentCampaignView(viewModel: CampaignViewModel)
+    func presentPopularServicesView(viewModel: PopularServicesViewModel)
+    func presentPostView(viewModel: PostsViewModel)
+    func displayServiceDetails(viewModel: ServiceDetailsViewModel)
 }
 
 final class ServicesViewController: UIViewController {
     
+    // MARK: - Properties
+    var servicesView: ServicesView?
+    var interactor: ServicesInteractorProtocol?
+    weak var presenter: ServicesPresenterProtocol?
+    var router: ServicesRouterProtocol?
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = servicesView
+        ServicesConfigurator.configureModule(viewController: self)
         self.interactor?.viewDidLoad()
         /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
-        ServicesConfigurator.configureModule(viewController: self)
         self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
         self.tabBarController?.navigationItem.title?.removeAll()
     }
@@ -31,25 +39,42 @@ final class ServicesViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    // MARK: - Properties
-    var servicesView: ServicesView?
-    var interactor: ServicesBusinessLogic?
-    weak var presenter: ServicesPresenter?
-    var router: ServicesRouter?
+    deinit {
+        print("deinit is called")
+    }
+
 }
 
 // MARK: - Presenter Output
 extension ServicesViewController: ServicesPresenterOutput {
+ 
     func presentAllServices(viewModel: AllServicesViewModel) {
         servicesView?.displayFetchedAllServices(viewModel: viewModel)
     }
-    /*
-    func presenter(didRetrieveItem item: String) {
-        //titleDetailView?.updateLabel(with: item)
+    
+    func presentHeaderView(viewModel: ServicesHeaderViewModel) {
+        servicesView?.displayHeaderView(viewModel: viewModel)
+    }
+    
+    func presentCampaignView(viewModel: CampaignViewModel) {
+        servicesView?.displayCampaingView(viewModel: viewModel)
     }
 
-    func presenter(didFailRetrieveItem message: String) {
-        //showError(with: message)
+    func presentPopularServicesView(viewModel: PopularServicesViewModel) {
+        servicesView?.displayPopularServicesView(viewModel: viewModel)
     }
-     */
+    
+    func presentPostView(viewModel: PostsViewModel) {
+        servicesView?.displayPostView(viewModel: viewModel)
+    }
+    
+    func displayServiceDetails(viewModel: ServiceDetailsViewModel) {
+        self.router?.routeToServiceDetail(with: "2")
+    }
+}
+
+extension ServicesViewController: ServicesViewDelegate {
+    func didSelectService(index at: Int) {
+        self.interactor?.fetchServiceDetails(at: at)
+    }
 }

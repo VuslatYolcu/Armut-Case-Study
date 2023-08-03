@@ -29,7 +29,7 @@ extension TabBarViewController {
     private func setupTabs() {
        
         let servicesVC = ServicesViewController()
-        let jobsVC = TitleDetailViewController()
+        let jobsVC = TitlesViewController()
         let notificationsVC = NotificationsViewController()
         let profilesVC = ProfilesViewController()
         

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AllServicesViewDelegate: AnyObject {
+    func didSelectService(at index: Int)
+}
+
 final class AllServicesView: UIView {
     
     // MARK: - Properties
@@ -27,6 +31,8 @@ final class AllServicesView: UIView {
         collectionView.register(AllServicesCollectionViewCell.self, forCellWithReuseIdentifier: AllServicesCollectionViewCell.cellIdentifier)
         return collectionView
     }()
+    
+    weak var delegate: AllServicesViewDelegate?
     
     private let itemsPerRow: Int = 4
     private var sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
@@ -95,8 +101,8 @@ extension AllServicesView: UICollectionViewDataSource {
 
 extension AllServicesView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectService(at: indexPath.row)
         collectionView.deselectItem(at: indexPath, animated: true)
-        // Handle cell tap
     }
 }
 

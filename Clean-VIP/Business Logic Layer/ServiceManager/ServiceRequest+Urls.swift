@@ -13,6 +13,6 @@ extension ServiceRequest {
     }
     
     struct ServiceDetail {
-        static let homeRequest = ServiceRequest(endpoint: .home)
+        static let getServiceDetail = ServiceRequest(endpoint: .service)
     }
 }
