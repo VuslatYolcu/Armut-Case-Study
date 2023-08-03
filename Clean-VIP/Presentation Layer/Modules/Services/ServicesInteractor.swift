@@ -10,20 +10,12 @@ import Foundation
 
 protocol ServicesInteractorProtocol: AnyObject {
     func viewDidLoad()
-    func fetchServiceDetails()
+    func fetchServiceDetails(at index: Int)
 }
 
-final class ServicesInteractor: ServicesInteractorProtocol {
+final class ServicesInteractor {
     
     var presenter: ServicesPresenterProtocol?
-    
-    func viewDidLoad() {
-        fetchServices()
-        fetchAllServices()
-        setHeaderView()
-        setHeaderView()
-        setCampaignView()
-    }
 
     private func fetchAllServices() {
         var allServicesList = [AllServicesCollectionViewCellModel]()
@@ -92,11 +84,59 @@ final class ServicesInteractor: ServicesInteractorProtocol {
         )
     }
     
-    func fetchServiceDetails() {
-        presenter?.presentServiceDetails()
+    private func getServiceDetails(index: Int) {
+        guard index < ServiceId.allCases.count else {
+            return
+        }
+        let serviceId = ServiceId.allCases[index]
+        
+        let request = ServiceRequest.init(
+            endpoint: .service,
+            pathComponents:[serviceId.rawValue],
+            queryParameters: []
+        )
+        
+        ServiceManager.shared.execute(
+            request,
+            expecting: ServiceDetailsResponseModel.self)
+        { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let model):
+                DispatchQueue.main.async {
+                    strongSelf.presenter?.presentServiceDetails(serviceDetail: model)
+                }
+                break
+            case .failure(let error):
+                // TODO: Handle error
+                print(error)
+                break
+            }
+        }
     }
     
-    deinit {
-        print("ServicesInteractor is deinit")
+}
+
+extension ServicesInteractor: ServicesInteractorProtocol {
+    func viewDidLoad() {
+        fetchServices()
+        fetchAllServices()
+        setHeaderView()
+        setHeaderView()
+        setCampaignView()
     }
+    
+    func fetchServiceDetails(at index: Int) {
+        getServiceDetails(index: index)
+    }
+}
+
+enum ServiceId: String, CaseIterable {
+    case tadilat = "208"
+    case temizlik = "191"
+    case nakliyat = "142"
+    case tamir = "533"
+    case ozel_ders = "608"
+    case dugun = "59"
+    case evlilik = "5819"
 }

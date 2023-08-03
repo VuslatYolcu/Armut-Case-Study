@@ -14,7 +14,7 @@ protocol ServicesPresenterProtocol: AnyObject {
     func presentCampaignView(imageName: String, discountRatio: String, bottomViewTitle: String, bottomViewLabel: String)
     func presentPopularServicesView(titleLabel: String, serviceList: [ServiceModel])
     func presentPostView(titleLabel: String, blogPostsList: [BlogPostModel])
-    func presentServiceDetails()
+    func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel)
 }
 
 final class ServicesPresenter: ServicesPresenterProtocol {
@@ -62,11 +62,21 @@ final class ServicesPresenter: ServicesPresenterProtocol {
         viewController?.presentPostView(viewModel: postViewModel)
     }
     
-    func presentServiceDetails() {
-        viewController?.displayServiceDetails()
+    func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel) {
+        let serviceDetailsViewModel = ServiceDetailsViewModel(
+            id: serviceDetail.id,
+            serviceID: serviceDetail.serviceID,
+            name: serviceDetail.name,
+            longName: serviceDetail.longName,
+            imageURL: serviceDetail.imageURL,
+            proCount: serviceDetail.proCount,
+            averageRating: serviceDetail.averageRating,
+            completedJobsOnLastMonth: serviceDetail.completedJobsOnLastMonth
+        )
+        viewController?.displayServiceDetails(viewModel: serviceDetailsViewModel)
     }
     
     deinit {
-        print("ServicesPresenter is deinit")
+        print("ServicesPresenter - deinit")
     }
 }

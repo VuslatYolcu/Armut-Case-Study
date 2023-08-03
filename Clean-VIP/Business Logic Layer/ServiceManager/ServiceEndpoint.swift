@@ -12,4 +12,5 @@ import Foundation
 @frozen enum ServiceEndpoint: String, CaseIterable, Hashable {
     
     case home
+    case service
 }

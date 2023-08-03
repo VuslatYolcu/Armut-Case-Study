@@ -37,6 +37,8 @@
 		11D8A93A2A6709D300DFB117 /* PostsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A9392A6709D300DFB117 /* PostsImageView.swift */; };
 		11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A93B2A67136400DFB117 /* PostsViewModel.swift */; };
 		11D8A93E2A67399A00DFB117 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */; };
+		11DF74182A7C3C7800A67E45 /* ServiceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF74172A7C3C7800A67E45 /* ServiceDetailsViewModel.swift */; };
+		11DF741A2A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
 		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
 		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
@@ -111,6 +113,8 @@
 		11D8A9392A6709D300DFB117 /* PostsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsImageView.swift; sourceTree = "<group>"; };
 		11D8A93B2A67136400DFB117 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		11DF74172A7C3C7800A67E45 /* ServiceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModel.swift; sourceTree = "<group>"; };
+		11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsResponseModel.swift; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		119106752A79941A00296BD8 /* ServiceDetails */ = {
 			isa = PBXGroup;
 			children = (
+				11DF74162A7C3C6400A67E45 /* Models */,
 			);
 			path = ServiceDetails;
 			sourceTree = "<group>";
@@ -275,6 +280,15 @@
 				11D8A93B2A67136400DFB117 /* PostsViewModel.swift */,
 			);
 			path = PostsView;
+			sourceTree = "<group>";
+		};
+		11DF74162A7C3C6400A67E45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11DF74172A7C3C7800A67E45 /* ServiceDetailsViewModel.swift */,
+				11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		11EF5FF82A421E6000A7F66F /* Dashboard */ = {
@@ -558,6 +572,7 @@
 				1CEF92AE2480EF4200643631 /* Model.xcdatamodeld in Sources */,
 				111B224E2A64067A001E88D5 /* CacheManager.swift in Sources */,
 				11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */,
+				11DF741A2A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift in Sources */,
 				115AEDB82A75842B00B66099 /* NotificationsConfigurator.swift in Sources */,
 				11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */,
 				111B22552A6424BD001E88D5 /* ServiceRequest+Urls.swift in Sources */,
@@ -611,6 +626,7 @@
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
 				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,
+				11DF74182A7C3C7800A67E45 /* ServiceDetailsViewModel.swift in Sources */,
 				11D8A93E2A67399A00DFB117 /* UIView+Extensions.swift in Sources */,
 				11D8A9332A66EFB900DFB117 /* CachedImageLoader.swift in Sources */,
 				11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */,
