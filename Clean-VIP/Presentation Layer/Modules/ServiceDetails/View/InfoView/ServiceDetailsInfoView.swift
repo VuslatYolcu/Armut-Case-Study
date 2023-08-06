@@ -10,12 +10,6 @@ import UIKit
 
 final class ServiceDetailsInfoView: UIView {
     
-//    private let imageView: ServicesImageView = {
-//        let imageView = ServicesImageView()
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -27,8 +21,7 @@ final class ServiceDetailsInfoView: UIView {
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .medium)
-        label.textColor = .white
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         label.numberOfLines = 0
         return label
     }()
@@ -48,8 +41,8 @@ final class ServiceDetailsInfoView: UIView {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 10),
-            imageView.widthAnchor.constraint(equalToConstant: 10),
+            imageView.heightAnchor.constraint(equalToConstant: 20),
+            imageView.widthAnchor.constraint(equalToConstant: 20),
             imageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             imageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)
         ])
@@ -57,18 +50,17 @@ final class ServiceDetailsInfoView: UIView {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
             label.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
+            label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            label.heightAnchor.constraint(equalToConstant: 20)
         ])
 
     }
     
-    public func configure(viewModel: ServiceDetailsHeaderViewModel) {
-        imageView.image = UIImage(named: viewModel.imageURL)
-        label.text =
-        guard let headerImageUrl = viewModel.imageURL, let imageUrl = URL(string: headerImageUrl) else { return }
-        imageView.configure(with: imageUrl)
-        titleLabel.text = viewModel.title
-        imageView.addFadingEffectToBottom(width: imageView.frame.size.width, height: imageView.frame.size.height)
+    public func configure(viewModel: ServiceDetailsInfoViewModel) {
+        let imageName = viewModel.type.info.imageName
+        imageView.image = UIImage(named: imageName)
+        let infoLabel = String(format: viewModel.type.info.text, viewModel.label)
+        label.text = infoLabel
     }
 
 }

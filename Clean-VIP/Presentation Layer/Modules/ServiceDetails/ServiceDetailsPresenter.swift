@@ -11,6 +11,7 @@ import Foundation
 protocol ServiceDetailsPresenterProtocol: AnyObject {
     func presentHeaderView(titleLabel: String, imageUrl: String)
     func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel)
+    func presentInfoView(label: String, type: ServiceDetailsInfoType)
 }
 
 final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
@@ -33,6 +34,14 @@ final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
             completedJobsOnLastMonth: serviceDetail.completedJobsOnLastMonth
         )
         viewController?.displayServiceDetails(viewModel: serviceDetailsViewModel)
+    }
+    
+    func presentInfoView(label: String, type: ServiceDetailsInfoType) {
+        let viewModel = ServiceDetailsInfoViewModel(
+            label: label,
+            type: type
+        )
+        viewController?.presentInfoView(viewModel: viewModel)
     }
 }
 

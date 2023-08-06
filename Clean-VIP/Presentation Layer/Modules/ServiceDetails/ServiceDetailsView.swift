@@ -14,6 +14,7 @@ protocol ServiceDetailsViewDelegate: AnyObject {
 
 protocol ServiceDetailsDisplayProtocol: AnyObject {
     func displayHeaderView(viewModel: ServiceDetailsHeaderViewModel)
+    func displayInfoViews(viewModel: ServiceDetailsInfoViewModel)
 }
 
 final class ServiceDetailsView: UIView {
@@ -42,6 +43,13 @@ final class ServiceDetailsView: UIView {
         return headerView
     }()
     
+    private let infoView: ServiceDetailsInfoView = {
+        let infoView = ServiceDetailsInfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        infoView.backgroundColor = .systemPink
+        return infoView
+    }()
+    
     weak var delegate: ServiceDetailsViewDelegate?
     
     // MARK: - Initialization
@@ -67,12 +75,14 @@ extension ServiceDetailsView {
         scrollView.addSubview(scrollViewContainer)
         
         scrollViewContainer.addArrangedSubview(headerView)
+        scrollViewContainer.addArrangedSubview(infoView)
         setupConstraints()
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             headerView.heightAnchor.constraint(equalToConstant: 220),
+            infoView.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         NSLayoutConstraint.activate([
@@ -98,6 +108,10 @@ extension ServiceDetailsView: ServiceDetailsDisplayProtocol {
     
     func displayHeaderView(viewModel: ServiceDetailsHeaderViewModel) {
         headerView.configure(viewModel: viewModel)
+    }
+    
+    func displayInfoViews(viewModel: ServiceDetailsInfoViewModel) {
+        infoView.configure(viewModel: viewModel)
     }
 }
 

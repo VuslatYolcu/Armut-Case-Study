@@ -7,16 +7,30 @@
 //
 
 struct ServiceDetailsInfoViewModel {
-    let imageName: String?
     let label: String
     let type: ServiceDetailsInfoType
 }
 
 enum ServiceDetailsInfoType: String, CodingKey {
-    case professionals = "{0} pros near you"
-    case rating = "{0} average rating"
-    case completedJobs = "Last month {0} cleaning job completed"
-    case charge = "Free of charge"
-    case serviceGuaranteed = "Service Guaranteed"
+    case professionals
+    case rating
+    case completedJobs
+    case freeCharge
+    case serviceGuaranteed
+    
+    var info: (text: String, imageName: String) {
+        switch self {
+        case .professionals:
+            return ("%@ pros near you", "professional")
+        case .rating:
+            return ("%@ average rating", "star")
+        case .completedJobs:
+            return ("Last month %@ cleaning job completed", "completedJob")
+        case .freeCharge:
+            return ("Free of charge", "freeCharge")
+        case .serviceGuaranteed:
+            return ("Service Guaranteed", "serviceGuaranteed")
+        }
+    }
 }
 
