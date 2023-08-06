@@ -10,26 +10,18 @@ import Foundation
 
 protocol ServiceDetailsInteractorProtocol: AnyObject {
     func viewDidLoad()
-    func fetchServiceDetails(at index: Int)
 }
 
 final class ServiceDetailsInteractor {
     
+    var serviceId: Int?
     var presenter: ServiceDetailsPresenterProtocol?
-
-
-    private func setHeaderView() {
-        presenter?.presentHeaderView(
-            titleLabel: "Hizmet piş \nağzıma düş",
-            imageName: "header",
-            searchBarPlaceHolder: "Which service do you need?"
-        )
-    }
     
     private func getServiceDetails(index: Int) {
         guard index < ServiceId.allCases.count else {
             return
         }
+        
         let serviceId = ServiceId.allCases[index]
         
         let request = ServiceRequest.init(
@@ -57,14 +49,20 @@ final class ServiceDetailsInteractor {
         }
     }
     
+    private func setHeaderView() {
+        presenter?.presentHeaderView(
+            titleLabel: "Hizmet piş \nağzıma düş",
+            imageName: "header",
+            searchBarPlaceHolder: "Which service do you need?"
+        )
+    }
+    
 }
 
 extension ServiceDetailsInteractor: ServiceDetailsInteractorProtocol {
     func viewDidLoad() {
-        setHeaderView()    }
-    
-    func fetchServiceDetails(at index: Int) {
-        getServiceDetails(index: index)
+        guard let serviceId = serviceId else { return }
+        getServiceDetails(index: serviceId)
     }
 }
 

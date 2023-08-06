@@ -22,11 +22,15 @@ final class ServiceDetailsViewController: UIViewController {
     var router: ServiceDetailsRouterProtocol?
     
     // MARK: - Lifecycle Methods
+    override func loadView() {
+        super.loadView()
+        self.view = servicesView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ServiceDetailsConfigurator.configureModule(viewController: self)
+        
         self.interactor?.viewDidLoad()
-        /// I want to call configurator from router but I could not find a way to call configureModule from UITabBarItem.
         self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
         self.tabBarController?.navigationItem.title?.removeAll()
     }
@@ -49,13 +53,13 @@ extension ServiceDetailsViewController: ServiceDetailsPresenterOutput {
     }
     
     func displayServiceDetails(viewModel: ServiceDetailsViewModel) {
-        self.router?.routeToServiceDetail(with: "2")
+        //self.router?.routeToServiceDetail(with: "2")
     }
 }
 
 extension ServiceDetailsViewController: ServiceDetailsViewDelegate {
     func didSelectService(index at: Int) {
-        self.interactor?.fetchServiceDetails(at: at)
+        //self.interactor?.fetchServiceDetails(at: at)
     }
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 
 final class ServiceDetailsConfigurator {
-    static func configureModule(viewController: ServiceDetailsViewController) {
+    static func configureModule(serviceId: Int?, viewController: ServiceDetailsViewController) {
         let view = ServiceDetailsView()
         let router = ServiceDetailsRouter()
         let interactor = ServiceDetailsInteractor()
@@ -18,9 +18,9 @@ final class ServiceDetailsConfigurator {
         viewController.servicesView = view
         viewController.router = router
         viewController.interactor = interactor
-        viewController.view = view
         
         interactor.presenter = presenter
+        interactor.serviceId = serviceId
         
         presenter.viewController = viewController
         view.delegate = viewController

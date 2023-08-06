@@ -10,7 +10,6 @@ import Foundation
 
 protocol ServicesInteractorProtocol: AnyObject {
     func viewDidLoad()
-    func fetchServiceDetails(at index: Int)
 }
 
 final class ServicesInteractor {
@@ -83,38 +82,6 @@ final class ServicesInteractor {
             blogPostsList: blogPostList
         )
     }
-    
-    private func getServiceDetails(index: Int) {
-        guard index < ServiceId.allCases.count else {
-            return
-        }
-        let serviceId = ServiceId.allCases[index]
-        
-        let request = ServiceRequest.init(
-            endpoint: .service,
-            pathComponents:[serviceId.rawValue],
-            queryParameters: []
-        )
-        
-        ServiceManager.shared.execute(
-            request,
-            expecting: ServiceDetailsResponseModel.self)
-        { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    strongSelf.presenter?.presentServiceDetails(serviceDetail: model)
-                }
-                break
-            case .failure(let error):
-                // TODO: Handle error
-                print(error)
-                break
-            }
-        }
-    }
-    
 }
 
 extension ServicesInteractor: ServicesInteractorProtocol {
@@ -124,10 +91,6 @@ extension ServicesInteractor: ServicesInteractorProtocol {
         setHeaderView()
         setHeaderView()
         setCampaignView()
-    }
-    
-    func fetchServiceDetails(at index: Int) {
-        getServiceDetails(index: index)
     }
 }
 

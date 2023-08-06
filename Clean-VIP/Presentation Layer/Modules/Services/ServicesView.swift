@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ServicesViewDelegate: AnyObject {
-    func didSelectService(index at: Int)
+    func didSelectService(at index: Int)
 }
 
 protocol ServicesDisplayProtocol: AnyObject {
@@ -155,6 +155,6 @@ extension ServicesView: ServicesDisplayProtocol {
 
 extension ServicesView: AllServicesViewDelegate {
     func didSelectService(at index: Int) {
-        delegate?.didSelectService(index: index)
+        delegate?.didSelectService(at: index)
     }
 }

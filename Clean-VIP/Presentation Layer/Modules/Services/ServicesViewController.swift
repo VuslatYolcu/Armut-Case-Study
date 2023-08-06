@@ -14,7 +14,6 @@ protocol ServicesPresenterOutput: AnyObject {
     func presentCampaignView(viewModel: CampaignViewModel)
     func presentPopularServicesView(viewModel: PopularServicesViewModel)
     func presentPostView(viewModel: PostsViewModel)
-    func displayServiceDetails(viewModel: ServiceDetailsViewModel)
 }
 
 final class ServicesViewController: UIViewController {
@@ -67,14 +66,10 @@ extension ServicesViewController: ServicesPresenterOutput {
     func presentPostView(viewModel: PostsViewModel) {
         servicesView?.displayPostView(viewModel: viewModel)
     }
-    
-    func displayServiceDetails(viewModel: ServiceDetailsViewModel) {
-        self.router?.routeToServiceDetail(with: "2")
-    }
 }
 
 extension ServicesViewController: ServicesViewDelegate {
-    func didSelectService(index at: Int) {
-        self.interactor?.fetchServiceDetails(at: at)
+    func didSelectService(at index: Int) {
+        self.router?.routeToServiceDetail(with: index)
     }
 }

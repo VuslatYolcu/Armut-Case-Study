@@ -10,17 +10,15 @@ import UIKit
 
 protocol ServicesRouterProtocol: AnyObject {
     var navigationController: UINavigationController? { get }
-    
-    func routeToServiceDetail(with id: String)
+    func routeToServiceDetail(with id: Int)
 }
 
 final class ServicesRouter: ServicesRouterProtocol {
     weak var navigationController: UINavigationController?
     
-    func routeToServiceDetail(with serviceId: String) {
+    func routeToServiceDetail(with serviceId: Int) {
         let viewController = ServiceDetailsViewController()
-        ServiceDetailsConfigurator.configureModule(viewController: viewController)
+        ServiceDetailsConfigurator.configureModule(serviceId: serviceId, viewController: viewController)
         navigationController?.pushViewController(viewController, animated: false)
     }
 }
-
