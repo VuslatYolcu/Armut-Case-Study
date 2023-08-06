@@ -39,6 +39,8 @@
 		11D8A93E2A67399A00DFB117 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */; };
 		11DF74182A7C3C7800A67E45 /* ServiceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF74172A7C3C7800A67E45 /* ServiceDetailsViewModel.swift */; };
 		11DF741A2A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */; };
+		11E630702A7FE62400182C8C /* ServiceDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6306F2A7FE62400182C8C /* ServiceDetailsHeaderView.swift */; };
+		11E630722A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E630712A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
 		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
 		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
@@ -66,8 +68,6 @@
 		11F5C4352A7F990700E031AF /* ServiceDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4342A7F990700E031AF /* ServiceDetailsRouter.swift */; };
 		11F5C4372A7F991400E031AF /* ServiceDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4362A7F991400E031AF /* ServiceDetailsInteractor.swift */; };
 		11F5C4392A7F991B00E031AF /* ServiceDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */; };
-		11F5C43C2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C43B2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift */; };
-		11F5C43E2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C43D2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift */; };
 		11F5C4402A7FDF2A00E031AF /* ServiceDetailsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C43F2A7FDF2A00E031AF /* ServiceDetailsInfoView.swift */; };
 		11F5C4442A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4432A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift */; };
 		11F9200B2A680206005B8918 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */; };
@@ -125,6 +125,8 @@
 		11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		11DF74172A7C3C7800A67E45 /* ServiceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsResponseModel.swift; sourceTree = "<group>"; };
+		11E6306F2A7FE62400182C8C /* ServiceDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderView.swift; sourceTree = "<group>"; };
+		11E630712A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +154,6 @@
 		11F5C4342A7F990700E031AF /* ServiceDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsRouter.swift; sourceTree = "<group>"; };
 		11F5C4362A7F991400E031AF /* ServiceDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsInteractor.swift; sourceTree = "<group>"; };
 		11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsConfigurator.swift; sourceTree = "<group>"; };
-		11F5C43B2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderView.swift; sourceTree = "<group>"; };
-		11F5C43D2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
 		11F5C43F2A7FDF2A00E031AF /* ServiceDetailsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsInfoView.swift; sourceTree = "<group>"; };
 		11F5C4432A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsInfoViewModel.swift; sourceTree = "<group>"; };
 		11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
@@ -391,8 +391,8 @@
 		11F5C4412A7FDF3200E031AF /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				11F5C43B2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift */,
-				11F5C43D2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift */,
+				11E6306F2A7FE62400182C8C /* ServiceDetailsHeaderView.swift */,
+				11E630712A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -620,7 +620,7 @@
 				11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */,
 				111B22582A643970001E88D5 /* PopularServicesView.swift in Sources */,
 				11EF60172A4222EF00A7F66F /* NotificationsInteractor.swift in Sources */,
-				11F5C43C2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift in Sources */,
+				11E630702A7FE62400182C8C /* ServiceDetailsHeaderView.swift in Sources */,
 				11EF60082A42217400A7F66F /* JobsView.swift in Sources */,
 				11D8A9382A6708E000DFB117 /* PostsViewCollectionViewCell.swift in Sources */,
 				11EF60012A42206500A7F66F /* ServicesInteractor.swift in Sources */,
@@ -658,6 +658,7 @@
 				111B22532A6412E4001E88D5 /* ServicesResponseModel.swift in Sources */,
 				116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */,
 				1CCAC45D247CE36B009AC08C /* TitlesInteractor.swift in Sources */,
+				11E630722A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift in Sources */,
 				111B22492A640318001E88D5 /* ServiceRequest.swift in Sources */,
 				11EF60202A42255D00A7F66F /* ProfilesViewController.swift in Sources */,
 				11D8A9362A66FC3900DFB117 /* PostsView.swift in Sources */,
@@ -683,7 +684,6 @@
 				111A3AE82A5F212D000CAE8A /* AllServicesView.swift in Sources */,
 				11D8A93A2A6709D300DFB117 /* PostsImageView.swift in Sources */,
 				111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */,
-				11F5C43E2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift in Sources */,
 				116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */,
 				11F5C42F2A7F98E900E031AF /* ServiceDetailsView.swift in Sources */,
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
