@@ -65,8 +65,7 @@ final class ServiceDetailsInteractor {
     }
     
     private func setInfoView(model: ServiceDetailsResponseModel) {
-        guard let proCount = model.proCount else { return }
-        presenter?.presentInfoView(label: String(proCount), type: .professionals)
+        presenter?.presentInfoView(model: model)
     }
     
 }

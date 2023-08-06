@@ -8,7 +8,7 @@
 
 struct ServiceDetailsInfoViewModel {
     let label: String
-    let type: ServiceDetailsInfoType
+    let imageName: String
 }
 
 enum ServiceDetailsInfoType: String, CodingKey {

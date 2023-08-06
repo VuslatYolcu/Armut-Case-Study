@@ -14,7 +14,7 @@ protocol ServiceDetailsViewDelegate: AnyObject {
 
 protocol ServiceDetailsDisplayProtocol: AnyObject {
     func displayHeaderView(viewModel: ServiceDetailsHeaderViewModel)
-    func displayInfoViews(viewModel: ServiceDetailsInfoViewModel)
+    func displayInfoViews(viewModels: [ServiceDetailsInfoViewModel])
 }
 
 final class ServiceDetailsView: UIView {
@@ -33,7 +33,16 @@ final class ServiceDetailsView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = 40
+        stackView.spacing = 20
+        return stackView
+    }()
+    
+    private let infoViewStackView: UIStackView = {
+       let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 10
         return stackView
     }()
 
@@ -42,14 +51,7 @@ final class ServiceDetailsView: UIView {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         return headerView
     }()
-    
-    private let infoView: ServiceDetailsInfoView = {
-        let infoView = ServiceDetailsInfoView()
-        infoView.translatesAutoresizingMaskIntoConstraints = false
-        infoView.backgroundColor = .systemPink
-        return infoView
-    }()
-    
+
     weak var delegate: ServiceDetailsViewDelegate?
     
     // MARK: - Initialization
@@ -75,14 +77,13 @@ extension ServiceDetailsView {
         scrollView.addSubview(scrollViewContainer)
         
         scrollViewContainer.addArrangedSubview(headerView)
-        scrollViewContainer.addArrangedSubview(infoView)
+        scrollViewContainer.addArrangedSubview(infoViewStackView)
         setupConstraints()
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             headerView.heightAnchor.constraint(equalToConstant: 220),
-            infoView.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         NSLayoutConstraint.activate([
@@ -100,6 +101,19 @@ extension ServiceDetailsView {
             // This is important for scrolling
             scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
+        
+        NSLayoutConstraint.activate([
+            infoViewStackView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 10),
+            infoViewStackView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -10)
+        ])
+    }
+    
+    private func createInfoView(viewModel: ServiceDetailsInfoViewModel) {
+        let infoView = ServiceDetailsInfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        infoView.configure(viewModel: viewModel)
+        infoViewStackView.addArrangedSubview(infoView)
+        infoView.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
 }
@@ -110,8 +124,10 @@ extension ServiceDetailsView: ServiceDetailsDisplayProtocol {
         headerView.configure(viewModel: viewModel)
     }
     
-    func displayInfoViews(viewModel: ServiceDetailsInfoViewModel) {
-        infoView.configure(viewModel: viewModel)
+    func displayInfoViews(viewModels: [ServiceDetailsInfoViewModel]) {
+        for viewModel in viewModels {
+            createInfoView(viewModel: viewModel)
+        }
     }
 }
 

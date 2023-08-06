@@ -12,7 +12,7 @@ final class ServiceDetailsInfoView: UIView {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -21,7 +21,7 @@ final class ServiceDetailsInfoView: UIView {
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         label.numberOfLines = 0
         return label
     }()
@@ -51,16 +51,14 @@ final class ServiceDetailsInfoView: UIView {
             label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
             label.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
             label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            label.heightAnchor.constraint(equalToConstant: 20)
+            label.heightAnchor.constraint(equalToConstant: 40)
         ])
 
     }
     
     public func configure(viewModel: ServiceDetailsInfoViewModel) {
-        let imageName = viewModel.type.info.imageName
-        imageView.image = UIImage(named: imageName)
-        let infoLabel = String(format: viewModel.type.info.text, viewModel.label)
-        label.text = infoLabel
+        imageView.image = UIImage(named: viewModel.imageName)
+        label.text = viewModel.label
     }
 
 }

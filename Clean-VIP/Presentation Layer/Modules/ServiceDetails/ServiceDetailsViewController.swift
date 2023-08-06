@@ -10,7 +10,7 @@ import UIKit
 
 protocol ServiceDetailsPresenterOutput: AnyObject {
     func presentHeaderView(viewModel: ServiceDetailsHeaderViewModel)
-    func presentInfoView(viewModel: ServiceDetailsInfoViewModel)
+    func presentInfoView(viewModels: [ServiceDetailsInfoViewModel])
     func displayServiceDetails(viewModel: ServiceDetailsViewModel)
 }
 
@@ -52,8 +52,8 @@ extension ServiceDetailsViewController: ServiceDetailsPresenterOutput {
         serviceDetailsView?.displayHeaderView(viewModel: viewModel)
     }
 
-    func presentInfoView(viewModel: ServiceDetailsInfoViewModel) {
-        serviceDetailsView?.displayInfoViews(viewModel: viewModel)
+    func presentInfoView(viewModels: [ServiceDetailsInfoViewModel]) {
+        serviceDetailsView?.displayInfoViews(viewModels: viewModels)
     }
     
     func displayServiceDetails(viewModel: ServiceDetailsViewModel) {
