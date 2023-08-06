@@ -60,6 +60,12 @@
 		11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60212A42256600A7F66F /* ProfilesInteractor.swift */; };
 		11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */; };
 		11EF60262A42257500A7F66F /* ProfilesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF60252A42257500A7F66F /* ProfilesRouter.swift */; };
+		11F5C42F2A7F98E900E031AF /* ServiceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C42E2A7F98E900E031AF /* ServiceDetailsView.swift */; };
+		11F5C4312A7F98F500E031AF /* ServiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4302A7F98F500E031AF /* ServiceDetailsViewController.swift */; };
+		11F5C4332A7F990000E031AF /* ServiceDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4322A7F990000E031AF /* ServiceDetailsPresenter.swift */; };
+		11F5C4352A7F990700E031AF /* ServiceDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4342A7F990700E031AF /* ServiceDetailsRouter.swift */; };
+		11F5C4372A7F991400E031AF /* ServiceDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4362A7F991400E031AF /* ServiceDetailsInteractor.swift */; };
+		11F5C4392A7F991B00E031AF /* ServiceDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */; };
 		11F9200B2A680206005B8918 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */; };
 		1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818BD247CDF03001B0324 /* AppDelegate.swift */; };
 		1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818C1247CDF03001B0324 /* TitlesViewController.swift */; };
@@ -136,6 +142,12 @@
 		11EF60212A42256600A7F66F /* ProfilesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesInteractor.swift; sourceTree = "<group>"; };
 		11EF60232A42256D00A7F66F /* ProfilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesPresenter.swift; sourceTree = "<group>"; };
 		11EF60252A42257500A7F66F /* ProfilesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesRouter.swift; sourceTree = "<group>"; };
+		11F5C42E2A7F98E900E031AF /* ServiceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsView.swift; sourceTree = "<group>"; };
+		11F5C4302A7F98F500E031AF /* ServiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewController.swift; sourceTree = "<group>"; };
+		11F5C4322A7F990000E031AF /* ServiceDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsPresenter.swift; sourceTree = "<group>"; };
+		11F5C4342A7F990700E031AF /* ServiceDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsRouter.swift; sourceTree = "<group>"; };
+		11F5C4362A7F991400E031AF /* ServiceDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsInteractor.swift; sourceTree = "<group>"; };
+		11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsConfigurator.swift; sourceTree = "<group>"; };
 		11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		1C4818BA247CDF03001B0324 /* Clean-VIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean-VIP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4818BD247CDF03001B0324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +268,12 @@
 			isa = PBXGroup;
 			children = (
 				11DF74162A7C3C6400A67E45 /* Models */,
+				11F5C42E2A7F98E900E031AF /* ServiceDetailsView.swift */,
+				11F5C4302A7F98F500E031AF /* ServiceDetailsViewController.swift */,
+				11F5C4322A7F990000E031AF /* ServiceDetailsPresenter.swift */,
+				11F5C4342A7F990700E031AF /* ServiceDetailsRouter.swift */,
+				11F5C4362A7F991400E031AF /* ServiceDetailsInteractor.swift */,
+				11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */,
 			);
 			path = ServiceDetails;
 			sourceTree = "<group>";
@@ -579,11 +597,14 @@
 				11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */,
 				11A3CFA52A5B11B5001EA591 /* ServicesHeaderViewModel.swift in Sources */,
 				1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */,
+				11F5C4332A7F990000E031AF /* ServiceDetailsPresenter.swift in Sources */,
 				11EF60192A4222F900A7F66F /* NotificationsPresenter.swift in Sources */,
 				11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */,
 				11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */,
 				1CEF92B52481761100643631 /* TitleDetailViewController.swift in Sources */,
 				11CAFC582A608644007C1847 /* AllServicesViewModel.swift in Sources */,
+				11F5C4372A7F991400E031AF /* ServiceDetailsInteractor.swift in Sources */,
+				11F5C4312A7F98F500E031AF /* ServiceDetailsViewController.swift in Sources */,
 				1CCAC463247CF7F5009AC08C /* TitlesView.swift in Sources */,
 				11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */,
 				1CCAC45F247CE372009AC08C /* TitlesPresenter.swift in Sources */,
@@ -611,6 +632,7 @@
 				11EF60032A42206C00A7F66F /* ServicesPresenter.swift in Sources */,
 				11EF60132A4222DE00A7F66F /* NotificationsView.swift in Sources */,
 				11EF601B2A4222FF00A7F66F /* NotificationsRouter.swift in Sources */,
+				11F5C4352A7F990700E031AF /* ServiceDetailsRouter.swift in Sources */,
 				1CEF92B72481762800643631 /* TitleDetailInteractor.swift in Sources */,
 				111A3AEC2A5F2E0E000CAE8A /* AllServicesCollectionViewCell.swift in Sources */,
 				1CCAC461247CE383009AC08C /* TitlesConfigurator.swift in Sources */,
@@ -623,12 +645,14 @@
 				11D8A93A2A6709D300DFB117 /* PostsImageView.swift in Sources */,
 				111B224B2A64052D001E88D5 /* ServiceEndpoint.swift in Sources */,
 				116C8EAE2A5DC64E00FE8173 /* CampaignView.swift in Sources */,
+				11F5C42F2A7F98E900E031AF /* ServiceDetailsView.swift in Sources */,
 				1CE9D684247D7B2E00C8AAF6 /* TitlesService.swift in Sources */,
 				11EF600E2A42218D00A7F66F /* JobsPresenter.swift in Sources */,
 				11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */,
 				11DF74182A7C3C7800A67E45 /* ServiceDetailsViewModel.swift in Sources */,
 				11D8A93E2A67399A00DFB117 /* UIView+Extensions.swift in Sources */,
 				11D8A9332A66EFB900DFB117 /* CachedImageLoader.swift in Sources */,
+				11F5C4392A7F991B00E031AF /* ServiceDetailsConfigurator.swift in Sources */,
 				11D8A93C2A67136400DFB117 /* PostsViewModel.swift in Sources */,
 				11181B832A5DEFCA00C70CE4 /* CampaignDiscountView.swift in Sources */,
 				11EF600A2A42217E00A7F66F /* JobsViewController.swift in Sources */,

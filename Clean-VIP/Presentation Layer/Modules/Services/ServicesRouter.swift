@@ -17,12 +17,9 @@ protocol ServicesRouterProtocol: AnyObject {
 final class ServicesRouter: ServicesRouterProtocol {
     weak var navigationController: UINavigationController?
     
-    func routeToServiceDetail(with id: String) {
-        let viewController = TitleDetailViewController()
-        TitleDetailConfigurator.configureModule(titleId: id,
-                                                viewController: viewController)
-        
-    
+    func routeToServiceDetail(with serviceId: String) {
+        let viewController = ServiceDetailsViewController()
+        ServiceDetailsConfigurator.configureModule(viewController: viewController)
         navigationController?.pushViewController(viewController, animated: false)
     }
 }
