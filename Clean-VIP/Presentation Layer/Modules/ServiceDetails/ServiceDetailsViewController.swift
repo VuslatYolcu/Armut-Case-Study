@@ -16,7 +16,7 @@ protocol ServiceDetailsPresenterOutput: AnyObject {
 final class ServiceDetailsViewController: UIViewController {
     
     // MARK: - Properties
-    var servicesView: ServiceDetailsView?
+    var serviceDetailsView: ServiceDetailsView?
     var interactor: ServiceDetailsInteractorProtocol?
     weak var presenter: ServiceDetailsPresenterProtocol?
     var router: ServiceDetailsRouterProtocol?
@@ -24,15 +24,14 @@ final class ServiceDetailsViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func loadView() {
         super.loadView()
-        self.view = servicesView
+        self.view = serviceDetailsView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.interactor?.viewDidLoad()
-        self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
-        self.tabBarController?.navigationItem.title?.removeAll()
+        self.navigationController?.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +48,7 @@ final class ServiceDetailsViewController: UIViewController {
 extension ServiceDetailsViewController: ServiceDetailsPresenterOutput {
 
     func presentHeaderView(viewModel: ServicesHeaderViewModel) {
-        servicesView?.displayHeaderView(viewModel: viewModel)
+        serviceDetailsView?.displayHeaderView(viewModel: viewModel)
     }
     
     func displayServiceDetails(viewModel: ServiceDetailsViewModel) {

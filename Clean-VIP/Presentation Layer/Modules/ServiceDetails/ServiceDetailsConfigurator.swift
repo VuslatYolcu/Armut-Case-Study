@@ -15,7 +15,7 @@ final class ServiceDetailsConfigurator {
         let interactor = ServiceDetailsInteractor()
         let presenter = ServiceDetailsPresenter()
         
-        viewController.servicesView = view
+        viewController.serviceDetailsView = view
         viewController.router = router
         viewController.interactor = interactor
         
