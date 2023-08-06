@@ -68,6 +68,8 @@
 		11F5C4392A7F991B00E031AF /* ServiceDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */; };
 		11F5C43C2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C43B2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift */; };
 		11F5C43E2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C43D2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift */; };
+		11F5C4402A7FDF2A00E031AF /* ServiceDetailsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C43F2A7FDF2A00E031AF /* ServiceDetailsInfoView.swift */; };
+		11F5C4442A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5C4432A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift */; };
 		11F9200B2A680206005B8918 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */; };
 		1C4818BE247CDF03001B0324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818BD247CDF03001B0324 /* AppDelegate.swift */; };
 		1C4818C2247CDF03001B0324 /* TitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4818C1247CDF03001B0324 /* TitlesViewController.swift */; };
@@ -152,6 +154,8 @@
 		11F5C4382A7F991B00E031AF /* ServiceDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsConfigurator.swift; sourceTree = "<group>"; };
 		11F5C43B2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderView.swift; sourceTree = "<group>"; };
 		11F5C43D2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
+		11F5C43F2A7FDF2A00E031AF /* ServiceDetailsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsInfoView.swift; sourceTree = "<group>"; };
+		11F5C4432A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsInfoViewModel.swift; sourceTree = "<group>"; };
 		11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		1C4818BA247CDF03001B0324 /* Clean-VIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean-VIP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4818BD247CDF03001B0324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -378,10 +382,28 @@
 		11F5C43A2A7FC39800E031AF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11F5C4422A7FDF3F00E031AF /* InfoView */,
+				11F5C4412A7FDF3200E031AF /* HeaderView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11F5C4412A7FDF3200E031AF /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
 				11F5C43B2A7FC3A600E031AF /* ServiceDetailsHeaderView.swift */,
 				11F5C43D2A7FC54900E031AF /* ServiceDetailsHeaderViewModel.swift */,
 			);
-			path = View;
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		11F5C4422A7FDF3F00E031AF /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				11F5C43F2A7FDF2A00E031AF /* ServiceDetailsInfoView.swift */,
+				11F5C4432A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift */,
+			);
+			path = InfoView;
 			sourceTree = "<group>";
 		};
 		1C390276247CDFC900797273 /* Application Layer */ = {
@@ -615,6 +637,8 @@
 				11F5C4332A7F990000E031AF /* ServiceDetailsPresenter.swift in Sources */,
 				11EF60192A4222F900A7F66F /* NotificationsPresenter.swift in Sources */,
 				11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */,
+				11F5C4442A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift in Sources */,
+				11F5C4402A7FDF2A00E031AF /* ServiceDetailsInfoView.swift in Sources */,
 				11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */,
 				1CEF92B52481761100643631 /* TitleDetailViewController.swift in Sources */,
 				11CAFC582A608644007C1847 /* AllServicesViewModel.swift in Sources */,
