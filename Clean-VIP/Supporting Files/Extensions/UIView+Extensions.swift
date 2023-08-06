@@ -19,4 +19,14 @@ extension UIView {
         self.layer.insertSublayer(gradient, at: 1)
         
     }
+    
+    func addFadingEffectToBottom(width: CGFloat, height: CGFloat) {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.locations = [0.7, 1]
+        self.layer.insertSublayer(gradient, at: 1)
+        
+    }
 }

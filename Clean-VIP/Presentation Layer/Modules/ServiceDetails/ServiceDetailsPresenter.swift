@@ -9,24 +9,17 @@
 import Foundation
 
 protocol ServiceDetailsPresenterProtocol: AnyObject {
-    func presentHeaderView(titleLabel: String, imageName: String, searchBarPlaceHolder: String)
+    func presentHeaderView(titleLabel: String, imageUrl: String)
     func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel)
 }
 
 final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
     var viewController: ServiceDetailsPresenterOutput?
-
-    func presentHeaderView(titleLabel: String, imageName: String, searchBarPlaceHolder: String) {
-        let headerViewModel = ServicesHeaderViewModel(
-            titleLabel: titleLabel,
-            imageName: imageName,
-            headerBackgroundColor: .systemGray6,
-            searchBarPlaceholder: searchBarPlaceHolder,
-            searchBarIconColor: .systemGreen
-        )
-        viewController?.presentHeaderView(viewModel: headerViewModel)
-    }
     
+    func presentHeaderView(titleLabel: String, imageUrl: String) {
+        let viewModel = ServiceDetailsHeaderViewModel(title: titleLabel, imageURL: imageUrl)
+        viewController?.presentHeaderView(viewModel: viewModel)
+    }
    
     func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel) {
         let serviceDetailsViewModel = ServiceDetailsViewModel(

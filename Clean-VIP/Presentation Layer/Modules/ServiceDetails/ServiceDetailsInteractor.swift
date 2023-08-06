@@ -38,6 +38,7 @@ final class ServiceDetailsInteractor {
             switch result {
             case .success(let model):
                 DispatchQueue.main.async {
+                    strongSelf.setHeaderView(model: model)
                     strongSelf.presenter?.presentServiceDetails(serviceDetail: model)
                 }
                 break
@@ -49,11 +50,15 @@ final class ServiceDetailsInteractor {
         }
     }
     
-    private func setHeaderView() {
+    private func setHeaderView(model: ServiceDetailsResponseModel) {
+        guard let title = model.longName,
+              let imageUrl = model.imageURL else {
+                  return
+              }
+        
         presenter?.presentHeaderView(
-            titleLabel: "Hizmet piş \nağzıma düş",
-            imageName: "header",
-            searchBarPlaceHolder: "Which service do you need?"
+            titleLabel: title,
+            imageUrl: imageUrl
         )
     }
     

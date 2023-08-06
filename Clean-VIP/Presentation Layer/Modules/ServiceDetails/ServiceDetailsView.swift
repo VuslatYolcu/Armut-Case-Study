@@ -13,7 +13,7 @@ protocol ServiceDetailsViewDelegate: AnyObject {
 }
 
 protocol ServiceDetailsDisplayProtocol: AnyObject {
-    func displayHeaderView(viewModel: ServicesHeaderViewModel)
+    func displayHeaderView(viewModel: ServiceDetailsHeaderViewModel)
 }
 
 final class ServiceDetailsView: UIView {
@@ -36,8 +36,8 @@ final class ServiceDetailsView: UIView {
         return stackView
     }()
 
-    private let headerView: ServicesHeaderView = {
-        let headerView = ServicesHeaderView()
+    private let headerView: ServiceDetailsHeaderView = {
+        let headerView = ServiceDetailsHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
         return headerView
     }()
@@ -72,7 +72,7 @@ extension ServiceDetailsView {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            headerView.heightAnchor.constraint(equalToConstant: 400),
+            headerView.heightAnchor.constraint(equalToConstant: 220),
         ])
         
         NSLayoutConstraint.activate([
@@ -96,8 +96,8 @@ extension ServiceDetailsView {
 
 extension ServiceDetailsView: ServiceDetailsDisplayProtocol {
     
-    func displayHeaderView(viewModel: ServicesHeaderViewModel) {
-        headerView.configure(with: viewModel)
+    func displayHeaderView(viewModel: ServiceDetailsHeaderViewModel) {
+        headerView.configure(viewModel: viewModel)
     }
 }
 
