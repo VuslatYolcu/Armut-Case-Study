@@ -51,6 +51,12 @@ final class ServiceDetailsView: UIView {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         return headerView
     }()
+    
+    private let seperatorView: SeperatorView = {
+        let view = SeperatorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     weak var delegate: ServiceDetailsViewDelegate?
     
@@ -78,6 +84,7 @@ extension ServiceDetailsView {
         
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(infoViewStackView)
+        scrollViewContainer.addArrangedSubview(seperatorView)
         setupConstraints()
     }
 
@@ -105,6 +112,11 @@ extension ServiceDetailsView {
         NSLayoutConstraint.activate([
             infoViewStackView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 12),
             infoViewStackView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -12)
+        ])
+        
+        NSLayoutConstraint.activate([
+            seperatorView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 12),
+            seperatorView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -12)
         ])
     }
     
