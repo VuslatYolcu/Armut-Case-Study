@@ -20,4 +20,6 @@ extension NSAttributedString {
                                       range: NSRange(location: 0, length: string.count))
         return NSAttributedString(attributedString: attributedString)
     }
+    
+
 }

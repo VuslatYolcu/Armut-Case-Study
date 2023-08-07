@@ -68,25 +68,9 @@ final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
     
     private func createInfoViewModel(type: ServiceDetailsInfoType, label: String?) -> ServiceDetailsInfoViewModel {
         let infoLabel = String(format: type.info.text, label ?? "")
-        let editedLabel = attributedStringWithColor(input: infoLabel, coloredText: label ?? "", color: UIColor.systemGreen)
+        let editedLabel = infoLabel.attributedStringWithColorAndFont(coloredText: label ?? "", color: UIColor.systemGreen, font: UIFont.systemFont(ofSize: 16.0, weight: .bold))
         let viewModel = ServiceDetailsInfoViewModel(label: editedLabel.string, attributedString: editedLabel,  imageName: type.info.imageName)
         return viewModel
     }
-    
-    private func editText() {
-        
-    }
-}
 
-extension ServiceDetailsPresenter {
-    func attributedStringWithColor(input: String, coloredText: String, color: UIColor) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: input)
-        
-        // Find the range of the coloredText in the input string
-        let range = (input as NSString).range(of: coloredText)
-        
-        // Apply the color attribute to the range
-        attributedString.addAttribute(.foregroundColor, value: color, range: range)
-        return attributedString
-    }
 }

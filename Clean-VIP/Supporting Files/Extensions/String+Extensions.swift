@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func formatString(input: String) -> String? {
@@ -17,5 +18,17 @@ extension String {
         var formattedString = input
         formattedString.insert(".", at: index)
         return formattedString
+    }
+    
+    func attributedStringWithColorAndFont(coloredText: String, color: UIColor, font: UIFont) -> NSAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor: color
+        ]
+
+        let attributedString = NSMutableAttributedString(string: self)
+        let range = (self as NSString).range(of: coloredText)
+        attributedString.setAttributes(attributes, range: range)
+        return attributedString
     }
 }
