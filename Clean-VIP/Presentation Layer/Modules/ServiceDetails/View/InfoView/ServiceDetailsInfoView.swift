@@ -48,7 +48,7 @@ final class ServiceDetailsInfoView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15),
             label.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
             label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             label.heightAnchor.constraint(equalToConstant: 40)
@@ -58,7 +58,8 @@ final class ServiceDetailsInfoView: UIView {
     
     public func configure(viewModel: ServiceDetailsInfoViewModel) {
         imageView.image = UIImage(named: viewModel.imageName)
-        label.text = viewModel.label
+        //label.text = viewModel.label
+        label.attributedText = viewModel.attributedString
     }
 
 }

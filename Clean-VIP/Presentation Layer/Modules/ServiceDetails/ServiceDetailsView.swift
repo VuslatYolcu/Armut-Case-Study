@@ -33,7 +33,7 @@ final class ServiceDetailsView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = 20
+        stackView.spacing = 10
         return stackView
     }()
     
@@ -103,8 +103,8 @@ extension ServiceDetailsView {
         ])
         
         NSLayoutConstraint.activate([
-            infoViewStackView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 10),
-            infoViewStackView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -10)
+            infoViewStackView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 12),
+            infoViewStackView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -12)
         ])
     }
     

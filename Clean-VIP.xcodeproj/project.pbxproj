@@ -41,6 +41,7 @@
 		11DF741A2A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */; };
 		11E630702A7FE62400182C8C /* ServiceDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6306F2A7FE62400182C8C /* ServiceDetailsHeaderView.swift */; };
 		11E630722A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E630712A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift */; };
+		11E630742A801CD900182C8C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E630732A801CD900182C8C /* String+Extensions.swift */; };
 		11EF5FFA2A421E8B00A7F66F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */; };
 		11EF5FFD2A42205200A7F66F /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFC2A42205200A7F66F /* ServicesView.swift */; };
 		11EF5FFF2A42205B00A7F66F /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */; };
@@ -127,6 +128,7 @@
 		11DF74192A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsResponseModel.swift; sourceTree = "<group>"; };
 		11E6306F2A7FE62400182C8C /* ServiceDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderView.swift; sourceTree = "<group>"; };
 		11E630712A7FE65200182C8C /* ServiceDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
+		11E630732A801CD900182C8C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		11EF5FF92A421E8B00A7F66F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11EF5FFC2A42205200A7F66F /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		11EF5FFE2A42205B00A7F66F /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */,
 				11D8A93D2A67399A00DFB117 /* UIView+Extensions.swift */,
 				11F9200A2A680206005B8918 /* NSAttributedString+Extensions.swift */,
+				11E630732A801CD900182C8C /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				11DF741A2A7C3E8A00A67E45 /* ServiceDetailsResponseModel.swift in Sources */,
 				115AEDB82A75842B00B66099 /* NotificationsConfigurator.swift in Sources */,
 				11EF60052A42207500A7F66F /* ServicesRouter.swift in Sources */,
+				11E630742A801CD900182C8C /* String+Extensions.swift in Sources */,
 				111B22552A6424BD001E88D5 /* ServiceRequest+Urls.swift in Sources */,
 				11EF60102A42219500A7F66F /* JobsRouter.swift in Sources */,
 				11A3CFA52A5B11B5001EA591 /* ServicesHeaderViewModel.swift in Sources */,

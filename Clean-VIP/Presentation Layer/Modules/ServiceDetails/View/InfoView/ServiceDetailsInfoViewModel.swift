@@ -6,8 +6,11 @@
 //  Copyright © 2023 Zafar. All rights reserved.
 //
 
+import Foundation
+
 struct ServiceDetailsInfoViewModel {
     let label: String
+    let attributedString: NSAttributedString?
     let imageName: String
 }
 
