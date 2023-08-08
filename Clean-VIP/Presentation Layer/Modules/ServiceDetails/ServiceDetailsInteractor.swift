@@ -41,7 +41,7 @@ final class ServiceDetailsInteractor {
                     strongSelf.setHeaderView(model: model)
                     strongSelf.setInfoView(model: model)
                     strongSelf.presenter?.presentServiceDetails(serviceDetail: model)
-                    
+                    strongSelf.setStepView()
                 }
                 break
             case .failure(let error):
@@ -68,6 +68,13 @@ final class ServiceDetailsInteractor {
         presenter?.presentInfoView(model: model)
     }
     
+    private func setStepView() {
+        let step1 = ServiceDetailsStepViewCollectionViewCellModel(stepNumber: "1", stepName: "Answer the question")
+        let step2 = ServiceDetailsStepViewCollectionViewCellModel(stepNumber: "2", stepName: "Get quotes")
+        let step3 = ServiceDetailsStepViewCollectionViewCellModel(stepNumber: "3", stepName: "Compare the prices and decide")
+        let viewModels: [ServiceDetailsStepViewCollectionViewCellModel] = [step1, step2, step3]
+        presenter?.presentStepView(viewModel: viewModels)
+    }
 }
 
 extension ServiceDetailsInteractor: ServiceDetailsInteractorProtocol {

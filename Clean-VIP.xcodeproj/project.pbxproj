@@ -21,6 +21,9 @@
 		111B225A2A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */; };
 		111B225E2A64469F001E88D5 /* UIImageView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */; };
 		111B22602A6447CB001E88D5 /* PopularServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */; };
+		112DC1142A82ABFD005CB1C7 /* ServiceDetailsStepViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DC1132A82ABFD005CB1C7 /* ServiceDetailsStepViewCollectionViewCell.swift */; };
+		112DC1162A82AC4A005CB1C7 /* ServiceDetailsStepViewCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DC1152A82AC4A005CB1C7 /* ServiceDetailsStepViewCollectionViewCellModel.swift */; };
+		112DC1182A82C199005CB1C7 /* ServiceDetailsStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DC1172A82C199005CB1C7 /* ServiceDetailsStepsView.swift */; };
 		1147A0542A8175C200DBF8F5 /* SeperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147A0532A8175C200DBF8F5 /* SeperatorView.swift */; };
 		115AEDB82A75842B00B66099 /* NotificationsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115AEDB72A75842B00B66099 /* NotificationsConfigurator.swift */; };
 		116A0BAC2A574B2A00BA9CF3 /* ServicesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */; };
@@ -109,6 +112,9 @@
 		111B22592A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		111B225D2A64469F001E88D5 /* UIImageView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extentions.swift"; sourceTree = "<group>"; };
 		111B225F2A6447CB001E88D5 /* PopularServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesViewModel.swift; sourceTree = "<group>"; };
+		112DC1132A82ABFD005CB1C7 /* ServiceDetailsStepViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsStepViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		112DC1152A82AC4A005CB1C7 /* ServiceDetailsStepViewCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsStepViewCollectionViewCellModel.swift; sourceTree = "<group>"; };
+		112DC1172A82C199005CB1C7 /* ServiceDetailsStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsStepsView.swift; sourceTree = "<group>"; };
 		1147A0532A8175C200DBF8F5 /* SeperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeperatorView.swift; sourceTree = "<group>"; };
 		115AEDB72A75842B00B66099 /* NotificationsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsConfigurator.swift; sourceTree = "<group>"; };
 		116A0BAB2A574B2A00BA9CF3 /* ServicesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImageView.swift; sourceTree = "<group>"; };
@@ -254,6 +260,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		112DC1122A82ABB2005CB1C7 /* StepView */ = {
+			isa = PBXGroup;
+			children = (
+				112DC1132A82ABFD005CB1C7 /* ServiceDetailsStepViewCollectionViewCell.swift */,
+				112DC1152A82AC4A005CB1C7 /* ServiceDetailsStepViewCollectionViewCellModel.swift */,
+				112DC1172A82C199005CB1C7 /* ServiceDetailsStepsView.swift */,
+			);
+			path = StepView;
+			sourceTree = "<group>";
+		};
 		1147A0522A81754800DBF8F5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +411,7 @@
 		11F5C43A2A7FC39800E031AF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				112DC1122A82ABB2005CB1C7 /* StepView */,
 				11F5C4422A7FDF3F00E031AF /* InfoView */,
 				11F5C4412A7FDF3200E031AF /* HeaderView */,
 			);
@@ -652,6 +669,7 @@
 				11F5C4332A7F990000E031AF /* ServiceDetailsPresenter.swift in Sources */,
 				11EF60192A4222F900A7F66F /* NotificationsPresenter.swift in Sources */,
 				11EF60222A42256600A7F66F /* ProfilesInteractor.swift in Sources */,
+				112DC1142A82ABFD005CB1C7 /* ServiceDetailsStepViewCollectionViewCell.swift in Sources */,
 				11F5C4442A7FE20000E031AF /* ServiceDetailsInfoViewModel.swift in Sources */,
 				11F5C4402A7FDF2A00E031AF /* ServiceDetailsInfoView.swift in Sources */,
 				11D53E8C2A48C2FF0014AC86 /* ServicesConfigurator.swift in Sources */,
@@ -662,10 +680,12 @@
 				1CCAC463247CF7F5009AC08C /* TitlesView.swift in Sources */,
 				11EF60242A42256D00A7F66F /* ProfilesPresenter.swift in Sources */,
 				1CCAC45F247CE372009AC08C /* TitlesPresenter.swift in Sources */,
+				112DC1182A82C199005CB1C7 /* ServiceDetailsStepsView.swift in Sources */,
 				1CEF92B02480FC5400643631 /* PersistentContainerProvider.swift in Sources */,
 				116C8EB02A5DDCDC00FE8173 /* CampaignBottomView.swift in Sources */,
 				111B225A2A643DD5001E88D5 /* PopularServicesCollectionViewCell.swift in Sources */,
 				11A3CFA02A5AF80A001EA591 /* ServicesSearchBarView.swift in Sources */,
+				112DC1162A82AC4A005CB1C7 /* ServiceDetailsStepViewCollectionViewCellModel.swift in Sources */,
 				1CEF92B92481763000643631 /* TitleDetailPresenter.swift in Sources */,
 				116E82F92A55F33800BBDEC4 /* ServicesHeaderView.swift in Sources */,
 				11D53E8A2A48C1D70014AC86 /* TabBarRouter.swift in Sources */,

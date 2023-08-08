@@ -13,9 +13,11 @@ protocol ServiceDetailsPresenterProtocol: AnyObject {
     func presentHeaderView(titleLabel: String, imageUrl: String)
     func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel)
     func presentInfoView(model: ServiceDetailsResponseModel)
+    func presentStepView(viewModel: [ServiceDetailsStepViewCollectionViewCellModel])
 }
 
 final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
+    
     var viewController: ServiceDetailsPresenterOutput?
     
     func presentHeaderView(titleLabel: String, imageUrl: String) {
@@ -71,6 +73,10 @@ final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
         let editedLabel = infoLabel.attributedStringWithColorAndFont(coloredText: label ?? "", color: UIColor.systemGreen, font: UIFont.systemFont(ofSize: 16.0, weight: .bold))
         let viewModel = ServiceDetailsInfoViewModel(label: editedLabel.string, attributedString: editedLabel,  imageName: type.info.imageName)
         return viewModel
+    }
+    
+    func presentStepView(viewModel: [ServiceDetailsStepViewCollectionViewCellModel]) {
+        viewController?.displayStepView(viewModels: viewModel)
     }
 
 }

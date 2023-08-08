@@ -58,7 +58,6 @@ final class ServiceDetailsInfoView: UIView {
     
     public func configure(viewModel: ServiceDetailsInfoViewModel) {
         imageView.image = UIImage(named: viewModel.imageName)
-        //label.text = viewModel.label
         label.attributedText = viewModel.attributedString
     }
 

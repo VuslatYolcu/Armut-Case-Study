@@ -15,6 +15,7 @@ protocol ServiceDetailsViewDelegate: AnyObject {
 protocol ServiceDetailsDisplayProtocol: AnyObject {
     func displayHeaderView(viewModel: ServiceDetailsHeaderViewModel)
     func displayInfoViews(viewModels: [ServiceDetailsInfoViewModel])
+    func displayStepsView(viewModel: [ServiceDetailsStepViewCollectionViewCellModel])
 }
 
 final class ServiceDetailsView: UIView {
@@ -57,8 +58,25 @@ final class ServiceDetailsView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(ServiceDetailsStepViewCollectionViewCell.self, forCellWithReuseIdentifier: ServiceDetailsStepViewCollectionViewCell.cellIdentifier)
+        return collectionView
+    }()
+    
+    private let stepsView: ServiceDetailsStepsView = {
+        let view = ServiceDetailsStepsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     weak var delegate: ServiceDetailsViewDelegate?
+    private var stepsViewModel = [ServiceDetailsStepViewCollectionViewCellModel]()
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -85,7 +103,9 @@ extension ServiceDetailsView {
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(infoViewStackView)
         scrollViewContainer.addArrangedSubview(seperatorView)
+        scrollViewContainer.addArrangedSubview(stepsView)
         setupConstraints()
+        setUpCollectionView()
     }
 
     private func setupConstraints() {
@@ -118,6 +138,11 @@ extension ServiceDetailsView {
             seperatorView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 12),
             seperatorView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -12)
         ])
+        
+        NSLayoutConstraint.activate([
+            stepsView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        
     }
     
     private func createInfoView(viewModel: ServiceDetailsInfoViewModel) {
@@ -126,6 +151,13 @@ extension ServiceDetailsView {
         infoView.configure(viewModel: viewModel)
         infoViewStackView.addArrangedSubview(infoView)
         infoView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    }
+    
+    // MARK: - Configurations
+    private func setUpCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.reloadData()
     }
 
 }
@@ -141,5 +173,47 @@ extension ServiceDetailsView: ServiceDetailsDisplayProtocol {
             createInfoView(viewModel: viewModel)
         }
     }
+    
+    func displayStepsView(viewModel: [ServiceDetailsStepViewCollectionViewCellModel]) {
+        stepsView.configure(with: viewModel)
+//        stepsViewModel = viewModel
+//        collectionView.reloadData()
+    }
+    
+    public func configure(vm: [ServiceDetailsStepViewCollectionViewCellModel]) {
+        stepsViewModel = vm
+        stepsView.configure(with: vm)
+    }
 }
 
+// MARK: - Collection View
+extension ServiceDetailsView: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return stepsViewModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceDetailsStepViewCollectionViewCell.cellIdentifier, for: indexPath) as? ServiceDetailsStepViewCollectionViewCell else {
+            fatalError("Unsupported cell")
+        }
+        cell.configure(viewModel: stepsViewModel[indexPath.row])
+        return cell
+    }
+   
+}
+
+extension ServiceDetailsView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 150, height: 200)
+    }
+}
+
+extension ServiceDetailsView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        // Handle cell tap
+    }
+}
