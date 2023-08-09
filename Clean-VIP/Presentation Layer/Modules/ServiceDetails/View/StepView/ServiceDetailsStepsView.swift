@@ -13,8 +13,9 @@ final class ServiceDetailsStepsView: UIView {
     // MARK: - Properties
     private let label: UILabel = {
         let label = UILabel()
+        label.text = "How it works"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .medium)
         return label
     }()
     
@@ -25,6 +26,7 @@ final class ServiceDetailsStepsView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ServiceDetailsStepViewCollectionViewCell.self, forCellWithReuseIdentifier: ServiceDetailsStepViewCollectionViewCell.cellIdentifier)
+        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
@@ -61,7 +63,7 @@ final class ServiceDetailsStepsView: UIView {
             collectionView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: collectionView.trailingAnchor, multiplier: 2),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
+            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 25),
         ])
     }
     
@@ -99,7 +101,7 @@ extension ServiceDetailsStepsView: UICollectionViewDelegate {
 extension ServiceDetailsStepsView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 200)
+        return CGSize(width: 100, height: 110)
     }
 }
 

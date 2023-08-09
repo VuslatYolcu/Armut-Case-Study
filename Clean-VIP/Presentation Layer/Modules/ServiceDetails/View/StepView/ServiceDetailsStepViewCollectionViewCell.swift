@@ -14,14 +14,23 @@ final class ServiceDetailsStepViewCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = "ServiceDetailsStepViewCollectionViewCell"
     
     private let circularLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.layer.cornerRadius = label.frame.width/2
+        label.clipsToBounds = true
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.layer.borderColor = UIColor.systemGray5.cgColor
+        label.layer.borderWidth = 2.0
+        return label
+    }()
+    
+    private let bottomLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1"
-        label.font = .systemFont(ofSize: 17, weight: .medium)
-        label.layer.cornerRadius = label.bounds.width / 2
-        label.layer.masksToBounds = true
-        label.layer.borderColor = UIColor.gray.cgColor
-        label.layer.borderWidth = 2.0
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 10, weight: .medium)
         return label
     }()
     
@@ -29,6 +38,7 @@ final class ServiceDetailsStepViewCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(circularLabel)
+        contentView.addSubview(bottomLabel)
         addConstraints()
         
     }
@@ -39,10 +49,16 @@ final class ServiceDetailsStepViewCollectionViewCell: UICollectionViewCell {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            circularLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            circularLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            circularLabel.heightAnchor.constraint(equalToConstant: 30),
-            circularLabel.widthAnchor.constraint(equalToConstant: 30),
+            circularLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            circularLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            circularLabel.heightAnchor.constraint(equalToConstant: 80),
+            circularLabel.widthAnchor.constraint(equalToConstant: 80),
+        ])
+        
+        NSLayoutConstraint.activate([
+            bottomLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            bottomLabel.topAnchor.constraint(equalTo: circularLabel.bottomAnchor, constant: 25),
+            bottomLabel.widthAnchor.constraint(equalToConstant: 150),
         ])
     }
     
@@ -58,7 +74,7 @@ final class ServiceDetailsStepViewCollectionViewCell: UICollectionViewCell {
     
     public func configure(viewModel: ServiceDetailsStepViewCollectionViewCellModel) {
         circularLabel.text = viewModel.stepNumber
-        
+        bottomLabel.text = viewModel.stepName
     }
 
 }

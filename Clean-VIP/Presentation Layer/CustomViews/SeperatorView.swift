@@ -10,20 +10,23 @@ import UIKit
 
 final class SeperatorView: UIView {
 
+    private var height: Int
+    
     // MARK: - Init
-    override init(frame: CGRect) {
+    init(frame: CGRect, height: Int) {
+        self.height = height
         super.init(frame: frame)
-        backgroundColor = UIColor.systemGray6
-        addConstraints()
+        self.backgroundColor = UIColor.systemGray6
+        self.addConstraints()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("Unsupported")
-    }
+    required init?(coder aDecoder: NSCoder) {
+          fatalError("init(coder:) has not been implemented")
+      }
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 1),
+            self.heightAnchor.constraint(equalToConstant: CGFloat(height)),
             self.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor)
         ])
     }
