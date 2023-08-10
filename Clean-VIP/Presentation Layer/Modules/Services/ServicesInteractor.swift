@@ -18,15 +18,14 @@ final class ServicesInteractor {
 
     private func fetchAllServices() {
         var allServicesList = [AllServicesCollectionViewCellModel]()
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tadilat", imageName: "tadilat"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Temizlik", imageName: "temizlik"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Nakliyat", imageName: "nakliyat"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Tamir", imageName: "tamir"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Özel ders", imageName: "ozel_ders"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Saglik", imageName: "saglik"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Dugun", imageName: "dugun"))
-        allServicesList.append(AllServicesCollectionViewCellModel(label: "Diger", imageName: "diger"))
-        
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.renovation.title".localized(), imageName: "tadilat"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.transportation.title".localized(), imageName: "temizlik"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.cleaning.title".localized(), imageName: "nakliyat"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.repair.title".localized(), imageName: "tamir"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.privatelesson.title".localized(), imageName: "ozel_ders"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.health.title".localized(), imageName: "saglik"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.wedding.title".localized(), imageName: "dugun"))
+        allServicesList.append(AllServicesCollectionViewCellModel(label: "services.other.title".localized(), imageName: "diger"))
         presenter?.presentAllServices(allServicesTitle: "All Services", allServicesList: allServicesList)
     }
     
