@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 
 extension String {
+    
+    /// Multiple Language Support
+    func localized() -> String {
+        return NSLocalizedString(self,
+                                 tableName: "Localizable",
+                                 bundle: .main,
+                                 value: self,
+                                 comment: self)
+    }
+    
     func formatString(input: String) -> String? {
         guard input.count >= 3 else {
             return nil
