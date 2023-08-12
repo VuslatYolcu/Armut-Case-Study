@@ -29,7 +29,7 @@ final class ServiceDetailsInteractor {
             pathComponents:[serviceId.rawValue],
             queryParameters: []
         )
-        
+
         ServiceManager.shared.execute(
             request,
             expecting: ServiceDetailsResponseModel.self)
@@ -45,7 +45,7 @@ final class ServiceDetailsInteractor {
                 }
                 break
             case .failure(let error):
-                // TODO: Handle error
+                strongSelf.presenter?.presentServiceDetailsError(error: error)
                 print(error)
                 break
             }

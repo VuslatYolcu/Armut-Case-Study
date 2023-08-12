@@ -11,7 +11,10 @@ import UIKit
 
 protocol ServiceDetailsPresenterProtocol: AnyObject {
     func presentHeaderView(titleLabel: String, imageUrl: String)
+    
     func presentServiceDetails(serviceDetail: ServiceDetailsResponseModel)
+    func presentServiceDetailsError(error: ServiceManager.ServiceError)
+    
     func presentInfoView(model: ServiceDetailsResponseModel)
     func presentStepView(viewModel: [ServiceDetailsStepViewCollectionViewCellModel])
 }
@@ -37,6 +40,10 @@ final class ServiceDetailsPresenter: ServiceDetailsPresenterProtocol {
             completedJobsOnLastMonth: serviceDetail.completedJobsOnLastMonth
         )
         viewController?.displayServiceDetails(viewModel: serviceDetailsViewModel)
+    }
+    
+    func presentServiceDetailsError(error: ServiceManager.ServiceError) {
+        viewController?.displayServiceDetailsError(errorMessage: error.message)
     }
     
     func presentInfoView(model: ServiceDetailsResponseModel) {

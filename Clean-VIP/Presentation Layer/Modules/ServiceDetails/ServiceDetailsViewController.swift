@@ -12,7 +12,9 @@ protocol ServiceDetailsPresenterOutput: AnyObject {
     func presentHeaderView(viewModel: ServiceDetailsHeaderViewModel)
     func presentInfoView(viewModels: [ServiceDetailsInfoViewModel])
     func displayStepView(viewModels: [ServiceDetailsStepViewCollectionViewCellModel])
+    
     func displayServiceDetails(viewModel: ServiceDetailsViewModel)
+    func displayServiceDetailsError(errorMessage: String)
 }
 
 final class ServiceDetailsViewController: UIViewController {
@@ -64,6 +66,10 @@ extension ServiceDetailsViewController: ServiceDetailsPresenterOutput {
     
     func displayServiceDetails(viewModel: ServiceDetailsViewModel) {
         //self.router?.routeToServiceDetail(with: "2")
+    }
+    
+    func displayServiceDetailsError(errorMessage: String) {
+        showError(with: errorMessage)
     }
 }
 
