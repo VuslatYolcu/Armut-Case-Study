@@ -18,9 +18,24 @@ final class ServiceManager {
     /// Privatized constructer
     private init() { }
     
-    enum ServiceError: Error {
+    enum ServiceError: String, CodingKey, Error {
         case failedToCreateRequest
         case failedGetData
+        case failedToGetCachedData
+        case failedToDecodeData
+        
+        var message: String {
+            switch self {
+            case .failedToCreateRequest:
+                return "Failed to create request."
+            case .failedGetData:
+                return "Failed to get data."
+            case .failedToGetCachedData:
+                return "Failed to get cached data."
+            case .failedToDecodeData:
+                return "Failed to get decode data."
+            }
+        }
     }
     
     /// Send API Call
@@ -31,7 +46,7 @@ final class ServiceManager {
     public func execute<T: Codable>(
         _ request: ServiceRequest,
         expecting type: T.Type,
-        completion: @escaping (Result<T, Error>) -> Void)
+        completion: @escaping (Result<T, ServiceError>) -> Void)
     {
          
         if let cachedData = cacheManager.cachedResponse(for: request.endpoint, url: request.url) {
@@ -40,7 +55,7 @@ final class ServiceManager {
                 let result = try JSONDecoder().decode(type.self, from: cachedData)
                 completion(.success(result))
             } catch {
-                completion(.failure(error))
+                completion(.failure(ServiceError.failedToGetCachedData))
             }
             return
         }
@@ -52,7 +67,7 @@ final class ServiceManager {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] data, _, error in
             guard let data = data, error == nil else {
-                completion(.failure(error ?? ServiceError.failedGetData))
+                completion(.failure(ServiceError.failedGetData))
                 return
             }
             
@@ -62,7 +77,7 @@ final class ServiceManager {
                 self?.cacheManager.setCache(for: request.endpoint, url: request.url, data: data)
                 completion(.success(result))
             } catch {
-                completion(.failure(error))
+                completion(.failure(.failedToDecodeData))
             }
         }
         task.resume()
